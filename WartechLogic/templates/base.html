@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="{% block keywords %}Wartech, browser game{% endblock %}" />
+	<meta name="description" content="{% block description %}Wartech{% endblock %}" />
+	<title>Wartech</title>
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/stylesheet.css" media="all" title="cssrefresh"/>
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}plugins/bootstrap/css/bootstrap.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}plugins/bootstrap/css/bootstrap-responsive.css" media="all" />
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="{{ MEDIA_URL }}plugins/bootstrap/js/bootstrap.js"></script>
+	{% block head %} {% endblock %}
+
+    {% block javascript %} {% endblock %}
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50">    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="/">Wartech.Logic</a>
+          <div style="margin-left: auto;margin-right:0;">
+              {% block fixed-buttons %}
+              {% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='page_background'>
+		<div class='well'>
+			<div><a href="https://github.com/antofik/Wartech">GitHub</a></div>
+			<div><a href="http://antofik.github.io/Wartech/">Main site</a></div>
+		</div>
+    {% block base-content %}{% endblock %}
+    </div>
+</body>
+</html>
