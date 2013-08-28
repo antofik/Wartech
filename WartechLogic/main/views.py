@@ -14,4 +14,40 @@ def dummy(request):
     data = {
         'Artem': 'Kurtem'
     }
+    return HttpResponse(simplejson.dumps(data), content_type="application/json")    
+    
+def get_all_users(request):    
+    data = {}
+    return HttpResponse(simplejson.dumps(data), content_type="application/json")
+    
+def request_fight(request):    
+    data = {}
+    return HttpResponse(simplejson.dumps(data), content_type="application/json")
+    
+def get_all_modules(request):    
+    data = {}
+    return HttpResponse(simplejson.dumps(data), content_type="application/json")
+    
+def get_user_robot(request):    
+    data = {}
+    return HttpResponse(simplejson.dumps(data), content_type="application/json")
+    
+def get_user_modules(request):    
+    data = {}
+    return HttpResponse(simplejson.dumps(data), content_type="application/json")
+    
+def set_module_to_slot(request):    
+    data = {}
+    return HttpResponse(simplejson.dumps(data), content_type="application/json")
+    
+def create_new_user(request):    
+    data = {}
+    return HttpResponse(simplejson.dumps(data), content_type="application/json")
+        
+def login(request):    
+    data = {}
+    return HttpResponse(simplejson.dumps(data), content_type="application/json")
+        
+def logout(request):    
+    data = {}
     return HttpResponse(simplejson.dumps(data), content_type="application/json")
