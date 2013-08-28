@@ -114,8 +114,7 @@ def get_user_robot(request):
     return HttpResponse(simplejson.dumps(data), content_type="application/json")
     
 def get_user_modules(request):    
-    data = 
-        [
+    data = [
             {
                'id': 1,
                'slot':'sensor',
