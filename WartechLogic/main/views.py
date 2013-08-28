@@ -156,7 +156,6 @@ def create_new_user(request):
         'session_id': '$fFDf32sd$@$@#$sdf3424fsd3==43223%@@!d', #must be added to cookies
         'user_name': 'RJ122302',
         'serial_number': '00203-22-108', #unique text id, which cannot be changed by user
-        '', 
     }
     return HttpResponse(simplejson.dumps(data), content_type="application/json")
         
