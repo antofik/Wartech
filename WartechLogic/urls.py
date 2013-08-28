@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     url(r'^get_user_modules$', main.views.get_user_modules),
     url(r'^set_module_to_slot$', main.views.set_module_to_slot),
     
+    url(r'^init$', main.views.init),
     url(r'^create_new_user$', main.views.create_new_user),
     url(r'^login$', main.views.login),
     

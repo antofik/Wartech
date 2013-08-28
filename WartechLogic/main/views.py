@@ -16,6 +16,12 @@ def dummy(request):
     }
     return HttpResponse(simplejson.dumps(data), content_type="application/json")    
     
+def init(request):    
+    data = {
+        'session_id': 'dummy_session_key'
+    }
+    return HttpResponse(simplejson.dumps(data), content_type="application/json")
+    
 def get_all_users(request):    
     data = [
         {'name':'antofik', 'available_for_fight': True},
