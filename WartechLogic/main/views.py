@@ -21,31 +21,151 @@ def get_all_users(request):
     return HttpResponse(simplejson.dumps(data), content_type="application/json")
     
 def request_fight(request):    
-    data = {}
+    data = {
+        'granted': true,
+        'arena': {
+            'width': 20,
+            'height': 20,
+            'cells': [
+                1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+                1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+                1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+                1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+                1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+                1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+                1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+                1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+                1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+                1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+                1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+                1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+                1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+                1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+                1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+            ],
+        },
+        'fight_replay': {},
+    }
     return HttpResponse(simplejson.dumps(data), content_type="application/json")
     
 def get_all_modules(request):    
-    data = {}
+    data = [
+        {
+           'slot':'sensor',
+           'modules':[
+                'optic',
+                'sound',
+                'wifi'
+           ]
+        },
+        {
+           'slot':'processor',
+           'modules':[
+                'Pentium I',
+                'Pentium II',
+                'Pentium III',
+                'Pentium IV'
+           ]
+        }
+    ]
     return HttpResponse(simplejson.dumps(data), content_type="application/json")
     
 def get_user_robot(request):    
-    data = {}
+    data = {
+        'hull_name': 'monster',
+        'hull_slots':[
+            {
+                'id': 1,
+                'slot': 'sensor',
+                'module': 'eye'
+            },
+            {
+                'id': 32,
+                'slot': 'sensor',
+                'module': 'eye'
+            },
+            {
+                'id': 2,
+                'slot': 'motion',
+                'module': 'legs'
+                'params': {
+                     'count': 3,
+                }
+            },
+            {
+                'id': 3,
+                'slot':'energy',
+                'module':'battery',
+                'params':{
+                     'energy': 87,
+                     'capacity': 100
+                }
+            },
+            {
+                'id': 4,
+                'slot':'processor',
+                'module':'Pentium III',
+                'params':{
+                     'overheat': 12,
+                }
+            }
+        ],
+    }
     return HttpResponse(simplejson.dumps(data), content_type="application/json")
     
 def get_user_modules(request):    
-    data = {}
+    data = 
+        [
+            {
+               'id': 1,
+               'slot':'sensor',
+               'module': 'optic',
+               'equipped': false,
+            },
+            {
+               'id': 3,
+               'slot':'power',
+               'module': 'Battery 10KJ',
+               'equipped': true,
+            },
+            {
+               'id': 4,
+               'slot':'power',
+               'module': 'Battery 10KJ',
+               'equipped': false,
+            },
+            {
+               'id': 47,
+               'slot':'processor',
+               'module': 'Pentium II',
+               'equipped': false,
+            }
+        ]    
     return HttpResponse(simplejson.dumps(data), content_type="application/json")
     
 def set_module_to_slot(request):    
-    data = {}
+    data = {
+        'ok': true,
+        'unequipped_module': 4, // -1 if no module was unequipped
+        'error_reason': '',    
+    }
     return HttpResponse(simplejson.dumps(data), content_type="application/json")
     
 def create_new_user(request):    
-    data = {}
+    data = {
+        'id': 11023,
+        'session_id': '$fFDf32sd$@$@#$sdf3424fsd3==43223%@@!d', //must be added to cookies
+        'user_name': 'RJ122302',
+        'serial_number': '00203-22-108', //unique text id, which cannot be changed by user
+        '', 
+    }
     return HttpResponse(simplejson.dumps(data), content_type="application/json")
         
 def login(request):    
-    data = {}
+    data = {
+        'granted': false,
+        'error_message': 3, // e.g., "3" is localization key, which corresponds to 'invalid password'
+    }
     return HttpResponse(simplejson.dumps(data), content_type="application/json")
         
 def logout(request):    
