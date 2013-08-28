@@ -19,6 +19,8 @@ urlpatterns = patterns('',
     url(r'create_new_user^$', main.views.create_new_user),
     url(r'login^$', main.views.login),
     
+    url(r'dummy^$', main.views.dummy),
+    
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
