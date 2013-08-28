@@ -77,20 +77,20 @@ def get_user_robot(request):
             {
                 'id': 1,
                 'slot': 'sensor',
-                'module': 'eye'
+                'module': 'eye',
             },
             {
                 'id': 32,
                 'slot': 'sensor',
-                'module': 'eye'
+                'module': 'eye',
             },
             {
                 'id': 2,
                 'slot': 'motion',
-                'module': 'legs'
+                'module': 'legs',
                 'params': {
                      'count': 3,
-                }
+                },
             },
             {
                 'id': 3,
@@ -99,7 +99,7 @@ def get_user_robot(request):
                 'params':{
                      'energy': 87,
                      'capacity': 100
-                }
+                },
             },
             {
                 'id': 4,
@@ -107,7 +107,7 @@ def get_user_robot(request):
                 'module':'Pentium III',
                 'params':{
                      'overheat': 12,
-                }
+                },
             }
         ],
     }
@@ -146,7 +146,7 @@ def get_user_modules(request):
 def set_module_to_slot(request):    
     data = {
         'ok': true,
-        'unequipped_module': 4, // -1 if no module was unequipped
+        'unequipped_module': 4, # -1 if no module was unequipped
         'error_reason': '',    
     }
     return HttpResponse(simplejson.dumps(data), content_type="application/json")
@@ -154,9 +154,9 @@ def set_module_to_slot(request):
 def create_new_user(request):    
     data = {
         'id': 11023,
-        'session_id': '$fFDf32sd$@$@#$sdf3424fsd3==43223%@@!d', //must be added to cookies
+        'session_id': '$fFDf32sd$@$@#$sdf3424fsd3==43223%@@!d', #must be added to cookies
         'user_name': 'RJ122302',
-        'serial_number': '00203-22-108', //unique text id, which cannot be changed by user
+        'serial_number': '00203-22-108', #unique text id, which cannot be changed by user
         '', 
     }
     return HttpResponse(simplejson.dumps(data), content_type="application/json")
@@ -164,7 +164,7 @@ def create_new_user(request):
 def login(request):    
     data = {
         'granted': false,
-        'error_message': 3, // e.g., "3" is localization key, which corresponds to 'invalid password'
+        'error_message': 3, # e.g., "3" is localization key, which corresponds to 'invalid password'
     }
     return HttpResponse(simplejson.dumps(data), content_type="application/json")
         
