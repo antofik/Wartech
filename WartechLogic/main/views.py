@@ -18,9 +18,9 @@ def dummy(request):
     
 def get_all_users(request):    
     data = [
-        {'name':'antofik', 'available_for_fight':true},
-        {'name':'ents', 'available_for_fight':true},
-        {'name':'BaDkInG', 'available_for_fight':false}
+        {'name':'antofik', 'available_for_fight': True},
+        {'name':'ents', 'available_for_fight': True},
+        {'name':'BaDkInG', 'available_for_fight': False}
     ]
     return HttpResponse(simplejson.dumps(data), content_type="application/json")
     
