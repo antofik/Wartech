@@ -17,7 +17,11 @@ def dummy(request):
     return HttpResponse(simplejson.dumps(data), content_type="application/json")    
     
 def get_all_users(request):    
-    data = {}
+    data = [
+        {'name':'antofik', 'available_for_fight':true},
+        {'name':'ents', 'available_for_fight':true},
+        {'name':'BaDkInG', 'available_for_fight':false}
+    ]
     return HttpResponse(simplejson.dumps(data), content_type="application/json")
     
 def request_fight(request):    
