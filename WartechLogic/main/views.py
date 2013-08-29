@@ -12,8 +12,8 @@ def JsonResponse(request, data):
     if 'HTTP_ACCEPT_ENCODING' in request.META.keys():
         if "application/json" in request.META['HTTP_ACCEPT_ENCODING']:
             mimetype = 'application/json'
-    response = render_to_response('home.html', {}, context_instance=RequestContext(request))
-    #response = HttpResponse(simplejson.dumps(data), content_type=mimetype, context_instance=RequestContext(request))
+    #response = render_to_response('home.html', {}, context_instance=RequestContext(request))
+    response = HttpResponse(simplejson.dumps(data), content_type=mimetype)
     response["Access-Control-Allow-Origin"] = "*"  
     response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"  
     response["Access-Control-Max-Age"] = "86400"  
@@ -25,24 +25,21 @@ def JsonResponse(request, data):
 def home(request):
     return render_to_response('home.html', {}, context_instance=RequestContext(request))
 
-#@csrf_exempt    
+  
 def dummy(request):    
-    return HttpResponse("ok")
     data = {
         'Artem': 'Kurtem'
     }
-    response = HttpResponse("ok", content_type="text/plain")# JsonResponse(request, data) 
-    response["x-test"] = "test string"
-    return JsonResponse(request, data)
+    JsonResponse(request, data) 
     
-#@csrf_exempt       
+     
 def init(request):    
     data = {
         'session_id': 'dummy_session_key'
     }
     return JsonResponse(request, data)
     
-#@csrf_exempt       
+     
 def get_all_users(request):    
     data = [
         {'name':'antofik', 'available_for_fight': True},
@@ -51,7 +48,7 @@ def get_all_users(request):
     ]
     return JsonResponse(request, data)
     
-#@csrf_exempt       
+     
 def request_fight(request):    
     data = {
         'granted': true,
@@ -80,7 +77,7 @@ def request_fight(request):
     }
     return JsonResponse(request, data)
     
-#@csrf_exempt       
+     
 def get_all_modules(request):    
     data = [
         {
@@ -103,7 +100,7 @@ def get_all_modules(request):
     ]
     return JsonResponse(request, data)
     
-#@csrf_exempt       
+     
 def get_user_robot(request):    
     data = {
         'hull_name': 'monster',
@@ -147,7 +144,7 @@ def get_user_robot(request):
     }
     return JsonResponse(request, data)
     
-#@csrf_exempt       
+     
 def get_user_modules(request):    
     data = [
             {
@@ -177,7 +174,7 @@ def get_user_modules(request):
         ]    
     return JsonResponse(request, data)
     
-#@csrf_exempt       
+     
 def set_module_to_slot(request):    
     data = {
         'ok': true,
@@ -186,7 +183,7 @@ def set_module_to_slot(request):
     }
     return JsonResponse(request, data)
     
-#@csrf_exempt       
+     
 def create_new_user(request):    
     data = {
         'id': 11023,
@@ -196,7 +193,7 @@ def create_new_user(request):
     }
     return JsonResponse(request, data)
         
-#@csrf_exempt       
+     
 def login(request):    
     data = {
         'granted': false,
@@ -204,7 +201,7 @@ def login(request):
     }
     return JsonResponse(request, data)
         
-#@csrf_exempt       
+     
 def logout(request):    
     data = {}
     return JsonResponse(request, data)
