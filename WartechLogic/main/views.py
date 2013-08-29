@@ -30,14 +30,16 @@ def dummy(request):
     data = {
         'Artem': 'Kurtem'
     }
-    return JsonResponse(request, data) 
+    return HttpResponse("ok")# JsonResponse(request, data) 
     
+@csrf_exempt       
 def init(request):    
     data = {
         'session_id': 'dummy_session_key'
     }
-    return HttpResponse(simplejson.dumps(data), content_type="application/json")
+    return JsonResponse(request, data)
     
+@csrf_exempt       
 def get_all_users(request):    
     data = [
         {'name':'antofik', 'available_for_fight': True},
@@ -46,6 +48,7 @@ def get_all_users(request):
     ]
     return JsonResponse(request, data)
     
+@csrf_exempt       
 def request_fight(request):    
     data = {
         'granted': true,
@@ -74,6 +77,7 @@ def request_fight(request):
     }
     return JsonResponse(request, data)
     
+@csrf_exempt       
 def get_all_modules(request):    
     data = [
         {
@@ -96,6 +100,7 @@ def get_all_modules(request):
     ]
     return JsonResponse(request, data)
     
+@csrf_exempt       
 def get_user_robot(request):    
     data = {
         'hull_name': 'monster',
@@ -139,6 +144,7 @@ def get_user_robot(request):
     }
     return JsonResponse(request, data)
     
+@csrf_exempt       
 def get_user_modules(request):    
     data = [
             {
@@ -168,6 +174,7 @@ def get_user_modules(request):
         ]    
     return JsonResponse(request, data)
     
+@csrf_exempt       
 def set_module_to_slot(request):    
     data = {
         'ok': true,
@@ -176,6 +183,7 @@ def set_module_to_slot(request):
     }
     return JsonResponse(request, data)
     
+@csrf_exempt       
 def create_new_user(request):    
     data = {
         'id': 11023,
@@ -185,6 +193,7 @@ def create_new_user(request):
     }
     return JsonResponse(request, data)
         
+@csrf_exempt       
 def login(request):    
     data = {
         'granted': false,
@@ -192,6 +201,7 @@ def login(request):
     }
     return JsonResponse(request, data)
         
+@csrf_exempt       
 def logout(request):    
     data = {}
     return JsonResponse(request, data)
