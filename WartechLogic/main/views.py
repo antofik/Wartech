@@ -8,12 +8,12 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 def JsonResponse(request, data):
-    response = HttpResponse(simplejson.dumps(data), content_type="application/json")
+    response = HttpResponse(simplejson.dumps(data))#, content_type="application/json")
     response["Access-Control-Allow-Origin"] = "*"  
     response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"  
-    response["Access-Control-Max-Age"] = "1000"  
+    response["Access-Control-Max-Age"] = "86400"  
     if request.method == "OPTIONS":
-        response["Access-Control-Allow-Headers"] = "Origin, Content-Type"
+        response["Access-Control-Allow-Headers"] = "origin, content-type, x-requested-with, accept, authorization"
     return response
 
 
