@@ -24,7 +24,7 @@ def JsonResponse(request, data):
 def home(request):
     return render_to_response('home.html', {}, context_instance=RequestContext(request))
 
-@csrf_exempt    
+#@csrf_exempt    
 def dummy(request):    
     data = {
         'Artem': 'Kurtem'
@@ -33,14 +33,14 @@ def dummy(request):
     response["x-test"] = "test string"
     return JsonResponse(request, data)
     
-@csrf_exempt       
+#@csrf_exempt       
 def init(request):    
     data = {
         'session_id': 'dummy_session_key'
     }
     return JsonResponse(request, data)
     
-@csrf_exempt       
+#@csrf_exempt       
 def get_all_users(request):    
     data = [
         {'name':'antofik', 'available_for_fight': True},
@@ -49,7 +49,7 @@ def get_all_users(request):
     ]
     return JsonResponse(request, data)
     
-@csrf_exempt       
+#@csrf_exempt       
 def request_fight(request):    
     data = {
         'granted': true,
@@ -78,7 +78,7 @@ def request_fight(request):
     }
     return JsonResponse(request, data)
     
-@csrf_exempt       
+#@csrf_exempt       
 def get_all_modules(request):    
     data = [
         {
@@ -101,7 +101,7 @@ def get_all_modules(request):
     ]
     return JsonResponse(request, data)
     
-@csrf_exempt       
+#@csrf_exempt       
 def get_user_robot(request):    
     data = {
         'hull_name': 'monster',
@@ -145,7 +145,7 @@ def get_user_robot(request):
     }
     return JsonResponse(request, data)
     
-@csrf_exempt       
+#@csrf_exempt       
 def get_user_modules(request):    
     data = [
             {
@@ -175,7 +175,7 @@ def get_user_modules(request):
         ]    
     return JsonResponse(request, data)
     
-@csrf_exempt       
+#@csrf_exempt       
 def set_module_to_slot(request):    
     data = {
         'ok': true,
@@ -184,7 +184,7 @@ def set_module_to_slot(request):
     }
     return JsonResponse(request, data)
     
-@csrf_exempt       
+#@csrf_exempt       
 def create_new_user(request):    
     data = {
         'id': 11023,
@@ -194,7 +194,7 @@ def create_new_user(request):
     }
     return JsonResponse(request, data)
         
-@csrf_exempt       
+#@csrf_exempt       
 def login(request):    
     data = {
         'granted': false,
@@ -202,7 +202,7 @@ def login(request):
     }
     return JsonResponse(request, data)
         
-@csrf_exempt       
+#@csrf_exempt       
 def logout(request):    
     data = {}
     return JsonResponse(request, data)
