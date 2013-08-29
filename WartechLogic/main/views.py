@@ -12,12 +12,10 @@ def JsonResponse(request, data):
     if 'HTTP_ACCEPT_ENCODING' in request.META.keys():
         if "application/json" in request.META['HTTP_ACCEPT_ENCODING']:
             mimetype = 'application/json'
-    response = HttpResponse("test", mimetype=mimetype)
-
-    #response = HttpResponse(simplejson.dumps(data), mimetype=mimetype)
-    #response["Access-Control-Allow-Origin"] = "*"  
-    #response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"  
-    #response["Access-Control-Max-Age"] = "86400"  
+    response = HttpResponse(simplejson.dumps(data), content_type=mimetype)
+    response["Access-Control-Allow-Origin"] = "*"  
+    response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"  
+    response["Access-Control-Max-Age"] = "86400"  
     if request.method == "OPTIONS":
         response["Access-Control-Allow-Headers"] = "origin, content-type, x-requested-with, accept, authorization"
     return response
@@ -32,7 +30,7 @@ def dummy(request):
     }
     response = HttpResponse("ok", content_type="text/plain")# JsonResponse(request, data) 
     response["x-test"] = "test string"
-    return response
+    return JsonResponse(request, data)
     
 @csrf_exempt       
 def init(request):    
