@@ -12,7 +12,8 @@ def JsonResponse(request, data):
     if 'HTTP_ACCEPT_ENCODING' in request.META.keys():
         if "application/json" in request.META['HTTP_ACCEPT_ENCODING']:
             mimetype = 'application/json'
-    response = HttpResponse(simplejson.dumps(data), content_type=mimetype)
+    response = render_to_response('home.html', {}, context_instance=RequestContext(request))
+    #response = HttpResponse(simplejson.dumps(data), content_type=mimetype, context_instance=RequestContext(request))
     response["Access-Control-Allow-Origin"] = "*"  
     response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"  
     response["Access-Control-Max-Age"] = "86400"  
