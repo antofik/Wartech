@@ -30,7 +30,9 @@ def dummy(request):
     data = {
         'Artem': 'Kurtem'
     }
-    return HttpResponse("ok")# JsonResponse(request, data) 
+    response = HttpResponse("ok", content_type="text/plain")# JsonResponse(request, data) 
+    response["x-test"] = "test string"
+    return response
     
 @csrf_exempt       
 def init(request):    
