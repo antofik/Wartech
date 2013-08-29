@@ -30,7 +30,7 @@ def dummy(request):
     data = {
         'Artem': 'Kurtem'
     }
-    JsonResponse(request, data) 
+    return JsonResponse(request, data) 
     
      
 def init(request):    
