@@ -16,6 +16,7 @@ def JsonResponse(request, data):
     response["Access-Control-Allow-Origin"] = "*"  
     response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"  
     response["Access-Control-Max-Age"] = "86400"  
+    response["x-test"] = "super secret header"
     if request.method == "OPTIONS":
         response["Access-Control-Allow-Headers"] = "origin, content-type, x-requested-with, accept, authorization"
     return response
