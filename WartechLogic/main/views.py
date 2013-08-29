@@ -7,6 +7,15 @@ from django.shortcuts import render_to_response, get_object_or_404, Http404, red
 from django.views.decorators.csrf import csrf_exempt
 
 
+def JsonResponse(data):
+    response = HttpResponse(simplejson.dumps(data), content_type="application/json")
+    response["Access-Control-Allow-Origin"] = "*"  
+    response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"  
+    response["Access-Control-Max-Age"] = "1000"  
+    response["Access-Control-Allow-Headers"] = "*"
+    return response
+
+
 def home(request):
     return render_to_response('home.html', {}, context_instance=RequestContext(request))
     
@@ -14,7 +23,7 @@ def dummy(request):
     data = {
         'Artem': 'Kurtem'
     }
-    return HttpResponse(simplejson.dumps(data), content_type="application/json")    
+    return JsonResponse(data) 
     
 def init(request):    
     data = {
@@ -28,7 +37,7 @@ def get_all_users(request):
         {'name':'ents', 'available_for_fight': True},
         {'name':'BaDkInG', 'available_for_fight': False}
     ]
-    return HttpResponse(simplejson.dumps(data), content_type="application/json")
+    return JsonResponse(data)
     
 def request_fight(request):    
     data = {
@@ -56,7 +65,7 @@ def request_fight(request):
         },
         'fight_replay': {},
     }
-    return HttpResponse(simplejson.dumps(data), content_type="application/json")
+    return JsonResponse(data)
     
 def get_all_modules(request):    
     data = [
@@ -78,7 +87,7 @@ def get_all_modules(request):
            ]
         }
     ]
-    return HttpResponse(simplejson.dumps(data), content_type="application/json")
+    return JsonResponse(data)
     
 def get_user_robot(request):    
     data = {
@@ -121,7 +130,7 @@ def get_user_robot(request):
             }
         ],
     }
-    return HttpResponse(simplejson.dumps(data), content_type="application/json")
+    return JsonResponse(data)
     
 def get_user_modules(request):    
     data = [
@@ -150,7 +159,7 @@ def get_user_modules(request):
                'equipped': false,
             }
         ]    
-    return HttpResponse(simplejson.dumps(data), content_type="application/json")
+    return JsonResponse(data)
     
 def set_module_to_slot(request):    
     data = {
@@ -158,7 +167,7 @@ def set_module_to_slot(request):
         'unequipped_module': 4, # -1 if no module was unequipped
         'error_reason': '',    
     }
-    return HttpResponse(simplejson.dumps(data), content_type="application/json")
+    return JsonResponse(data)
     
 def create_new_user(request):    
     data = {
@@ -167,15 +176,15 @@ def create_new_user(request):
         'user_name': 'RJ122302',
         'serial_number': '00203-22-108', #unique text id, which cannot be changed by user
     }
-    return HttpResponse(simplejson.dumps(data), content_type="application/json")
+    return JsonResponse(data)
         
 def login(request):    
     data = {
         'granted': false,
         'error_message': 3, # e.g., "3" is localization key, which corresponds to 'invalid password'
     }
-    return HttpResponse(simplejson.dumps(data), content_type="application/json")
+    return JsonResponse(data)
         
 def logout(request):    
     data = {}
-    return HttpResponse(simplejson.dumps(data), content_type="application/json")
+    return JsonResponse(data)
