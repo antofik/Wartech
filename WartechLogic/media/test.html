@@ -5,8 +5,10 @@
 	<script type="text/javascript">
 		$.ajax( {url:'http://wartech.algo.pw/dummy',
 			type:"POST",
-			success:function(data, textStatus, jqXHR) {console.log("success");},
-});
+			dataType:"json",
+			data:{'param1':'value1'}, 
+			success:function(a, b, c) {console.log("success");},
+		});
 	</script>
 </head>
 <body>	

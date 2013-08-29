@@ -27,6 +27,7 @@ def home(request):
 
 #@csrf_exempt    
 def dummy(request):    
+    return HttpResponse("ok")
     data = {
         'Artem': 'Kurtem'
     }
