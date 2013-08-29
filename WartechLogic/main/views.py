@@ -151,25 +151,25 @@ def get_user_modules(request):
                'id': 1,
                'slot':'sensor',
                'module': 'optic',
-               'equipped': false,
+               'equipped': False,
             },
             {
                'id': 3,
                'slot':'power',
                'module': 'Battery 10KJ',
-               'equipped': true,
+               'equipped': True,
             },
             {
                'id': 4,
                'slot':'power',
                'module': 'Battery 10KJ',
-               'equipped': false,
+               'equipped': False,
             },
             {
                'id': 47,
                'slot':'processor',
                'module': 'Pentium II',
-               'equipped': false,
+               'equipped': False,
             }
         ]    
     return JsonResponse(request, data)
