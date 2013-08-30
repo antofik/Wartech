@@ -1,6 +1,6 @@
 <!-- UWSGI XML Configuration File -->
 <uwsgi>
-    <socket>/server/www/wartech.logic/uwsgi.sock</socket>
+    <socket>/tmp/wartech.logic.sock</socket>
     <plugins>python</plugins>
     <pythonpath>/server/www/wartech.logic</pythonpath>
     <module>wsgi</module>
@@ -11,5 +11,5 @@
     <reload-mercy>8</reload-mercy>
     <master />
     <no-orphans />
-
+    <post-buffering>1</post-buffering>
 </uwsgi>
