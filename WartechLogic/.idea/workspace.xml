@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9345266-ce5f-4564-9989-cce456f95f16" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/WartechLogic.iml" afterPath="$PROJECT_DIR$/.idea/WartechLogic.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/localsettings.py" afterPath="$PROJECT_DIR$/localsettings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WartechLogic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -15,7 +11,7 @@
     <file path="/Django Console" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377869644665" ignored="false" />
     <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377871027755" ignored="false" />
     <file path="/uwsgi.xml" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377887090653" ignored="false" />
-    <file path="/localsettings.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377888102691" ignored="false" />
+    <file path="/localsettings.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377888497955" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +65,7 @@
       <file leaf-file-name="localsettings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/localsettings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="29" selection-start="575" selection-end="575" vertical-scroll-proportion="0.26234567">
+            <state line="15" column="34" selection-start="580" selection-end="580" vertical-scroll-proportion="0.26234567">
               <folding />
             </state>
           </provider>
@@ -494,7 +490,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/localsettings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="29" selection-start="575" selection-end="575" vertical-scroll-proportion="0.26234567">
+        <state line="15" column="34" selection-start="580" selection-end="580" vertical-scroll-proportion="0.26234567">
           <folding />
         </state>
       </provider>
