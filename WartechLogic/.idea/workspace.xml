@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9345266-ce5f-4564-9989-cce456f95f16" name="Default" comment="">
+    <list default="true" id="a9345266-ce5f-4564-9989-cce456f95f16" name="Default" comment="test">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/localsettings.py" afterPath="$PROJECT_DIR$/localsettings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
     </list>
     <ignored path="WartechLogic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377888123936" ignored="false" />
+    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377889469129" ignored="false" />
     <file path="/models.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377870490942" ignored="false" />
     <file path="/Django Console" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377869644665" ignored="false" />
-    <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377871027755" ignored="false" />
+    <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377889445210" ignored="false" />
     <file path="/uwsgi.xml" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377887090653" ignored="false" />
     <file path="/localsettings.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377888905034" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,46 +41,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="30" selection-start="1781" selection-end="1781" vertical-scroll-proportion="-0.68">
+            <state line="52" column="33" selection-start="1621" selection-end="1621" vertical-scroll-proportion="0.4372428">
               <folding>
                 <element signature="e#15#28#0" expanded="true" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="uwsgi.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uwsgi.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="450" selection-end="450" vertical-scroll-proportion="-9.807693">
-              <folding>
-                <marker date="1377887120769" expanded="true" signature="44:448" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="localsettings.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/localsettings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="23" selection-start="456" selection-end="456" vertical-scroll-proportion="0.20987654">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nginx.conf" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nginx.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="11" selection-start="55" selection-end="55" vertical-scroll-proportion="-1.36">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-            <state />
           </provider>
         </entry>
       </file>
@@ -102,10 +71,10 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/main/models.py" />
-        <option value="$PROJECT_DIR$/main/views.py" />
         <option value="$PROJECT_DIR$/uwsgi.xml" />
         <option value="$PROJECT_DIR$/nginx.conf" />
         <option value="$PROJECT_DIR$/localsettings.py" />
+        <option value="$PROJECT_DIR$/main/views.py" />
       </list>
     </option>
   </component>
@@ -451,15 +420,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="30" selection-start="1781" selection-end="1781" vertical-scroll-proportion="-0.68">
-          <folding>
-            <element signature="e#15#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -483,15 +443,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="0" selection-start="450" selection-end="450" vertical-scroll-proportion="-9.807693">
           <folding>
-            <marker date="1377887120769" expanded="true" signature="44:448" placeholder="..." />
+            <marker date="1377887120769" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/localsettings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="23" selection-start="456" selection-end="456" vertical-scroll-proportion="0.20987654">
+        <state line="12" column="23" selection-start="456" selection-end="456" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="33" selection-start="1621" selection-end="1621" vertical-scroll-proportion="0.4372428">
+          <folding>
+            <element signature="e#15#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -50,7 +50,7 @@ def get_request_value(request, key):
 
 def get_session(request):
     session_id = get_request_value(request, "session_id")
-    session = Session.objects.get(pk=session_id)
+    session = Session.objects.get(session_id=session_id)
     if not session:
         raise Exception("session not found")
     return session
