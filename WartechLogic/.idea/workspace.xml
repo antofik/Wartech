@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a9345266-ce5f-4564-9989-cce456f95f16" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/anton.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sqldb.lite" afterPath="$PROJECT_DIR$/sqldb.lite" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/models.py" afterPath="$PROJECT_DIR$/main/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
     </list>
@@ -12,7 +11,7 @@
     <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377863266221" ignored="false" />
     <file path="/models.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377870490942" ignored="false" />
     <file path="/Django Console" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377869644665" ignored="false" />
-    <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377870567518" ignored="false" />
+    <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377871027755" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,12 +43,9 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="26" selection-start="1512" selection-end="1512" vertical-scroll-proportion="0.36335877">
+            <state line="59" column="30" selection-start="1777" selection-end="1777" vertical-scroll-proportion="0.519084">
               <folding>
                 <element signature="e#15#28#0" expanded="true" />
-                <element signature="e#251#901#0" expanded="false" />
-                <element signature="e#927#1011#0" expanded="false" />
-                <element signature="e#1044#1109#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -422,19 +418,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../../Python/Portable Python CE/pypy/site-packages/django/http/response.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="445" column="17" selection-start="16123" selection-end="16123" vertical-scroll-proportion="0.7923664">
-          <folding />
+        <state line="445" column="23" selection-start="16120" selection-end="16129" vertical-scroll-proportion="0.7923664">
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="26" selection-start="1512" selection-end="1512" vertical-scroll-proportion="0.36335877">
+        <state line="59" column="30" selection-start="1777" selection-end="1777" vertical-scroll-proportion="0.519084">
           <folding>
             <element signature="e#15#28#0" expanded="true" />
-            <element signature="e#251#901#0" expanded="false" />
-            <element signature="e#927#1011#0" expanded="false" />
-            <element signature="e#1044#1109#0" expanded="false" />
           </folding>
         </state>
       </provider>
