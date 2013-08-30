@@ -1,6 +1,6 @@
 <!-- UWSGI XML Configuration File -->
 <uwsgi>
-    <socket>/tmp/wartech.logic.sock</socket>
+    <socket>127.0.0.1:9001</socket>
     <plugins>python</plugins>
     <pythonpath>/server/www/wartech.logic</pythonpath>
     <module>wsgi</module>

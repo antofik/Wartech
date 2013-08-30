@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" hash="1247334589">
+    <data-source source="LOCAL" name="Django default" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="742fa3eb-cd4f-4ab2-b042-76cbfcbefcf8">
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://wartech.logic/wartech.logic</jdbc-url>
+      <user-name>wartech.logic</user-name>
+      <user-password>dfccdfcedfcbdf99df9edfc1df98df91dfcedff9dfebdf89df8fdf8fdf9edf99df9fdfd8dfccdfcedfcbdf98dff9</user-password>
+      <libraries>
+        <library>
+          <url>file://$USER_HOME$/.PyCharm20/config/jdbc-drivers/mysql-connector-license.txt</url>
+        </library>
+        <library>
+          <url>file://$USER_HOME$/.PyCharm20/config/jdbc-drivers/mysql-connector-java-5.1.18-bin.jar</url>
+        </library>
+      </libraries>
+    </data-source>
     <data-source source="LOCAL" name="Django default" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="bc28e451-4e37-485c-a34e-9677d9ad3a90">
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:D:\GitHub\Wartech\WartechLogic\sqldb.lite</jdbc-url>
