@@ -1,19 +1,18 @@
 # coding=utf-8
+import random
 import string
-from django.http import HttpResponse
-from django.utils import simplejson
+from django.http import HttpResponse, Http404
+import json
 from django.template import RequestContext
-from django.shortcuts import render_to_response, get_object_or_404, Http404, redirect
-from django.views.decorators.csrf import csrf_exempt
-
+from django.shortcuts import render_to_response
+from models import *
 
 def JsonResponse(request, data):
     mimetype = 'text/plain'
     if 'HTTP_ACCEPT_ENCODING' in request.META.keys():
         if "application/json" in request.META['HTTP_ACCEPT_ENCODING']:
             mimetype = 'application/json'
-    #response = render_to_response('home.html', {}, context_instance=RequestContext(request))
-    response = HttpResponse(simplejson.dumps(data), content_type=mimetype)
+    response = HttpResponse(json.dumps(data), content_type=mimetype)
     response["Access-Control-Allow-Origin"] = "*"  
     response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"  
     response["Access-Control-Max-Age"] = "86400"  
@@ -22,36 +21,43 @@ def JsonResponse(request, data):
         response["Access-Control-Allow-Headers"] = "origin, content-type, x-requested-with, accept, authorization"
     return response
 
+
 def home(request):
     return render_to_response('home.html', {}, context_instance=RequestContext(request))
 
   
 def dummy(request):    
-    data = {
-        'Artem': 'Kurtem'
-    }
+    data = {'Artem': 'Kurtem'}
     return JsonResponse(request, data) 
     
      
-def init(request):    
-    data = {
-        'session_id': 'dummy_session_key'
-    }
+def init(request):
+    session_key = ''.join(random.choice(string.letters) for _ in xrange(128))
+    data = {'session_id': session_key}
     return JsonResponse(request, data)
-    
+
+
+def get_session(request):
+    session_id = request.POST["session_id"]
+    session = Session.objects.get(pk=session_id)
+    if not session:
+        raise Http404
+    return session
+
      
-def get_all_users(request):    
-    data = [
-        {'name':'antofik', 'available_for_fight': True},
-        {'name':'ents', 'available_for_fight': True},
-        {'name':'BaDkInG', 'available_for_fight': False}
-    ]
+def get_all_users(request):
+    session = get_session(request)
+    user = session.user
+    if not user:
+        raise Http404
+    users = User.objects.filter(is_online=True).all()
+    data = [{'name': user.name, 'available_for_fight': user.id != session.user.id} for user in users]
     return JsonResponse(request, data)
     
      
 def request_fight(request):    
     data = {
-        'granted': true,
+        'granted': True,
         'arena': {
             'width': 20,
             'height': 20,
@@ -177,7 +183,7 @@ def get_user_modules(request):
      
 def set_module_to_slot(request):    
     data = {
-        'ok': true,
+        'ok': True,
         'unequipped_module': 4, # -1 if no module was unequipped
         'error_reason': '',    
     }
@@ -196,7 +202,7 @@ def create_new_user(request):
      
 def login(request):    
     data = {
-        'granted': false,
+        'granted': False,
         'error_message': 3, # e.g., "3" is localization key, which corresponds to 'invalid password'
     }
     return JsonResponse(request, data)
