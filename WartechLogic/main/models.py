@@ -17,6 +17,12 @@ class User(Model):
     login_date = DateField()
 
 
+class Robot(Model):
+    id = AutoField(primary_key=True)
+    user = ForeignKey(User, related_name="robots")
+    hull = OneToOneField(Hull)
+
+
 class HullPrototype(Model):
     id = AutoField(primary_key=True)
     slug = SlugField()
@@ -30,6 +36,7 @@ class ModulePrototype(Model):
     slug = SlugField()
     name = CharField(max_length=50)
     slot = CharField(max_length=50)
+    category = CharField(max_length=50)
     description = TextField()
     parameters = TextField()
 

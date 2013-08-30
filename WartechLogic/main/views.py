@@ -28,41 +28,20 @@ def home(request):
 
 
 def dummy(request):
-    data = {'Artem': 'Kurtem'}
+    data = {'Artem': 'Kurtem', 'session_key': request.session.session_id}
     return JsonResponse(request, data)
 
 
-def init(request):
-    session_key = ''.join(random.choice(string.letters) for _ in xrange(128))
-    session = Session()
-    session.session_id = session_key
-    session.save()
-    data = {'session_id': session_key}
-    return JsonResponse(request, data)
-
-
-def get_request_value(request, key):
-    if request.method == "GET":
-        return request.GET[key]
-    else:
-        return request.POST[key]
-
-
-def get_session(request):
-    session_id = get_request_value(request, "session_id")
-    session = Session.objects.get(session_id=session_id)
-    if not session:
-        raise Exception("session not found")
-    return session
+def is_authrized(request):
+    if not "is_authorized" in request.session:
+        return False
+    return request.session["is_authorized"]
 
 
 def get_all_users(request):
-    session = get_session(request)
-    user = session.user
-    if not user:
-        raise Exception("user not found")
+    user_id = request.session["user_id"] if "user_id" in request.session else None
     users = User.objects.filter(is_online=True).all()
-    data = [{'name': user.name, 'available_for_fight': user.id != session.user.id} for user in users]
+    data = [{'name': user.name, 'available_for_fight': user.id != user_id} for user in users]
     return JsonResponse(request, data)
 
 
@@ -96,30 +75,29 @@ def request_fight(request):
 
 
 def get_all_modules(request):
-    data = [
-        {
-            'slot': 'sensor',
-            'modules': [
-                'optic',
-                'sound',
-                'wifi'
-            ]
-        },
-        {
-            'slot': 'processor',
-            'modules': [
-                'Pentium I',
-                'Pentium II',
-                'Pentium III',
-                'Pentium IV'
-            ]
+    data = []
+    for module in ModulePrototype.objects.all():
+        item = {
+            'slot': module.slot,
+            'slug': module.slug,
+            'name': module.name,
+            'description': module.description,
+            'parameters': module.parameters,
         }
-    ]
+        data.append(item)
     return JsonResponse(request, data)
 
 
 def get_user_robot(request):
+    if not is_authrized(request):
+        return JsonResponse(request, {"ok": False, "error_message": "Not authorized"})
+
+    user_id = request.session["user_id"]
+    user = User.objects.get(pk=user_id)
+    user.robot
+
     data = {
+        'ok': True,
         'hull_name': 'monster',
         'hull_slots': [
             {
@@ -201,24 +179,57 @@ def set_module_to_slot(request):
     return JsonResponse(request, data)
 
 
-def create_new_user(request):
-    data = {
-        'id': 11023,
-        'session_id': '$fFDf32sd$@$@#$sdf3424fsd3==43223%@@!d', #must be added to cookies
-        'user_name': 'RJ122302',
-        'serial_number': '00203-22-108', #unique text id, which cannot be changed by user
-    }
-    return JsonResponse(request, data)
+def give_start_robot_to_user(user):
+    hullProto = HullPrototype.objects.get(slug='start')
+    hull = Hull()
+    hull.proto = hullProto
+    hull.parameters = hullProto.parameters
+    hull.save()
+
+    slots = json.load(hullProto.parameters)['slots']
+
+    robot = Robot()
+    robot.user = user
+    robot.hull = hull
+    robot.save()
+
+    for moduleProto in ModulePrototype.objects.filter(category="start").all():
+        module = UserModule()
+        module.user = user
+        module.proto = moduleProto
+        module.hull = hull
+        for slot in slots:
+            if moduleProto.slot == slot.slot:
+                module.hull_slot_id = slot.id
+                slots.remove(slot)
+                break
+        module.save()
 
 
 def login(request):
-    data = {
-        'granted': False,
-        'error_message': 3, # e.g., "3" is localization key, which corresponds to 'invalid password'
-    }
-    return JsonResponse(request, data)
+    for key in ["token", "provider"]:
+        if key not in request.session:
+            return JsonResponse(request, {"ok": False, "error_message": "key %s not found" % key})
+    token = request.session["token"]
+    provider = request.session["provider"]
+    users = User.objects.filter(token=token).filter(provider=provider).all()
+    if users:
+        user = users[0]
+    else:
+        user = User()
+        user.token = token
+        user.provider = provider
+        give_start_robot_to_user(user)
+    user.is_online = True
+    user.login_date = datetime.datetime.now()
+    user.save()
+    request.session["user_id"] = user.id
+    request.session["is_authorized"] = True
+    return JsonResponse(request, {'granted': True})
 
 
 def logout(request):
-    data = {}
-    return JsonResponse(request, data)
+    if not is_authrized(request):
+        return JsonResponse(request, {"ok": False, "error_message": "Not authorized"})
+    request.session["is_authorized"] = False
+    return JsonResponse(request, {"ok": True})
