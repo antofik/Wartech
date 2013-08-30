@@ -11,9 +11,11 @@ DATABASES = {
         #'NAME': os.path.join(PROJECT_PATH, "sqldb.lite"),                      # Or path to database file if using sqlite3.
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'wartech.logic',
-        'USER': 'wartech.logic',
-        'PASSWORD': 'fda34k2;dSA#%%435rfda2S',
-        'HOST': 'logic.wartech.pro',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        #'USER': 'wartech.logic',
+        #'PASSWORD': 'fda34k2;dSA#%%435rfda2S',
+        'HOST': '',
         'PORT': '',
         #'OPTIONS': {'read_default_file': os.path.join(PROJECT_PATH, 'mysql.cnf'),},
     }
