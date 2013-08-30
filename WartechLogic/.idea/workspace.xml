@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9345266-ce5f-4564-9989-cce456f95f16" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/WartechLogic.iml" afterPath="$PROJECT_DIR$/.idea/WartechLogic.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/localsettings.py" afterPath="$PROJECT_DIR$/localsettings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WartechLogic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,7 +59,9 @@
         <entry file="file://$PROJECT_DIR$/uwsgi.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state line="15" column="0" selection-start="450" selection-end="450" vertical-scroll-proportion="-9.807693">
-              <folding />
+              <folding>
+                <marker date="1377887120769" expanded="true" signature="44:448" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,7 +69,7 @@
       <file leaf-file-name="localsettings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/localsettings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="688" selection-end="688" vertical-scroll-proportion="0.35902852">
+            <state line="15" column="29" selection-start="575" selection-end="575" vertical-scroll-proportion="0.26234567">
               <folding />
             </state>
           </provider>
@@ -179,7 +185,7 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="appearance" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="C:/Program Files (x86)/Git/bin/git.exe" />
     <property name="FullScreen" value="false" />
@@ -480,13 +486,15 @@
     <entry file="file://$PROJECT_DIR$/uwsgi.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="0" selection-start="450" selection-end="450" vertical-scroll-proportion="-9.807693">
-          <folding />
+          <folding>
+            <marker date="1377887120769" expanded="true" signature="44:448" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/localsettings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="688" selection-end="688" vertical-scroll-proportion="0.35902852">
+        <state line="15" column="29" selection-start="575" selection-end="575" vertical-scroll-proportion="0.26234567">
           <folding />
         </state>
       </provider>
