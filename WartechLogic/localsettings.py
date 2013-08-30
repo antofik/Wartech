@@ -10,7 +10,7 @@ DATABASES = {
         #'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         #'NAME': os.path.join(PROJECT_PATH, "sqldb.lite"),                      # Or path to database file if using sqlite3.
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'wartech.logic',
+        'NAME': 'logic.wartech',
         'USER': 'root',
         'PASSWORD': 'root',
         #'USER': 'wartech.logic',

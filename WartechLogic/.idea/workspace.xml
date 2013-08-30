@@ -11,7 +11,7 @@
     <file path="/Django Console" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377869644665" ignored="false" />
     <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377871027755" ignored="false" />
     <file path="/uwsgi.xml" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377887090653" ignored="false" />
-    <file path="/localsettings.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377888810139" ignored="false" />
+    <file path="/localsettings.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377888905034" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +65,7 @@
       <file leaf-file-name="localsettings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/localsettings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="17" selection-start="617" selection-end="617" vertical-scroll-proportion="0.2973251">
+            <state line="12" column="23" selection-start="456" selection-end="456" vertical-scroll-proportion="0.20987654">
               <folding />
             </state>
           </provider>
@@ -490,7 +490,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/localsettings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="17" selection-start="617" selection-end="617" vertical-scroll-proportion="0.2973251">
+        <state line="12" column="23" selection-start="456" selection-end="456" vertical-scroll-proportion="0.20987654">
           <folding />
         </state>
       </provider>
