@@ -34,6 +34,9 @@ def dummy(request):
 
 def init(request):
     session_key = ''.join(random.choice(string.letters) for _ in xrange(128))
+    session = Session()
+    session.session_id = session_key
+    session.save()
     data = {'session_id': session_key}
     return JsonResponse(request, data)
 
