@@ -15,17 +15,17 @@
 
             </div>
         </div>
-        <script src="/lib/jquery.cookie.js"></script>
-        <script src="/js/all.js"></script>
+        <script src="lib/jquery.cookie.js"></script>
+        <script src="js/all.js"></script>
         <script>
             $().ready(function(){
                 api.init(function(){
                     robot.init(function(){
                         $('.wait').hide();
                         $('.page').show();
-                        setTimeout(auth.login, 1000);
                     });
                 });
+                setTimeout(auth.login, 1000);
             });
         </script>
     </body>
