@@ -3,9 +3,9 @@
   <component name="DataSourceManagerImpl" format="xml" hash="1247334589">
     <data-source source="LOCAL" name="Django default" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="742fa3eb-cd4f-4ab2-b042-76cbfcbefcf8">
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://wartech.logic/wartech.logic</jdbc-url>
-      <user-name>wartech.logic</user-name>
-      <user-password>dfccdfcedfcbdf99df9edfc1df98df91dfcedff9dfebdf89df8fdf8fdf9edf99df9fdfd8dfccdfcedfcbdf98dff9</user-password>
+      <jdbc-url>jdbc:mysql://logic.wartech.pro/logic.wartech</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfd8dfc5dfc5dfde</user-password>
       <libraries>
         <library>
           <url>file://$USER_HOME$/.PyCharm20/config/jdbc-drivers/mysql-connector-license.txt</url>
