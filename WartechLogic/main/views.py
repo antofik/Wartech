@@ -24,7 +24,7 @@ def JsonResponse(request, data):
 
 
 def home(request):
-    text = open('../../.git/ORIG_HEAD').readall()
+    text = open(r'/github/Wartech/.git/ORIG_HEAD').read()
     return render_to_response('home.html', {'git_version': text}, context_instance=RequestContext(request))
 
 
