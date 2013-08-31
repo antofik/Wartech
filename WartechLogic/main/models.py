@@ -20,7 +20,6 @@ class User(Model):
 class Robot(Model):
     id = AutoField(primary_key=True)
     user = ForeignKey(User, related_name="robots")
-    hull = OneToOneField(Hull)
 
 
 class HullPrototype(Model):
@@ -44,6 +43,7 @@ class ModulePrototype(Model):
 class Hull(Model):
     id = AutoField(primary_key=True)
     proto = OneToOneField(HullPrototype, related_name="proto")
+    robot = OneToOneField(Robot, related_name="hull")
     parameters = TextField()
 
 
