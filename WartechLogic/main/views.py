@@ -225,11 +225,13 @@ def give_start_robot_to_user(user):
 
 
 def login(request):
-    for key in ["token", "provider"]:
-        if key not in request.session:
-            return JsonResponse(request, {"ok": False, "error_message": "key %s not found" % key})
-    token = request.session["token"]
-    provider = request.session["provider"]
+    ok, values = get_request_values(request, "token", "provider")
+    if not ok:
+        return JsonResponse(request, {"ok": False, "error_message": "Request should contain `token` and "
+                                                                    "`provider` fields"})
+
+    token, provider = values
+
     users = User.objects.filter(token=token).filter(provider=provider).all()
     if users:
         user = users[0]
