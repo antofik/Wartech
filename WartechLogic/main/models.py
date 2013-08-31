@@ -75,3 +75,10 @@ class UserModule(Model, ModelWithParameters):
     hull = ForeignKey(Hull, null=True, related_name="modules")
     hull_slot_id = IntegerField()
     parameters = TextField()
+
+
+class Arena(Model):
+    id = AutoField(primary_key=True)
+    width = IntegerField()
+    height = IntegerField()
+    terrain = TextField()

@@ -40,7 +40,7 @@ def get_request_values(request, *keys):
     return True, [d[key] for key in keys]
 
 
-def is_authrized(request):
+def is_authorized(request):
     if not "is_authorized" in request.session:
         return False
     return request.session["is_authorized"]
@@ -97,13 +97,13 @@ def get_all_modules(request):
 
 
 def get_user_robot(request):
-    if not is_authrized(request):
+    if not is_authorized(request):
         return JsonResponse(request, {"ok": False, "error_message": "Not authorized"})
 
     user_id = request.session["user_id"]
     user = User.objects.get(pk=user_id)
     data = []
-    for robot in user.robots.select_related("hull__proto").all():#.prefetch_related("hull", "hull__proto"):
+    for robot in user.robots.select_related("hull__proto").all():
         print 'proto=%s' % robot.hull.proto
         item = {
             'id': robot.id,
@@ -130,7 +130,7 @@ def get_user_robot(request):
 
 
 def get_user_modules(request):
-    if not is_authrized(request):
+    if not is_authorized(request):
         return JsonResponse(request, {"ok": False, "error_message": "Not authorized"})
 
     user_id = request.session["user_id"]
@@ -147,7 +147,7 @@ def get_user_modules(request):
 
 @transaction.commit_on_success
 def set_module_to_slot(request):
-    if not is_authrized(request):
+    if not is_authorized(request):
         return JsonResponse(request, {"ok": False, "error_message": "Not authorized"})
 
     ok, values = get_request_values(request, "slot_id", "module_id", "robot_id")
@@ -269,7 +269,7 @@ def login(request):
 
 
 def logout(request):
-    if not is_authrized(request):
+    if not is_authorized(request):
         return JsonResponse(request, {"ok": False, "error_message": "Not authorized"})
     request.session["is_authorized"] = False
     return JsonResponse(request, {"ok": True})
