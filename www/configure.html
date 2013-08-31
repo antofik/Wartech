@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <title>WarTech</title>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <link rel="stylesheet" href="/css/main.css" />
+    </head>
+    <body>
+        <div class="wait">
+            Загрузка...
+        </div>
+        <div class="page configurator" style="display: none">
+            <div class="hull"></div>
+            <div class="inventory">
+
+            </div>
+        </div>
+        <script src="/lib/jquery.cookie.js"></script>
+        <script src="/js/all.js"></script>
+        <script>
+            $().ready(function(){
+                api.init(function(){
+                    robot.init(function(){
+                        $('.wait').hide();
+                        $('.page').show();
+                        setTimeout(auth.login, 1000);
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
