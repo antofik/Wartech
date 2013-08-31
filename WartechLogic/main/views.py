@@ -24,7 +24,8 @@ def JsonResponse(request, data):
 
 
 def home(request):
-    return render_to_response('home.html', {}, context_instance=RequestContext(request))
+    text = open('../../.git/ORIG_HEAD').readall()
+    return render_to_response('home.html', {'git_version': text}, context_instance=RequestContext(request))
 
 
 def dummy(request):
