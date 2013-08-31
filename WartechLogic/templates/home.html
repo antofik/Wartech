@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 
-{% block base-content %}
-    git: {{ git_version }}
+{% block well-content %}
+    <div>latest commit: {{ git_version }}</div>
+    <div><a href="https://github.com/antofik/Wartech">GitHub</a></div>
+    <div><a href="http://antofik.github.io/Wartech/">Main site</a></div>
+
 {% endblock %}
