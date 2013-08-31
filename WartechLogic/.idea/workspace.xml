@@ -2,18 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9345266-ce5f-4564-9989-cce456f95f16" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urls.py" afterPath="$PROJECT_DIR$/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WartechLogic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377975969849" ignored="false" />
+    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377975990048" ignored="false" />
     <file path="/models.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377974971804" ignored="false" />
     <file path="/Django Console" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377869644665" ignored="false" />
-    <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377975874988" ignored="false" />
+    <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377976577499" ignored="false" />
     <file path="/uwsgi.xml" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377887090653" ignored="false" />
     <file path="/localsettings.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377956145737" ignored="false" />
-    <file path="/urls.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377975810241" ignored="false" />
+    <file path="/urls.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377976551657" ignored="false" />
     <file path="/base.html" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377944795536" ignored="false" />
     <file path="/home.html" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377944533812" ignored="false" />
     <file path="/importlib.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377974893125" ignored="false" />
@@ -50,7 +51,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="48" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
+            <state line="11" column="43" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -59,7 +60,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="65" selection-start="3970" selection-end="3970" vertical-scroll-proportion="1.7453799">
+            <state line="44" column="0" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.2670157">
               <folding />
             </state>
           </provider>
@@ -122,8 +123,8 @@
         <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/localsettings.py" />
-        <option value="D:/Portable Python CE/App/Lib/site-packages/django/utils/importlib.py" />
         <option value="$PROJECT_DIR$/main/models.py" />
+        <option value="D:/Portable Python CE/App/Lib/site-packages/django/utils/importlib.py" />
         <option value="$PROJECT_DIR$/urls.py" />
         <option value="$PROJECT_DIR$/main/views.py" />
       </list>
@@ -220,7 +221,7 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="Errors" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="C:/Program Files (x86)/Git/bin/git.exe" />
     <property name="FullScreen" value="false" />
@@ -430,19 +431,24 @@
       <created>1377975911228</created>
       <updated>1377975911228</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="is_authorized">
+      <created>1377975992559</created>
+      <updated>1377975992559</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1918" height="1158" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296593" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296593" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31465518" sideWeight="0.6002004" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997996" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3997996" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296593" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32865733" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -451,7 +457,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296593" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -522,7 +527,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -600,29 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Portable Python CE/App/Lib/site-packages/django/utils/importlib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="2" selection-start="1181" selection-end="1181" vertical-scroll-proportion="0.94066316">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Portable Python CE/App/Lib/site-packages/django/core/management/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="19" selection-start="950" selection-end="950" vertical-scroll-proportion="0.5072017">
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="48" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="55" column="35" selection-start="1507" selection-end="1507" vertical-scroll-proportion="0.0">
@@ -632,9 +614,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://D:/Portable Python CE/App/Lib/site-packages/django/core/management/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="257" selection-end="257" vertical-scroll-proportion="0.2670157">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="43" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Portable Python CE/App/Lib/site-packages/django/utils/importlib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="4" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.94938916">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="65" selection-start="3970" selection-end="3970" vertical-scroll-proportion="1.7453799">
+        <state line="44" column="0" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.2670157">
           <folding />
         </state>
       </provider>

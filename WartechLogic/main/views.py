@@ -40,6 +40,10 @@ def get_request_values(request, *keys):
     return True, [d[key] for key in keys]
 
 
+def get_is_authorized(request):
+    return JsonResponse(request, is_authorized(request))
+
+
 def is_authorized(request):
     if not "is_authorized" in request.session:
         return False

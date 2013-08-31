@@ -9,7 +9,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^$', main.views.home),
     
-    url(r'^is_authorized$', main.views.is_authorized),
+    url(r'^is_authorized$', main.views.get_is_authorized),
     url(r'^get_all_users$', main.views.get_all_users),
     url(r'^request_fight$', main.views.request_fight),
     url(r'^get_all_modules$', main.views.get_all_modules),
