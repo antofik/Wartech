@@ -1,4 +1,5 @@
 # coding=utf-8
+from django.db import transaction
 from django.http import HttpResponse
 import json
 from django.template import RequestContext
@@ -11,8 +12,6 @@ def JsonResponse(request, data):
     if 'HTTP_ACCEPT_ENCODING' in request.META.keys():
         if "application/json" in request.META['HTTP_ACCEPT_ENCODING']:
             mimetype = 'application/json'
-    if 'ok' not in data:
-        data['ok'] = True
     response = HttpResponse(json.dumps(data), content_type=mimetype)
     response["Access-Control-Allow-Origin"] = "*"
     response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
@@ -24,11 +23,7 @@ def JsonResponse(request, data):
 
 
 def home(request):
-    try:
-        text = open(r'/github/Wartech/.git/ORIG_HEAD').read()
-    except Exception, e:
-        text = str(e)
-
+    text = open(r'../.git/refs/heads/master').read()
     return render_to_response('home.html', {'git_version': text}, context_instance=RequestContext(request))
 
 
@@ -108,7 +103,8 @@ def get_user_robot(request):
     user_id = request.session["user_id"]
     user = User.objects.get(pk=user_id)
     data = []
-    for robot in user.robots:
+    for robot in user.robots.select_related("hull__proto").all():#.prefetch_related("hull", "hull__proto"):
+        print 'proto=%s' % robot.hull.proto
         item = {
             'id': robot.id,
             'name': robot.name,
@@ -120,13 +116,13 @@ def get_user_robot(request):
                 'parameters': robot.hull.parameters,
                 'modules': [{
                     'id': module.id,
-                    'name': module.name,
+                    'name': module.proto.name,
                     'slot_id': module.hull_slot_id,
                     'parameters': module.parameters,
                     'slug': module.proto.slug,
-                    'category': module.proty.category,
-                    'description': module.proty.description,
-                } for module in robot.hull.modules]
+                    'category': module.proto.category,
+                    'description': module.proto.description,
+                } for module in robot.hull.modules.all().prefetch_related("proto", "hull")]
             }
         }
         data.append(item)
@@ -141,14 +137,15 @@ def get_user_modules(request):
     user = User.objects.get(pk=user_id)
     data = [{
         'id': module.id,
-        'slot': module.slot,
+        'slot': module.proto.slot,
         'equipped': module.hull_id is not None,
         'slug': module.proto.slug,
         'parameters': module.parameters,
-    } for module in user.modules]
+    } for module in user.modules.all()]
     return JsonResponse(request, data)
 
 
+@transaction.commit_on_success
 def set_module_to_slot(request):
     if not is_authrized(request):
         return JsonResponse(request, {"ok": False, "error_message": "Not authorized"})
@@ -158,78 +155,92 @@ def set_module_to_slot(request):
         return JsonResponse(request, {"ok": False,
                                       "error_message": "Request should contain all 'slot_id', "
                                                        "'module_id', and 'robot_id' parameters"})
-    slot_id, module_id, robot_id = values
+    try:
+        slot_id, module_id, robot_id = map(int, values)
+    except TypeError:
+        return JsonResponse(request, {"ok": False, "error_message": "Invalid parameters"})
 
     user_id = request.session["user_id"]
     user = User.objects.get(pk=user_id)
 
-    robot = None
-    for r in user.robots:
-        if r.id == robot_id:
-            robot = r
-    if not robot:
+    try:
+        robot = user.robots.get(pk=robot_id)
+    except Robot.DoesNotExist:
         return JsonResponse(request, {"ok": False, "error_message": "Robot not found"})
 
-    module = None
-    for m in user.modules:
-        if m.id == module_id:
-            module = m
-    if not module:
-        return JsonResponse(request, {"ok": False, "error_message": "Module not found"})
+    if module_id != -1:
+        try:
+            module = user.modules.get(pk=module_id)
+        except UserModule.DoesNotExist:
+            return JsonResponse(request, {"ok": False, "error_message": "Module not found"})
+    else:
+        module = None
 
-    hull = robot.hull
-    slots = json.loads(hull.parameters)['slots']
     old_module_id = -1
-    for slot in slots:
+    hull = robot.hull
+    hull.load_parameters()
+
+    for slot in hull.slots:
         if slot['id'] == slot_id:
-            if slot['slot'] == module.slot:
+            if not module or slot['slot'] == module.proto.slot:
                 if 'module_id' in slot:
                     old_module_id = slot['module_id']
-                slot['module_id'] = module.id
-                module.hull = hull
-                module.hull_slot_id = slot_id
-                hull.parameters = json.dumps(slots)
-                module.save()
+                    if old_module_id != '-1':
+                        old_module = user.modules.get(pk=old_module_id)
+                        old_module.hull = None
+                        old_module.hull_slot_id = -1
+                        old_module.save()
+                slot['module_id'] = module_id
+                if module:
+                    module.hull = hull
+                    module.hull_slot_id = slot_id
+                    module.save()
+                hull.save_parameters()
                 hull.save()
                 break
             else:
                 return JsonResponse(request, {"ok": False, "error_message": "You are trying mount <%s> "
                                                                             "module in <%s> slot" %
-                                                                            (module.slot, slot['slot'])})
+                                                                            (module.proto.slot, slot['slot'])})
     else:
         return JsonResponse(request, {"ok": False, "error_message": "Slot not found"})
 
     return JsonResponse(request, {'ok': True, 'unequipped_module': old_module_id})
 
 
+@transaction.commit_on_success
 def give_start_robot_to_user(user):
     hullProto = HullPrototype.objects.get(slug='start')
     hull = Hull()
     hull.proto = hullProto
     hull.parameters = hullProto.parameters
 
-    slots = json.load(hullProto.parameters)['slots']
-
     robot = Robot()
     robot.user = user
-    hull.robot = robot
-
-    hull.save()
     robot.save()
 
+    hull.robot = robot
+    hull.save()
+
+    hull.load_parameters()
     for moduleProto in ModulePrototype.objects.filter(category="start").all():
         module = UserModule()
         module.user = user
         module.proto = moduleProto
         module.hull = hull
-        for slot in slots:
-            if moduleProto.slot == slot.slot:
-                module.hull_slot_id = slot.id
-                slots.remove(slot)
+        slot = None
+        for slot in hull.slots:
+            if moduleProto.slot == slot['slot'] and 'module_id' not in slot:
+                module.hull_slot_id = slot['id']
                 break
         module.save()
+        if slot:
+            slot['module_id'] = module.id
+    hull.save_parameters()
+    hull.save()
 
 
+@transaction.commit_on_success
 def login(request):
     ok, values = get_request_values(request, "token", "provider")
     if not ok:
@@ -239,16 +250,19 @@ def login(request):
     token, provider = values
 
     users = User.objects.filter(token=token).filter(provider=provider).all()
+    create_new_robot = False
     if users:
         user = users[0]
     else:
         user = User()
         user.token = token
         user.provider = provider
-        give_start_robot_to_user(user)
+        create_new_robot = True
     user.is_online = True
     user.login_date = datetime.datetime.now()
     user.save()
+    if create_new_robot:
+        give_start_robot_to_user(user)
     request.session["user_id"] = user.id
     request.session["is_authorized"] = True
     return JsonResponse(request, {'granted': True})
