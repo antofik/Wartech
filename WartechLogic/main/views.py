@@ -24,7 +24,10 @@ def JsonResponse(request, data):
 
 
 def home(request):
-    text = open(r'/github/Wartech/.git/ORIG_HEAD').read()
+    try:
+        text = open(r'/github/Wartech/.git/ORIG_HEAD').read()
+    except Exception, e:
+        text = str(e)
     return render_to_response('home.html', {'git_version': text}, context_instance=RequestContext(request))
 
 

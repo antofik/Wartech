@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9345266-ce5f-4564-9989-cce456f95f16" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WartechLogic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377944009426" ignored="false" />
+    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377944014971" ignored="false" />
     <file path="/models.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377938364981" ignored="false" />
     <file path="/Django Console" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377869644665" ignored="false" />
-    <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377944004761" ignored="false" />
+    <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377944131947" ignored="false" />
     <file path="/uwsgi.xml" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377887090653" ignored="false" />
     <file path="/localsettings.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377943885801" ignored="false" />
     <file path="/urls.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377937907440" ignored="false" />
@@ -55,7 +56,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="57" selection-start="989" selection-end="989" vertical-scroll-proportion="0.58074534">
+            <state line="31" column="0" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.7127329">
               <folding />
             </state>
           </provider>
@@ -375,7 +376,11 @@
       <created>1377944011856</created>
       <updated>1377944011856</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="test">
+      <created>1377944017395</created>
+      <updated>1377944017395</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -556,7 +561,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="57" selection-start="989" selection-end="989" vertical-scroll-proportion="0.58074534">
+        <state line="31" column="0" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.7127329">
           <folding />
         </state>
       </provider>
