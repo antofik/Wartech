@@ -8,3 +8,4 @@ tests/coverage_html/
 tests/.coverage
 WartechLogic/.idea
 WartechLogic/.idea/*
+workspace.xml
