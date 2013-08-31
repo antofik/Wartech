@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9345266-ce5f-4564-9989-cce456f95f16" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WartechLogic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377943783269" ignored="false" />
+    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377944009426" ignored="false" />
     <file path="/models.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377938364981" ignored="false" />
     <file path="/Django Console" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377869644665" ignored="false" />
     <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377944004761" ignored="false" />
@@ -372,7 +371,11 @@
       <created>1377943785979</created>
       <updated>1377943785979</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="test">
+      <created>1377944011856</created>
+      <updated>1377944011856</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
