@@ -207,13 +207,14 @@ def give_start_robot_to_user(user):
     hull = Hull()
     hull.proto = hullProto
     hull.parameters = hullProto.parameters
-    hull.save()
 
     slots = json.load(hullProto.parameters)['slots']
 
     robot = Robot()
     robot.user = user
-    robot.hull = hull
+    hull.robot = robot
+
+    hull.save()
     robot.save()
 
     for moduleProto in ModulePrototype.objects.filter(category="start").all():
