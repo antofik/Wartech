@@ -71,6 +71,7 @@ window.api.request = function(method, data, callback) {
     }));
     __iced_deferrals._fulfill();
   })(function() {
+    console.log(reply);
     return callback(reply);
   });
 };
@@ -146,7 +147,7 @@ robot.init = function(callback) {
           return _robot = arguments[0];
         };
       })(),
-      lineno: 60
+      lineno: 61
     }));
     __iced_deferrals._fulfill();
   })(function() {
@@ -162,7 +163,7 @@ robot.init = function(callback) {
             return __slot_1.allModules = arguments[0];
           };
         })(robot),
-        lineno: 61
+        lineno: 62
       }));
       __iced_deferrals._fulfill();
     })(function() {
@@ -178,7 +179,7 @@ robot.init = function(callback) {
               return __slot_1.userModules = arguments[0];
             };
           })(robot),
-          lineno: 62
+          lineno: 63
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -196,7 +197,7 @@ robot.init = function(callback) {
                 return reply = arguments[0];
               };
             })(),
-            lineno: 66
+            lineno: 67
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -239,7 +240,7 @@ window.template.load = function(url, callback) {
           return reply = arguments[0];
         };
       })(),
-      lineno: 79
+      lineno: 80
     }));
     __iced_deferrals._fulfill();
   })(function() {
