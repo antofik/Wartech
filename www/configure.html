@@ -32,7 +32,9 @@
                     })
                 });
                 if (matches = document.location.toString().match(/&code=(\w+)/)) {
-                    api.login(matches[1], 'vk');
+                    api.login(matches[1], 'vk', function(a, b, c, d){
+                        console.log(a, b, c, d);
+                    });
                 } else {
                     setTimeout(auth.login, 1000);
                 }
