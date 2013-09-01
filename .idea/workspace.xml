@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31a818ca-440a-4f7a-87a6-db728fbc5893" name="Default" comment="">
-      <change type="DELETED" beforePath="Z:\domains\wartech\README.md" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/configure.html" afterPath="$PROJECT_DIR$/www/configure.html" />
     </list>
     <ignored path="wartech.iws" />
@@ -10,7 +9,7 @@
     <file path="/api.js" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377802176906" ignored="false" />
     <file path="/index.php" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377710569877" ignored="false" />
     <file path="/index.html" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377712863618" ignored="false" />
-    <file path="/configure.html" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377933667814" ignored="false" />
+    <file path="/configure.html" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1378053565871" ignored="false" />
     <file path="/proxy.php" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377715855162" ignored="false" />
     <file path="/Dummy.txt" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377934345596" ignored="false" />
     <file path="/loader.js" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377798538280" ignored="false" />
@@ -20,7 +19,7 @@
     <file path="/hull.js" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377803630323" ignored="false" />
     <file path="/main.less" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377806802850" ignored="false" />
     <file path="/inventory.js" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377883293118" ignored="false" />
-    <file path="/api.iced" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377927064340" ignored="false" />
+    <file path="/api.iced" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1378052946141" ignored="false" />
     <file path="/robot.iced" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377927775464" ignored="false" />
     <file path="/template.iced" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377926898965" ignored="false" />
     <file path="/inventory.iced" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377927169404" ignored="false" />
@@ -47,7 +46,16 @@
       <file leaf-file-name="configure.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/configure.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="16" selection-start="827" selection-end="827" vertical-scroll-proportion="0.4746639">
+            <state line="42" column="0" selection-start="1589" selection-end="1589" vertical-scroll-proportion="0.7507886">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="api.iced" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/coffee/api.iced">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="7" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -71,7 +79,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/api.js" />
         <option value="$PROJECT_DIR$/templates/hull/monster.html" />
         <option value="$PROJECT_DIR$/js/hull.js" />
         <option value="$PROJECT_DIR$/js/template.js" />
@@ -86,15 +93,14 @@
         <option value="$PROJECT_DIR$/coffee/auth.iced.js" />
         <option value="$PROJECT_DIR$/coffee/auth.iced" />
         <option value="$PROJECT_DIR$/configure.html" />
+        <option value="$PROJECT_DIR$/www/coffee/api.iced" />
         <option value="$PROJECT_DIR$/www/configure.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1932" />
-    <option name="height" value="1176" />
+    <option name="width" value="1920" />
+    <option name="height" value="1160" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -189,6 +195,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wartech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wartech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coffee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -249,13 +273,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="1176" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1160" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2503962" sideWeight="0.6705998" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25199363" sideWeight="0.6705998" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -333,9 +357,16 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/www/coffee/api.iced">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="7" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/configure.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="16" selection-start="827" selection-end="827" vertical-scroll-proportion="0.4746639">
+        <state line="42" column="0" selection-start="1589" selection-end="1589" vertical-scroll-proportion="0.7507886">
           <folding />
         </state>
       </provider>

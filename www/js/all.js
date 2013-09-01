@@ -104,11 +104,23 @@ window.api.setModuleToSlot = function(slot_id, module_id, callback) {
   }, callback);
 };
 
-window.api.login = function(login, password, callback) {
+window.api.isAuthorized = function(callback) {
+  return api.request('is_authorized', {}, callback);
+};
+
+window.api.login = function(token, provider, callback) {
   return api.request('login', {
-    login: login,
-    password: password
+    token: token,
+    provider: provider
   }, callback);
+};
+
+window.auth = {};
+
+auth.login = function() {
+  var redirect_uri;
+  redirect_uri = 'http://wartech.pro/oauth.php?adapter=vk.com&domain=' + location.host;
+  return document.location = 'https://oauth.vk.com/authorize?client_id=3851736&scope=PERMISSIONS&redirect_uri=' + encodeURIComponent(redirect_uri) + '&response_type=code&v=5.0';
 };
 
 window.inventory = {};
@@ -134,7 +146,7 @@ robot.init = function(callback) {
           return _robot = arguments[0];
         };
       })(),
-      lineno: 49
+      lineno: 60
     }));
     __iced_deferrals._fulfill();
   })(function() {
@@ -150,7 +162,7 @@ robot.init = function(callback) {
             return __slot_1.allModules = arguments[0];
           };
         })(robot),
-        lineno: 50
+        lineno: 61
       }));
       __iced_deferrals._fulfill();
     })(function() {
@@ -166,7 +178,7 @@ robot.init = function(callback) {
               return __slot_1.userModules = arguments[0];
             };
           })(robot),
-          lineno: 51
+          lineno: 62
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -184,7 +196,7 @@ robot.init = function(callback) {
                 return reply = arguments[0];
               };
             })(),
-            lineno: 55
+            lineno: 66
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -227,18 +239,10 @@ window.template.load = function(url, callback) {
           return reply = arguments[0];
         };
       })(),
-      lineno: 68
+      lineno: 79
     }));
     __iced_deferrals._fulfill();
   })(function() {
     return callback(reply);
   });
-};
-
-window.auth = {};
-
-auth.login = function() {
-  var redirect_uri;
-  redirect_uri = 'http://wartech.pro/oauth.php?adapter=vk.com&domain=' + location.host;
-  return document.location = 'https://oauth.vk.com/authorize?client_id=3851736&scope=PERMISSIONS&redirect_uri=' + encodeURIComponent(redirect_uri) + '&response_type=code&v=5.0';
 };

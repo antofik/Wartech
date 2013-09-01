@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="/css/main.css" />
     </head>
     <body>
+        <a href="" onclick="auth.login(); return false;">Авторизироваться с помощью vk.com</a>
         <div class="wait">
             Загрузка...
         </div>
@@ -20,12 +21,29 @@
         <script>
             $().ready(function(){
                 api.init(function(){
-                    robot.init(function(){
-                        $('.wait').hide();
-                        $('.page').show();
-                    });
+                    api.isAuthorized(function(isAuthrized){
+                        if (isAuthrized) {
+                            robot.init(function(){
+                                $('.wait').hide();
+                                $('.page').show();
+                            });
+                        } else {
+
+                        }
+                    })
                 });
-                setTimeout(auth.login, 1000);
+                if (matches = document.location.toString().match(/&code=(\w+)/)) {
+                    api.login(matches[1], 'vk', function(a, b, c, d){
+                        api.isAuthorized(function(isAuthrized){
+                            if (isAuthrized) {
+                                robot.init(function(){
+                                    $('.wait').hide();
+                                    $('.page').show();
+                                });
+                            }
+                        })
+                    });
+                }
             });
         </script>
     </body>
