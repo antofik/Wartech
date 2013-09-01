@@ -32,7 +32,7 @@
                     })
                 });
                 if (matches = document.location.toString().match(/&code=(\w+)/)) {
-                    api.login(match[1], 'vk');
+                    api.login(matches[1], 'vk');
                 } else {
                     setTimeout(auth.login, 1000);
                 }
