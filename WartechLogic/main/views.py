@@ -13,6 +13,7 @@ def JsonResponse(request, data):
         if "application/json" in request.META['HTTP_ACCEPT_ENCODING']:
             mimetype = 'application/json'
     response = HttpResponse(json.dumps(data), content_type=mimetype)
+    response["Access-Control-Allow-Credentials"] = "true"
     response["Access-Control-Allow-Origin"] = "*"
     response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
     response["Access-Control-Max-Age"] = "86400"
