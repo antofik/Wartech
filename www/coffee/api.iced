@@ -29,9 +29,11 @@ window.api.setModuleToSlot = (slot_id, module_id, callback) ->
         module_id: module_id
     }, callback)
 
+window.api.isAuthorized = (callback) ->
+    api.request('is_authorized', {}, callback)
+
+
+
 window.api.login = (login, password, callback) ->
-   api.request('login', {
-        login: login,
-        password: password
-    }, callback);
+
 

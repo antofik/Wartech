@@ -20,12 +20,22 @@
         <script>
             $().ready(function(){
                 api.init(function(){
-                    robot.init(function(){
-                        $('.wait').hide();
-                        $('.page').show();
-                    });
+                    api.isAuthorized(function(isAuthrized){
+                        if (isAuthrized) {
+                            robot.init(function(){
+                                $('.wait').hide();
+                                $('.page').show();
+                            });
+                        } else {
+
+                        }
+                    })
                 });
-                setTimeout(auth.login, 1000);
+                if (matches = document.location.toString().match(/&code=(\w+)/)) {
+                    alert(matches[1]);
+                } else {
+                    setTimeout(auth.login, 1000);
+                }
             });
         </script>
     </body>
