@@ -9,7 +9,7 @@
     <file path="/api.js" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377802176906" ignored="false" />
     <file path="/index.php" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377710569877" ignored="false" />
     <file path="/index.html" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377712863618" ignored="false" />
-    <file path="/configure.html" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1378053416151" ignored="false" />
+    <file path="/configure.html" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1378053565871" ignored="false" />
     <file path="/proxy.php" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377715855162" ignored="false" />
     <file path="/Dummy.txt" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377934345596" ignored="false" />
     <file path="/loader.js" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377798538280" ignored="false" />
@@ -46,7 +46,7 @@
       <file leaf-file-name="configure.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/configure.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="48" selection-start="1230" selection-end="1230" vertical-scroll-proportion="0.6256572">
+            <state line="38" column="0" selection-start="1350" selection-end="1350" vertical-scroll-proportion="0.679285">
               <folding />
             </state>
           </provider>
@@ -366,7 +366,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/configure.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="48" selection-start="1230" selection-end="1230" vertical-scroll-proportion="0.6256572">
+        <state line="38" column="0" selection-start="1350" selection-end="1350" vertical-scroll-proportion="0.679285">
           <folding />
         </state>
       </provider>
