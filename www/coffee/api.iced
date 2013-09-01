@@ -1,6 +1,12 @@
 window.api = {};
 
 api.init = (callback) ->
+  $.ajaxSetup({
+    xhrFields: {
+      withCredentials: true
+    },
+    crossDomain: true
+  });
   callback();
 
 window.api.request = (method, data, callback) ->

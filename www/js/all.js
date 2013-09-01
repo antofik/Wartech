@@ -46,6 +46,12 @@ __iced_k = __iced_k_noop = function() {};
 window.api = {};
 
 api.init = function(callback) {
+  $.ajaxSetup({
+    xhrFields: {
+      withCredentials: true
+    },
+    crossDomain: true
+  });
   return callback();
 };
 
@@ -67,7 +73,7 @@ window.api.request = function(method, data, callback) {
           return reply = arguments[0];
         };
       })(),
-      lineno: 7
+      lineno: 13
     }));
     __iced_deferrals._fulfill();
   })(function() {
@@ -146,7 +152,7 @@ robot.init = function(callback) {
           return _robot = arguments[0];
         };
       })(),
-      lineno: 60
+      lineno: 66
     }));
     __iced_deferrals._fulfill();
   })(function() {
@@ -162,7 +168,7 @@ robot.init = function(callback) {
             return __slot_1.allModules = arguments[0];
           };
         })(robot),
-        lineno: 61
+        lineno: 67
       }));
       __iced_deferrals._fulfill();
     })(function() {
@@ -178,7 +184,7 @@ robot.init = function(callback) {
               return __slot_1.userModules = arguments[0];
             };
           })(robot),
-          lineno: 62
+          lineno: 68
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -196,7 +202,7 @@ robot.init = function(callback) {
                 return reply = arguments[0];
               };
             })(),
-            lineno: 66
+            lineno: 72
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -239,7 +245,7 @@ window.template.load = function(url, callback) {
           return reply = arguments[0];
         };
       })(),
-      lineno: 79
+      lineno: 85
     }));
     __iced_deferrals._fulfill();
   })(function() {
