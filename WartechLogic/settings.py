@@ -48,6 +48,7 @@ TEMPLATE_LOADERS = (
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
+    'main.middleware.CooklessMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -77,6 +78,7 @@ INSTALLED_APPS = (
 
     #Custom applications
     'main',
+    'battles',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (

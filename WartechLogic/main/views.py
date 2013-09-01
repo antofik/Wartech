@@ -47,7 +47,7 @@ def get_is_authorized(request):
 
 
 def is_authorized(request):
-    if not "is_authorized" in request.session:
+    if not request.session or not "is_authorized" in request.session:
         return False
     return request.session["is_authorized"]
 

@@ -2,6 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf import settings
 import main.views
+import battles.views
 
 
 admin.autodiscover()
@@ -18,7 +19,8 @@ urlpatterns = patterns('',
     url(r'^set_module_to_slot$', main.views.set_module_to_slot),
     url(r'^login$', main.views.login),
     url(r'^logout$', main.views.logout),
-    url(r'^dummy$', main.views.dummy),
+
+    url(r'^test_fight$', battles.views.test_fight),
     
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
