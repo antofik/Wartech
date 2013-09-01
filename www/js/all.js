@@ -46,12 +46,6 @@ __iced_k = __iced_k_noop = function() {};
 window.api = {};
 
 api.init = function(callback) {
-  $.ajaxSetup({
-    xhrFields: {
-      withCredentials: true
-    },
-    crossDomain: true
-  });
   return callback();
 };
 
@@ -73,7 +67,7 @@ window.api.request = function(method, data, callback) {
           return reply = arguments[0];
         };
       })(),
-      lineno: 13
+      lineno: 7
     }));
     __iced_deferrals._fulfill();
   })(function() {
@@ -153,7 +147,7 @@ robot.init = function(callback) {
           return _robot = arguments[0];
         };
       })(),
-      lineno: 67
+      lineno: 61
     }));
     __iced_deferrals._fulfill();
   })(function() {
@@ -169,7 +163,7 @@ robot.init = function(callback) {
             return __slot_1.allModules = arguments[0];
           };
         })(robot),
-        lineno: 68
+        lineno: 62
       }));
       __iced_deferrals._fulfill();
     })(function() {
@@ -185,7 +179,7 @@ robot.init = function(callback) {
               return __slot_1.userModules = arguments[0];
             };
           })(robot),
-          lineno: 69
+          lineno: 63
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -203,7 +197,7 @@ robot.init = function(callback) {
                 return reply = arguments[0];
               };
             })(),
-            lineno: 73
+            lineno: 67
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -246,7 +240,7 @@ window.template.load = function(url, callback) {
           return reply = arguments[0];
         };
       })(),
-      lineno: 86
+      lineno: 80
     }));
     __iced_deferrals._fulfill();
   })(function() {

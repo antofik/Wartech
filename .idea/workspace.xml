@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="31a818ca-440a-4f7a-87a6-db728fbc5893" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/coffee/api.iced" afterPath="$PROJECT_DIR$/www/coffee/api.iced" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/configure.html" afterPath="$PROJECT_DIR$/www/configure.html" />
     </list>
     <ignored path="wartech.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,19 +44,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="configure.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="configure.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/configure.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="0" selection-start="1589" selection-end="1589" vertical-scroll-proportion="-27.461538">
+            <state line="27" column="19" selection-start="885" selection-end="885" vertical-scroll-proportion="0.48264983">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="api.iced" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="api.iced" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/coffee/api.iced">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="23" selection-start="317" selection-end="317" vertical-scroll-proportion="0.24360287">
+            <state line="3" column="4" selection-start="47" selection-end="47" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -93,8 +94,8 @@
         <option value="$PROJECT_DIR$/coffee/auth.iced.js" />
         <option value="$PROJECT_DIR$/coffee/auth.iced" />
         <option value="$PROJECT_DIR$/configure.html" />
-        <option value="$PROJECT_DIR$/www/configure.html" />
         <option value="$PROJECT_DIR$/www/coffee/api.iced" />
+        <option value="$PROJECT_DIR$/www/configure.html" />
       </list>
     </option>
   </component>
@@ -357,16 +358,16 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/configure.html">
+    <entry file="file://$PROJECT_DIR$/www/coffee/api.iced">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1589" selection-end="1589" vertical-scroll-proportion="-27.461538">
+        <state line="3" column="4" selection-start="47" selection-end="47" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/coffee/api.iced">
+    <entry file="file://$PROJECT_DIR$/www/configure.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="23" selection-start="317" selection-end="317" vertical-scroll-proportion="0.24360287">
+        <state line="27" column="19" selection-start="885" selection-end="885" vertical-scroll-proportion="0.48264983">
           <folding />
         </state>
       </provider>

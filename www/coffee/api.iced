@@ -1,13 +1,7 @@
 window.api = {};
 
 api.init = (callback) ->
-  $.ajaxSetup({
-    xhrFields: {
-      withCredentials: true
-    },
-    crossDomain: true
-  });
-  callback();
+    callback();
 
 window.api.request = (method, data, callback) ->
     url = 'http://logic.wartech.pro/' + method;
