@@ -34,6 +34,10 @@ window.api.isAuthorized = (callback) ->
 
 
 
-window.api.login = (login, password, callback) ->
+window.api.login = (token, provider, callback) ->
+    api.request('login', {
+        token: token,
+        provider: provider
+    }, callback)
 
 

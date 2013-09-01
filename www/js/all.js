@@ -108,7 +108,12 @@ window.api.isAuthorized = function(callback) {
   return api.request('is_authorized', {}, callback);
 };
 
-window.api.login = function(login, password, callback) {};
+window.api.login = function(token, provider, callback) {
+  return api.request('login', {
+    token: token,
+    provider: provider
+  }, callback);
+};
 
 window.auth = {};
 
@@ -141,7 +146,7 @@ robot.init = function(callback) {
           return _robot = arguments[0];
         };
       })(),
-      lineno: 56
+      lineno: 60
     }));
     __iced_deferrals._fulfill();
   })(function() {
@@ -157,7 +162,7 @@ robot.init = function(callback) {
             return __slot_1.allModules = arguments[0];
           };
         })(robot),
-        lineno: 57
+        lineno: 61
       }));
       __iced_deferrals._fulfill();
     })(function() {
@@ -173,7 +178,7 @@ robot.init = function(callback) {
               return __slot_1.userModules = arguments[0];
             };
           })(robot),
-          lineno: 58
+          lineno: 62
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -191,7 +196,7 @@ robot.init = function(callback) {
                 return reply = arguments[0];
               };
             })(),
-            lineno: 62
+            lineno: 66
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -234,7 +239,7 @@ window.template.load = function(url, callback) {
           return reply = arguments[0];
         };
       })(),
-      lineno: 75
+      lineno: 79
     }));
     __iced_deferrals._fulfill();
   })(function() {

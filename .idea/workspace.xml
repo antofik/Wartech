@@ -5,14 +5,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/all.js" afterPath="$PROJECT_DIR$/www/js/all.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/coffee/api.iced" afterPath="$PROJECT_DIR$/www/coffee/api.iced" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/configure.html" afterPath="$PROJECT_DIR$/www/configure.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="wartech.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/api.js" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377802176906" ignored="false" />
     <file path="/index.php" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377710569877" ignored="false" />
     <file path="/index.html" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377712863618" ignored="false" />
-    <file path="/configure.html" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377977723138" ignored="false" />
+    <file path="/configure.html" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1378052977050" ignored="false" />
     <file path="/proxy.php" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377715855162" ignored="false" />
     <file path="/Dummy.txt" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377934345596" ignored="false" />
     <file path="/loader.js" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377798538280" ignored="false" />
@@ -22,7 +21,7 @@
     <file path="/hull.js" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377803630323" ignored="false" />
     <file path="/main.less" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377806802850" ignored="false" />
     <file path="/inventory.js" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377883293118" ignored="false" />
-    <file path="/api.iced" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377977527347" ignored="false" />
+    <file path="/api.iced" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1378052946141" ignored="false" />
     <file path="/robot.iced" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377927775464" ignored="false" />
     <file path="/template.iced" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377926898965" ignored="false" />
     <file path="/inventory.iced" changelist="31a818ca-440a-4f7a-87a6-db728fbc5893" time="1377927169404" ignored="false" />
@@ -49,7 +48,7 @@
       <file leaf-file-name="configure.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/configure.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="0" selection-start="926" selection-end="926" vertical-scroll-proportion="0.5005258">
+            <state line="34" column="43" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.6077813">
               <folding />
             </state>
           </provider>
@@ -58,7 +57,7 @@
       <file leaf-file-name="api.iced" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/coffee/api.iced">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="34" selection-start="956" selection-end="956" vertical-scroll-proportion="0.0">
+            <state line="38" column="7" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -362,14 +361,14 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/www/coffee/api.iced">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="34" selection-start="956" selection-end="956" vertical-scroll-proportion="0.0">
+        <state line="38" column="7" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/configure.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="926" selection-end="926" vertical-scroll-proportion="0.5005258">
+        <state line="34" column="43" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.6077813">
           <folding />
         </state>
       </provider>
