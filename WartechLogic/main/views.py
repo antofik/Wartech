@@ -23,6 +23,7 @@ def JsonResponse(request, data):
     return response
 
 
+
 def home(request):
     text = open(r'../.git/refs/heads/master').read()
     return render_to_response('home.html', {'git_version': text}, context_instance=RequestContext(request))
