@@ -12,6 +12,7 @@ api.init = (callback) ->
 window.api.request = (method, data, callback) ->
     url = 'http://logic.wartech.pro/' + method;
     await $.getJSON url, data, defer reply
+    console.log(reply);
     callback(reply);
 
 window.api.getAllUsers = (callback) ->
