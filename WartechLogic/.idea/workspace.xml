@@ -7,7 +7,7 @@
     </list>
     <ignored path="WartechLogic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378116971671" ignored="false" />
+    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378116986519" ignored="false" />
     <file path="/models.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377977470488" ignored="false" />
     <file path="/Django Console" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377869644665" ignored="false" />
     <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378114016005" ignored="false" />
@@ -71,7 +71,7 @@
       <file leaf-file-name="test.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/media/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="6" selection-start="415" selection-end="415" vertical-scroll-proportion="0.4047619">
+            <state line="6" column="22" selection-start="221" selection-end="225" vertical-scroll-proportion="0.16190477">
               <folding />
             </state>
           </provider>
@@ -390,6 +390,13 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method />
+    </configuration>
     <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
       <option name="VM_PARAMETERS" value="" />
       <option name="USER_CFG_CLASS" />
@@ -532,7 +539,11 @@
       <created>1378114022309</created>
       <updated>1378114022309</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="update">
+      <created>1378116989298</created>
+      <updated>1378116989298</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -734,7 +745,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/media/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="6" selection-start="415" selection-end="415" vertical-scroll-proportion="0.4047619">
+        <state line="6" column="22" selection-start="221" selection-end="225" vertical-scroll-proportion="0.16190477">
           <folding />
         </state>
       </provider>
