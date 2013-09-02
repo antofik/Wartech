@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script type="text/javascript" src='http://algo.pw/media/js/jquery-1.9.1.min.js'></script>
+	<script type="text/javascript" src='/media/js/jquery-1.9.1.min.js'></script>
 	<script type="text/javascript">
 		$.ajax( {url:'http://logic.wartech.pro/is_authorized',
 			type:"POST",
 			dataType:"json",
 			data:{'param1':'value1'},
             xhrFields: {
-                withCredentials: true
+                //withCredentials: true
             },
             crossDomain: true,
 			success:function(a, b, c) {console.log("success");}
