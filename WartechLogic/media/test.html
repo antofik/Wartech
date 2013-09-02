@@ -3,16 +3,16 @@
 <head>
 	<script type="text/javascript" src='http://algo.pw/media/js/jquery-1.9.1.min.js'></script>
 	<script type="text/javascript">
-		$.ajax( {url:'/dummy',
+		$.ajax( {url:'/is_authorized',
 			type:"POST",
 			dataType:"json",
 			data:{'param1':'value1'}, 
-			success:function(a, b, c) {console.log("success");},
+			success:function(a, b, c) {console.log("success");}
 		});
 	</script>
 </head>
 <body>	
-	<form method="post" action="http://wartech.algo.pw/dummy">
+	<form method="post" action="http://logic.wartech.pro/is_authorized">
 	    <input type="text" name="data" value="test" />
 	    <input type="submit" />
 	</form>
