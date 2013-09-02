@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9345266-ce5f-4564-9989-cce456f95f16" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/test.html" afterPath="$PROJECT_DIR$/media/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logic_modules/eye.py" afterPath="$PROJECT_DIR$/logic_modules/eye.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/battles/views.py" afterPath="$PROJECT_DIR$/battles/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WartechLogic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378117572109" ignored="false" />
+    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378128534658" ignored="false" />
     <file path="/models.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377977470488" ignored="false" />
     <file path="/Django Console" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377869644665" ignored="false" />
-    <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378117566678" ignored="false" />
+    <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378126112447" ignored="false" />
     <file path="/uwsgi.xml" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377887090653" ignored="false" />
     <file path="/localsettings.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377956145737" ignored="false" />
     <file path="/urls.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377977188759" ignored="false" />
@@ -19,7 +19,7 @@
     <file path="/home.html" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377944533812" ignored="false" />
     <file path="/importlib.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377974893125" ignored="false" />
     <file path="/settings.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378063934576" ignored="false" />
-    <file path="/eye.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378112323576" ignored="false" />
+    <file path="/eye.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378128408189" ignored="false" />
     <file path="/sensor.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378052621055" ignored="false" />
     <file path="/cookless_middleware.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378063849278" ignored="false" />
     <file path="/test.html" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378116968753" ignored="false" />
@@ -51,28 +51,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="49" selection-start="787" selection-end="787" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="15" column="0" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/media/test.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="40" selection-start="67" selection-end="67" vertical-scroll-proportion="0.08095238">
               <folding />
             </state>
           </provider>
@@ -87,10 +69,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/battles/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="25" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0">
+            <state line="5" column="0" selection-start="98" selection-end="98" vertical-scroll-proportion="0.10315534">
               <folding />
             </state>
           </provider>
@@ -99,8 +81,11 @@
       <file leaf-file-name="eye.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logic_modules/eye.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="8" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="58" column="104" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#362#1349#1" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -151,10 +136,10 @@
         <option value="$PROJECT_DIR$/logic_modules/sensor.py" />
         <option value="$PROJECT_DIR$/main/cookless_middleware.py" />
         <option value="$PROJECT_DIR$/settings.py" />
-        <option value="$PROJECT_DIR$/logic_modules/eye.py" />
-        <option value="$PROJECT_DIR$/battles/views.py" />
         <option value="$PROJECT_DIR$/main/views.py" />
         <option value="$PROJECT_DIR$/media/test.html" />
+        <option value="$PROJECT_DIR$/logic_modules/eye.py" />
+        <option value="$PROJECT_DIR$/battles/views.py" />
       </list>
     </option>
   </component>
@@ -224,38 +209,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WartechLogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WartechLogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WartechLogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WartechLogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WartechLogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -574,19 +527,23 @@
       <created>1378117574066</created>
       <updated>1378117574066</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="update">
+      <created>1378117643112</created>
+      <updated>1378117643112</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="334" y="-8" width="1594" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32874015" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16338582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296593" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39425588" sideWeight="0.6712598" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2186684" sideWeight="0.8366142" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997996" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296593" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -695,7 +652,10 @@
     <entry file="file://$PROJECT_DIR$/logic_modules/eye.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="8" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#362#1349#1" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -725,13 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/middleware.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="16" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="49" selection-start="787" selection-end="787" vertical-scroll-proportion="0.0">
@@ -746,23 +699,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/models.py">
+    <entry file="file://$PROJECT_DIR$/media/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="4" selection-start="716" selection-end="716" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logic_modules/eye.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="8" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/battles/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="25" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0">
+        <state line="23" column="7" selection-start="637" selection-end="637" vertical-scroll-proportion="0.48997495">
           <folding />
         </state>
       </provider>
@@ -774,9 +713,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/media/test.html">
+    <entry file="file://$PROJECT_DIR$/main/middleware.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="40" selection-start="67" selection-end="67" vertical-scroll-proportion="0.08095238">
+        <state line="8" column="16" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="4" selection-start="716" selection-end="716" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logic_modules/eye.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="104" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#362#1349#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/battles/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="98" selection-end="98" vertical-scroll-proportion="0.10315534">
           <folding />
         </state>
       </provider>

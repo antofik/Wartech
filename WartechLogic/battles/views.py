@@ -3,7 +3,6 @@ from collections import defaultdict
 import random
 import json
 from models import *
-from main.models import *
 from main.views import is_authorized, JsonResponse
 
 
@@ -19,6 +18,15 @@ def test_fight(request):
 
 
 class Battlefield(dict):
+    DIRECTIONS = [
+        (1, 0),
+        (0, 1),
+        (-1, 1),
+        (-1, 0),
+        (0, -1),
+        (1, -1),
+    ]
+
     def __init__(self, arena):
         super(Battlefield, self).__init__()
         self.arena = arena
@@ -39,14 +47,28 @@ class Battlefield(dict):
             if self[x, y] == Arena.EMPTY:
                 self[x, y] = fighter
                 fighter.x, fighter.y = x, y
+                fighter.direction = random.randint(0, 5)
                 break
         if not counter:
             raise Exception("cannot place fighter: not enough space")
 
+    def get_visual_object_at(self, x, y):
+        type = 'error'
+        object = None
+        if (x, y) in self:
+            item = self[x, y]
+            object = item
+            if isinstance(item, Fighter):
+                type = 'fighter'
+            elif isinstance(item, int):
+                type = 'nature'
+        return {'type': type, 'object': object}
+
 
 class Fighter(object):
-    def __init__(self, robot):
+    def __init__(self, robot, teamid):
         self.robot = robot
+        self.teamid = teamid
         slots = defaultdict(list)
         for module in self.robot.hull.modules:
             slots[module.proto.slot].append(module)
@@ -71,8 +93,9 @@ def fight(arena, *teams):
     battlefield = Battlefield(arena)
     fighters = []
     for robots in teams:
+        teamid = id(robots)
         for robot in robots:
-            fighter = Fighter(robot)
+            fighter = Fighter(robot, teamid)
             fighters.append(fighter)
 
     for fighter in fighters:
