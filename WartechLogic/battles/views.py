@@ -3,7 +3,8 @@ from collections import defaultdict
 import random
 import json
 from models import *
-from ..main.views import is_authorized, JsonResponse
+from main.models import *
+from main.views import is_authorized, JsonResponse
 
 
 def test_fight(request):
