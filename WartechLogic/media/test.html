@@ -6,7 +6,11 @@
 		$.ajax( {url:'http://logic.wartech.pro/is_authorized',
 			type:"POST",
 			dataType:"json",
-			data:{'param1':'value1'}, 
+			data:{'param1':'value1'},
+            xhrFields: {
+                withCredentials: true
+            },
+            crossDomain: true,
 			success:function(a, b, c) {console.log("success");}
 		});
 	</script>
