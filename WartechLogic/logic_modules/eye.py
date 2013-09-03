@@ -174,8 +174,6 @@ class RangeFinderModule(AnalyzerWrapper):
 
 class RandomRovingModule(AnalyzerWrapper):
     def process(self, data):
-        if not 'goto' in data:
-            return {}
         direction = random.randint(0, 6)
         return {'goto': {'vector': DIRECTIONS[direction], 'priority': 0}}
 
