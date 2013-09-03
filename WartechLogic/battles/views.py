@@ -167,7 +167,7 @@ def fight(arena, *teams):
                 bullets = fighter.process(battlefield)
                 for bullet in bullets:
                     target = bullet['target']
-                    fight_journal.append("%s fires at %s" % (fighter.name, target.name))
+                    fight_journal.append("%s fires at %s" % (fighter.name, target['object']['object'].name))
                 shoots.extend(bullets)
         for shoot in shoots:
             target = battlefield[shoot['target_position']]
