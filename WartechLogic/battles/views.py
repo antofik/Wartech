@@ -2,6 +2,7 @@
 from collections import defaultdict
 import random
 import json
+from datetime import datetime
 from logic_modules.eye import *
 from main.models import User
 from main.views import is_authorized, JsonResponse
@@ -110,6 +111,8 @@ class Fighter(object):
 
 def fight(arena, *teams):
     fight_journal = []
+    fight_start = datetime.now()
+    fight_journal.append("Fight started at %s" % fight_start)
 
     battlefield = Battlefield(arena, fight_journal)
     fighters = []
@@ -156,5 +159,11 @@ def fight(arena, *teams):
             idle_counter += 1
         if idle_counter > 100:
             fight_journal.append("Fight finished: 100 cycles without shooting&hitting. It's really boring")
+            break
+
+        if (datetime.now() - fight_start).total_seconds() > 30:
+            fight_journal.append("Fight finished: exceeded time limit")
+            break
+
     return fight_journal
 
