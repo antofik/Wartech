@@ -63,14 +63,15 @@ class Battlefield(dict):
         dx, dy = fighter.goto
         if dx == dy == 0:
             self.fight_journal.append("%s stays" % fighter.name)
-        x, y = fighter.x + dx, fighter.y + dy
-        if self[x, y] == Arena.EMPTY:
-            self.fight_journal.append("%s moving (%s, %s)" % (fighter.name, dx, dy))
-            self[fighter.x, fighter.y] = Arena.EMPTY
-            self[x, y] = fighter
-            fighter.x, fighter.y = x, y
         else:
-            self.fight_journal.append("%s fails to move (%s, %s)" % (fighter.name, dx, dy))
+            x, y = fighter.x + dx, fighter.y + dy
+            if self[x, y] == Arena.EMPTY:
+                self.fight_journal.append("%s moving (%s, %s)" % (fighter.name, dx, dy))
+                self[fighter.x, fighter.y] = Arena.EMPTY
+                self[x, y] = fighter
+                fighter.x, fighter.y = x, y
+            else:
+                self.fight_journal.append("%s fails to move (%s, %s)" % (fighter.name, dx, dy))
 
 
 class Fighter(object):
@@ -129,7 +130,7 @@ def fight(arena, *teams):
     for robots in teams:
         teamid = random.randint(0, 100)
         for robot in robots:
-            fighter = Fighter(robot, teamid)
+            fighter = Fighter(robot, teamid, fight_journal)
             fighters.append(fighter)
 
     for fighter in fighters:
