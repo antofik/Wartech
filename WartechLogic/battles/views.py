@@ -36,7 +36,7 @@ class Battlefield(dict):
         counter = 1000
         while counter:
             counter -= 1
-            x, y = self.translate_point_to_hexagone(random.randint(0, len(self.arena) - 1))
+            x, y = self.translate_point_to_hexagone(random.randint(0, len(self.arena.terrain) - 1))
             if self[x, y] == Arena.EMPTY:
                 self[x, y] = fighter
                 fighter.x, fighter.y = x, y
