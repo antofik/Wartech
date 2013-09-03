@@ -65,7 +65,7 @@ class Battlefield(dict):
             self.fight_journal.append("%s stays" % fighter.name)
         else:
             x, y = fighter.x + dx, fighter.y + dy
-            if self[x, y] == Arena.EMPTY:
+            if (x, y) in self and self[x, y] == Arena.EMPTY:
                 self.fight_journal.append("%s moving (%s, %s)" % (fighter.name, dx, dy))
                 self[fighter.x, fighter.y] = Arena.EMPTY
                 self[x, y] = fighter
