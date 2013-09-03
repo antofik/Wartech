@@ -69,7 +69,8 @@ class EyeModule(SensorWrapper):
         parameters = json.loads(self.module.proto.parameters)
         field_of_vision = parameters['field_of_vision']
         result = []
-        for key in xrange(1, 1000):
+        for i in xrange(1, 1000):
+            key = str(i)
             if key not in field_of_vision:
                 break
             item = field_of_vision[key]
@@ -78,7 +79,7 @@ class EyeModule(SensorWrapper):
             delta_source = item['from']
             if delta_source == 0:
                 start_x, start_y = 0, 0
-            elif delta_source < key:
+            elif delta_source < i:
                 start_x, start_y = result[delta_source + 1]['position']
             else:
                 break

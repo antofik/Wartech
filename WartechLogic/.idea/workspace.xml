@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9345266-ce5f-4564-9989-cce456f95f16" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logic_modules/eye.py" afterPath="$PROJECT_DIR$/logic_modules/eye.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WartechLogic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378216141723" ignored="false" />
+    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378216412153" ignored="false" />
     <file path="/models.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377977470488" ignored="false" />
     <file path="/Django Console" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378210188519" ignored="false" />
     <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378215993546" ignored="false" />
@@ -17,7 +18,7 @@
     <file path="/home.html" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377944533812" ignored="false" />
     <file path="/importlib.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377974893125" ignored="false" />
     <file path="/settings.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378212145926" ignored="false" />
-    <file path="/eye.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378216223716" ignored="false" />
+    <file path="/eye.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378216623154" ignored="false" />
     <file path="/sensor.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378052621055" ignored="false" />
     <file path="/cookless_middleware.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378063849278" ignored="false" />
     <file path="/test.html" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378116968753" ignored="false" />
@@ -66,14 +67,14 @@
       <file leaf-file-name="eye.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/logic_modules/eye.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="509" selection-end="509" vertical-scroll-proportion="0.11717172">
+            <state line="80" column="39" selection-start="2224" selection-end="2224" vertical-scroll-proportion="0.5464646">
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <element signature="e#3466#3960#0" expanded="false" />
-                <element signature="e#4009#4472#0" expanded="false" />
-                <element signature="e#4521#4846#0" expanded="false" />
-                <element signature="e#4896#5088#0" expanded="false" />
-                <element signature="e#5867#6789#0" expanded="false" />
+                <element signature="e#3487#3981#0" expanded="false" />
+                <element signature="e#4030#4493#0" expanded="false" />
+                <element signature="e#4542#4867#0" expanded="false" />
+                <element signature="e#4917#5109#0" expanded="false" />
+                <element signature="e#5888#6810#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -710,7 +711,11 @@
       <created>1378216143060</created>
       <updated>1378216143060</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="test fight">
+      <created>1378216413540</created>
+      <updated>1378216413540</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -823,11 +828,11 @@
         <state line="6" column="8" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#3466#3960#0" expanded="false" />
-            <element signature="e#4009#4472#0" expanded="false" />
-            <element signature="e#4521#4846#0" expanded="false" />
-            <element signature="e#4896#5088#0" expanded="false" />
-            <element signature="e#5867#6789#0" expanded="false" />
+            <element signature="e#3487#3981#0" expanded="false" />
+            <element signature="e#4030#4493#0" expanded="false" />
+            <element signature="e#4542#4867#0" expanded="false" />
+            <element signature="e#4917#5109#0" expanded="false" />
+            <element signature="e#5888#6810#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -928,14 +933,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/logic_modules/eye.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="509" selection-end="509" vertical-scroll-proportion="0.11717172">
+        <state line="80" column="39" selection-start="2224" selection-end="2224" vertical-scroll-proportion="0.5464646">
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#3466#3960#0" expanded="false" />
-            <element signature="e#4009#4472#0" expanded="false" />
-            <element signature="e#4521#4846#0" expanded="false" />
-            <element signature="e#4896#5088#0" expanded="false" />
-            <element signature="e#5867#6789#0" expanded="false" />
+            <element signature="e#3487#3981#0" expanded="false" />
+            <element signature="e#4030#4493#0" expanded="false" />
+            <element signature="e#4542#4867#0" expanded="false" />
+            <element signature="e#4917#5109#0" expanded="false" />
+            <element signature="e#5888#6810#0" expanded="false" />
           </folding>
         </state>
       </provider>
