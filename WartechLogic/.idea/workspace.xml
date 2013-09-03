@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9345266-ce5f-4564-9989-cce456f95f16" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/battles/models.py" afterPath="$PROJECT_DIR$/battles/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/battles/views.py" afterPath="$PROJECT_DIR$/battles/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WartechLogic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378231839732" ignored="false" />
+    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378231883696" ignored="false" />
     <file path="/models.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378231878225" ignored="false" />
     <file path="/Django Console" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378212975479" ignored="false" />
     <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378231860844" ignored="false" />
@@ -41,10 +40,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/battles/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="35" selection-start="240" selection-end="240" vertical-scroll-proportion="0.19238684">
+            <state line="11" column="35" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -86,10 +85,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/battles/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="41" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0">
+            <state line="178" column="51" selection-start="6372" selection-end="6372" vertical-scroll-proportion="0.7376543">
               <folding>
                 <element signature="e#15#50#0" expanded="true" />
               </folding>
@@ -156,8 +155,8 @@
         <option value="$PROJECT_DIR$/settings.py" />
         <option value="$PROJECT_DIR$/logic_modules/eye.py" />
         <option value="$PROJECT_DIR$/main/views.py" />
-        <option value="$PROJECT_DIR$/battles/views.py" />
         <option value="$PROJECT_DIR$/battles/models.py" />
+        <option value="$PROJECT_DIR$/battles/views.py" />
       </list>
     </option>
   </component>
@@ -660,7 +659,11 @@
       <created>1378231842071</created>
       <updated>1378231842071</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="update">
+      <created>1378231885596</created>
+      <updated>1378231885596</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -840,6 +843,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/battles/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="35" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="232" column="26" selection-start="8621" selection-end="8621" vertical-scroll-proportion="0.0">
@@ -849,17 +859,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/battles/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="41" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0">
+        <state line="178" column="51" selection-start="6372" selection-end="6372" vertical-scroll-proportion="0.7376543">
           <folding>
             <element signature="e#15#50#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/battles/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="35" selection-start="240" selection-end="240" vertical-scroll-proportion="0.19238684">
-          <folding />
         </state>
       </provider>
     </entry>

@@ -175,8 +175,8 @@ def fight(arena, *teams):
 
         if idle:
             idle_counter += 1
-        if idle_counter > 10000:
-            fight_journal.append("Fight finished: 10000 cycles without shooting&hitting. It's really boring")
+        if idle_counter > 1000:
+            fight_journal.append("Fight finished: 1000 cycles without shooting&hitting. It's really boring")
             break
 
         if (datetime.now() - fight_start).total_seconds() > 10:
