@@ -182,6 +182,7 @@ def fight(arena, *teams):
                 fight_journal.append("%s received %s damage" % (target.name, hit))
 
         for fighter in list(fighters):
+            fight_journal.append("%s has %s health. Alive=%s" % (fighter.name, fighter.health, fighter.alive))
             if fighter.alive:
                 battlefield.move_fighter(fighter)
             else:
@@ -194,7 +195,7 @@ def fight(arena, *teams):
             fight_journal.append("Fight finished: 100 cycles without shooting&hitting. It's really boring")
             break
 
-        if (datetime.now() - fight_start).total_seconds() > 10:
+        if (datetime.now() - fight_start).total_seconds() > 1:
             fight_journal.append("Fight finished: exceeded time limit")
             break
 
