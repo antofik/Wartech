@@ -75,7 +75,7 @@ class Fighter(object):
         self.robot = robot
         self.teamid = teamid
         slots = defaultdict(list)
-        for module in self.robot.hull.modules:
+        for module in self.robot.hull.modules.all():
             slots[module.proto.slot].append(module)
         self.slots = slots
         self.sensors = [SensorWrapper(self, module) for module in slots['sensor']]
