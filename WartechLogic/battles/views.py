@@ -179,7 +179,7 @@ def fight(arena, *teams):
             fight_journal.append("Fight finished: 1000000 cycles without shooting&hitting. It's really boring")
             break
 
-        if (datetime.now() - fight_start).total_seconds() > 30:
+        if (datetime.now() - fight_start).total_seconds() > 10:
             fight_journal.append("Fight finished: exceeded time limit")
             break
 
