@@ -233,6 +233,7 @@ def give_start_robot_to_user(user):
         module.user = user
         module.proto = moduleProto
         module.hull = hull
+        module.hull_slot_id = -1
         slot = None
         for slot in hull.slots:
             if moduleProto.slot == slot['slot'] and 'module_id' not in slot:
