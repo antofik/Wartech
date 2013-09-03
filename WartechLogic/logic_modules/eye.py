@@ -204,7 +204,7 @@ class GetTargetsInFirezoneModule(AnalyzerWrapper):
         if 'objects' in data:
             for object in data['objects']:
                 if 'distance' in object and object['distance'] <= weapon.range:
-                    if 'type' in object and object['type'] == 'fighter' and \
+                    if object['object']['type'] == 'fighter' and \
                             'is_friend' in object and not object['is_friend']:
                         result.append(object)
         weapon.targets = result
