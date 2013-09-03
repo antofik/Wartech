@@ -14,7 +14,7 @@ def test_fight(request):
     user = User.objects.get(pk=request.session["user_id"])
     robots = user.robots.all()
     arena = Arena.objects.all()[0]
-    journal = fight(robots, robots, arena)
+    journal = fight(arena, robots, robots)
     return JsonResponse(request, {"ok": True, "journal": journal})
 
 
