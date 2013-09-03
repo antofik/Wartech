@@ -7,7 +7,7 @@
     </list>
     <ignored path="WartechLogic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378216883888" ignored="false" />
+    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378216964176" ignored="false" />
     <file path="/models.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377977470488" ignored="false" />
     <file path="/Django Console" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378210188519" ignored="false" />
     <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378215993546" ignored="false" />
@@ -67,7 +67,7 @@
       <file leaf-file-name="eye.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/logic_modules/eye.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="222" column="47" selection-start="6539" selection-end="6539" vertical-scroll-proportion="0.7939394">
+            <state line="177" column="56" selection-start="5039" selection-end="5039" vertical-scroll-proportion="0.05959596">
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <element signature="e#3487#3981#0" expanded="false" />
@@ -721,7 +721,11 @@
       <created>1378216885716</created>
       <updated>1378216885716</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="test fight">
+      <created>1378216965715</created>
+      <updated>1378216965715</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -937,7 +941,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/logic_modules/eye.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="222" column="47" selection-start="6539" selection-end="6539" vertical-scroll-proportion="0.7939394">
+        <state line="177" column="56" selection-start="5039" selection-end="5039" vertical-scroll-proportion="0.05959596">
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <element signature="e#3487#3981#0" expanded="false" />
