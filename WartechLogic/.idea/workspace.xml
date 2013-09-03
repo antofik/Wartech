@@ -7,10 +7,10 @@
     </list>
     <ignored path="WartechLogic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378213083718" ignored="false" />
+    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378213117519" ignored="false" />
     <file path="/models.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377977470488" ignored="false" />
     <file path="/Django Console" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378210188519" ignored="false" />
-    <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378213110602" ignored="false" />
+    <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378213345260" ignored="false" />
     <file path="/uwsgi.xml" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377887090653" ignored="false" />
     <file path="/localsettings.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377956145737" ignored="false" />
     <file path="/urls.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377977188759" ignored="false" />
@@ -55,10 +55,10 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/battles/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="92" selection-start="1257" selection-end="1257" vertical-scroll-proportion="0.44054878">
+            <state line="38" column="104" selection-start="1269" selection-end="1269" vertical-scroll-proportion="0.51829267">
               <folding>
                 <element signature="e#15#50#0" expanded="true" />
-                <element signature="e#1702#2016#0" expanded="false" />
+                <element signature="e#1713#2027#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -676,7 +676,11 @@
       <created>1378213085244</created>
       <updated>1378213085244</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="test fight">
+      <created>1378213119439</created>
+      <updated>1378213119439</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -890,10 +894,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/battles/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="92" selection-start="1257" selection-end="1257" vertical-scroll-proportion="0.44054878">
+        <state line="38" column="104" selection-start="1269" selection-end="1269" vertical-scroll-proportion="0.51829267">
           <folding>
             <element signature="e#15#50#0" expanded="true" />
-            <element signature="e#1702#2016#0" expanded="false" />
+            <element signature="e#1713#2027#0" expanded="false" />
           </folding>
         </state>
       </provider>
