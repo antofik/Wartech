@@ -111,6 +111,8 @@ class AnalyzerWrapper(object):
             factory = RangeFinderModule
         elif slot == "random_roving":
             factory = RandomRovingModule
+        elif slot == "fire_at_random_enemy":
+            factory = GetTargetsInFirezoneModule
         if factory:
             return factory(fighter, module)
         return None
@@ -186,7 +188,7 @@ class WeaponModuleWrapper(object):
 
     @staticmethod
     def create(module):
-        return GetTargetsInFirezoneModule(module)
+        return WeaponModuleWrapper(module)
 
     def get_bullet(self):
         return None
@@ -196,7 +198,7 @@ class WeaponModuleWrapper(object):
         return 10
 
 
-class GetTargetsInFirezoneModule(WeaponModuleWrapper):
+class GetTargetsInFirezoneModule(AnalyzerWrapper):
     def process(self, data, weapon):
         result = []
         if 'objects' in data:
@@ -205,6 +207,7 @@ class GetTargetsInFirezoneModule(WeaponModuleWrapper):
                     if object['type'] == 'fighter' and 'is_friend' in object and not object['is_friend']:
                         result.append(object)
         weapon.targets = result
+        return {}
 
 
 class DecisionMaker(object):

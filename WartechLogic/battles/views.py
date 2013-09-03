@@ -83,13 +83,15 @@ class Fighter(object):
         for module in self.robot.hull.modules.all():
             slots[module.proto.slot].append(module)
         self.slots = slots
-        self.sensors = [SensorWrapper.create(self, module) for module in slots['sensor']]
+        self.sensors = [m for m in [SensorWrapper.create(self, module) for module in slots['sensor']] if m]
         self.sensors.sort(key=lambda item: item.priority)
-        self.analyzers = [AnalyzerWrapper.create(self, module) for module in slots['analyzer']]
+        self.analyzers = [m for m in [AnalyzerWrapper.create(self, module) for module in slots['analyzer']] if m]
         self.analyzers.sort(key=lambda item: item.priority)
+        self.weapon_analyzers = [m for m in [AnalyzerWrapper.create(self, module) for module in slots['weapon_analyzer']] if m]
+        self.weapon_analyzers.sort(key=lambda item: item.priority)
         self.decision = DecisionMaker(slots['decision'])
         self.motion = MotionWrapper(slots['motion'])
-        self.weapon = [WeaponModuleWrapper.create(module) for module in slots['weapon']]
+        self.weapon = [m for m in [WeaponModuleWrapper.create(module) for module in slots['weapon']] if m]
         self.health = 100
 
         self.log("slots: %s" % self.slots)
@@ -111,6 +113,11 @@ class Fighter(object):
             if module:
                 self.log("processing analyzer %s" % module)
                 data.update(module.process(data))
+        for weapon in self.weapon:
+            for module in self.weapon_analyzers:
+                if module:
+                    self.log("processing weapon module %s for weapon %s" % (module, weapon))
+                    data.update(module.process(data, weapon))
         self.log("result data = %s" % data)
         commands = self.decision.process(data, self.weapon, self.motion, self.log)
         self.goto = commands['goto']
