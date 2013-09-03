@@ -79,6 +79,7 @@ INSTALLED_APPS = (
     #Custom applications
     'main',
     'battles',
+    'logic_modules',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (

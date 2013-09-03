@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9345266-ce5f-4564-9989-cce456f95f16" name="Default" comment="test fight">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logic_modules/eye.py" afterPath="$PROJECT_DIR$/logic_modules/eye.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/battles/views.py" afterPath="$PROJECT_DIR$/battles/views.py" />
+    <list default="true" id="a9345266-ce5f-4564-9989-cce456f95f16" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.py" afterPath="$PROJECT_DIR$/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WartechLogic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378212027832" ignored="false" />
+    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378212043645" ignored="false" />
     <file path="/models.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377977470488" ignored="false" />
     <file path="/Django Console" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378210188519" ignored="false" />
     <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378211995112" ignored="false" />
@@ -18,7 +17,7 @@
     <file path="/base.html" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377944795536" ignored="false" />
     <file path="/home.html" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377944533812" ignored="false" />
     <file path="/importlib.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377974893125" ignored="false" />
-    <file path="/settings.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378063934576" ignored="false" />
+    <file path="/settings.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378212145926" ignored="false" />
     <file path="/eye.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378211664092" ignored="false" />
     <file path="/sensor.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378052621055" ignored="false" />
     <file path="/cookless_middleware.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378063849278" ignored="false" />
@@ -52,10 +51,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/battles/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="11" selection-start="202" selection-end="202" vertical-scroll-proportion="0.15114504">
+            <state line="20" column="17" selection-start="581" selection-end="592" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#15#50#0" expanded="true" />
                 <element signature="e#1032#1106#0" expanded="false" />
@@ -68,7 +67,7 @@
       <file leaf-file-name="eye.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logic_modules/eye.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="188" column="90" selection-start="5477" selection-end="5477" vertical-scroll-proportion="0.0">
+            <state line="9" column="28" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <element signature="e#362#1349#1" expanded="false" />
@@ -77,10 +76,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sensor.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logic_modules/sensor.py">
+      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="20" selection-start="144" selection-end="144" vertical-scroll-proportion="0.0">
+            <state line="81" column="20" selection-start="2742" selection-end="2742" vertical-scroll-proportion="0.54503816">
               <folding />
             </state>
           </provider>
@@ -121,12 +120,12 @@
         <option value="$PROJECT_DIR$/logic_modules/__init__.py" />
         <option value="$PROJECT_DIR$/logic_modules/sensor.py" />
         <option value="$PROJECT_DIR$/main/cookless_middleware.py" />
-        <option value="$PROJECT_DIR$/settings.py" />
         <option value="$PROJECT_DIR$/media/test.html" />
         <option value="$PROJECT_DIR$/main/middleware.py" />
         <option value="$PROJECT_DIR$/main/views.py" />
         <option value="$PROJECT_DIR$/logic_modules/eye.py" />
         <option value="$PROJECT_DIR$/battles/views.py" />
+        <option value="$PROJECT_DIR$/settings.py" />
       </list>
     </option>
   </component>
@@ -534,17 +533,21 @@
       <created>1378190326634</created>
       <updated>1378190326634</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="test fight">
+      <created>1378212045719</created>
+      <updated>1378212045719</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16338582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296593" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297244" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297244" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.178762" sideWeight="0.67027557" order="0" side_tool="false" content_ui="combo" />
@@ -603,7 +606,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed must_create flag from session.save" />
+    <option name="LAST_COMMIT_MESSAGE" value="test fight" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -624,6 +627,7 @@
     <MESSAGE value="session bugfix" />
     <MESSAGE value="get/post sessionid will dominate over cookie sessionid" />
     <MESSAGE value="removed must_create flag from session.save" />
+    <MESSAGE value="test fight" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -634,17 +638,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/battles/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#15#50#0" expanded="true" />
-            <element signature="e#1032#1106#0" expanded="false" />
-            <element signature="e#1765#2079#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/middleware.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="16" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0">
@@ -672,20 +665,6 @@
     <entry file="file://$PROJECT_DIR$/logic_modules/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logic_modules/sensor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="20" selection-start="144" selection-end="144" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="28" selection-start="4263" selection-end="4263" vertical-scroll-proportion="0.57076204">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/urls.py">
@@ -739,9 +718,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/battles/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="17" selection-start="581" selection-end="592" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#15#50#0" expanded="true" />
+            <element signature="e#1032#1106#0" expanded="false" />
+            <element signature="e#1765#2079#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logic_modules/sensor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="20" selection-start="144" selection-end="144" vertical-scroll-proportion="0.129771">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/localsettings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/logic_modules/eye.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="188" column="90" selection-start="5477" selection-end="5477" vertical-scroll-proportion="0.0">
+        <state line="9" column="28" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <element signature="e#362#1349#1" expanded="false" />
@@ -749,14 +753,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/battles/views.py">
+    <entry file="file://$PROJECT_DIR$/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="11" selection-start="202" selection-end="202" vertical-scroll-proportion="0.15114504">
-          <folding>
-            <element signature="e#15#50#0" expanded="true" />
-            <element signature="e#1032#1106#0" expanded="false" />
-            <element signature="e#1765#2079#0" expanded="false" />
-          </folding>
+        <state line="81" column="20" selection-start="2742" selection-end="2742" vertical-scroll-proportion="0.54503816">
+          <folding />
         </state>
       </provider>
     </entry>
