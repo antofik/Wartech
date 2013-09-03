@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9345266-ce5f-4564-9989-cce456f95f16" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logic_modules/eye.py" afterPath="$PROJECT_DIR$/logic_modules/eye.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/battles/views.py" afterPath="$PROJECT_DIR$/battles/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WartechLogic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378215358589" ignored="false" />
+    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378215945952" ignored="false" />
     <file path="/models.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377977470488" ignored="false" />
     <file path="/Django Console" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378210188519" ignored="false" />
-    <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378215928751" ignored="false" />
+    <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378215993546" ignored="false" />
     <file path="/uwsgi.xml" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377887090653" ignored="false" />
     <file path="/localsettings.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377956145737" ignored="false" />
     <file path="/urls.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377977188759" ignored="false" />
@@ -56,7 +55,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/battles/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="49" selection-start="3340" selection-end="3340" vertical-scroll-proportion="0.48686868">
+            <state line="107" column="16" selection-start="4004" selection-end="4004" vertical-scroll-proportion="0.7959596">
               <folding>
                 <element signature="e#15#50#0" expanded="true" />
                 <element signature="e#1743#2057#0" expanded="false" />
@@ -702,7 +701,11 @@
       <created>1378215359771</created>
       <updated>1378215359771</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="test fight">
+      <created>1378215947603</created>
+      <updated>1378215947603</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -928,7 +931,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/battles/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="49" selection-start="3340" selection-end="3340" vertical-scroll-proportion="0.48686868">
+        <state line="107" column="16" selection-start="4004" selection-end="4004" vertical-scroll-proportion="0.7959596">
           <folding>
             <element signature="e#15#50#0" expanded="true" />
             <element signature="e#1743#2057#0" expanded="false" />

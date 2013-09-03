@@ -97,11 +97,13 @@ class Fighter(object):
     def process(self, battlefield):
         data = defaultdict(list)
         for module in self.sensors:
-            self.log("processing module %s" % module)
-            data.update(module.process(battlefield))
+            if module:
+                self.log("processing module %s" % module)
+                data.update(module.process(battlefield))
         for module in self.analyzers:
-            self.log("processing analyzer %s" % module)
-            data.update(module.process(data))
+            if module:
+                self.log("processing analyzer %s" % module)
+                data.update(module.process(data))
         self.log("result data = %s" % data)
         commands = self.decision.process(data, self.weapon, self.motion, self.log)
         self.goto = commands['goto']
