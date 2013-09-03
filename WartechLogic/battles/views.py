@@ -68,7 +68,7 @@ class Battlefield(dict):
             self[x, y] = fighter
             fighter.x, fighter.y = x, y
         else:
-            self.fight_journal.append("%s fails to move (%s, %s)" % (fighter.name, x, y))
+            self.fight_journal.append("%s fails to move (%s, %s)" % (fighter.name, dx, dy))
 
 
 class Fighter(object):
@@ -117,7 +117,7 @@ def fight(arena, *teams):
     battlefield = Battlefield(arena, fight_journal)
     fighters = []
     for robots in teams:
-        teamid = id(robots)
+        teamid = random.randint(0, 100)
         for robot in robots:
             fighter = Fighter(robot, teamid)
             fighters.append(fighter)
@@ -165,5 +165,5 @@ def fight(arena, *teams):
             fight_journal.append("Fight finished: exceeded time limit")
             break
 
-    return fight_journal
+    return '\n'.join(fight_journal)
 
