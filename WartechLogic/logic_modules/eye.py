@@ -140,7 +140,7 @@ class ObjectDetectorModule(AnalyzerWrapper):
             if type == 'fighter':
                 result.append(item)
             elif isinstance(item['object']['object'], int):
-                if item['object'] != Arena.EMPTY:
+                if item['object']['object'] != Arena.EMPTY:
                     result.append(item)
         return result
 
