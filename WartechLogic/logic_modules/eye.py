@@ -13,7 +13,7 @@ class SensorWrapper(object):
 
     @staticmethod
     def create(fighter, module):
-        slot = module.proto.slot
+        slot = module.proto.slug
         factory = None
         if slot == "eye":
             factory = EyeModule
@@ -98,7 +98,7 @@ class AnalyzerWrapper(object):
 
     @staticmethod
     def create(fighter, module):
-        slot = module.proto.slot
+        slot = module.proto.slug
         factory = None
         if slot == "object_detector":
             factory = ObjectDetectorModule
