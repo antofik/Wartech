@@ -73,6 +73,9 @@ class Battlefield(dict):
             else:
                 self.fight_journal.append("%s fails to move (%s, %s)" % (fighter.name, dx, dy))
 
+    def remove_fighter(self, fighter):
+        self[fighter.x, fighter.y] = Arena.EMPTY
+
 
 class Fighter(object):
     def __init__(self, robot, teamid, journal=None):
@@ -188,6 +191,7 @@ def fight(arena, *teams):
             else:
                 fight_journal.append("%s is dead" % fighter.name)
                 fighters.remove(fighter)
+                battlefield.remove_fighter(fighter)
 
         if idle:
             idle_counter += 1
