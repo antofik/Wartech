@@ -97,6 +97,10 @@ class MotionWrapper(object):
     def __init__(self, module):
         self.module = module
 
+    @property
+    def busy(self):
+        return False
+
 
 class ObjectDetectorModule(AnalyzerWrapper):
     def process(self, data):
