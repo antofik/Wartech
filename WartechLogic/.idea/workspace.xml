@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9345266-ce5f-4564-9989-cce456f95f16" name="Default" comment="update">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
+    <list default="true" id="a9345266-ce5f-4564-9989-cce456f95f16" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/middleware.py" afterPath="$PROJECT_DIR$/main/middleware.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WartechLogic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378129376067" ignored="false" />
+    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378190037114" ignored="false" />
     <file path="/models.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377977470488" ignored="false" />
     <file path="/Django Console" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377869644665" ignored="false" />
     <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378189999850" ignored="false" />
@@ -22,6 +22,7 @@
     <file path="/sensor.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378052621055" ignored="false" />
     <file path="/cookless_middleware.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378063849278" ignored="false" />
     <file path="/test.html" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378116968753" ignored="false" />
+    <file path="/middleware.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378190065432" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,10 +51,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="272" column="36" selection-start="9910" selection-end="9910" vertical-scroll-proportion="0.7111651">
+            <state line="256" column="76" selection-start="9445" selection-end="9445" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#15#48#0" expanded="true" />
               </folding>
@@ -70,10 +71,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="middleware.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="middleware.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/middleware.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="35" selection-end="565" vertical-scroll-proportion="0.0">
+            <state line="5" column="9" selection-start="118" selection-end="118" vertical-scroll-proportion="0.10315534">
               <folding />
             </state>
           </provider>
@@ -136,7 +137,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/nginx.conf" />
         <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/localsettings.py" />
@@ -152,6 +152,7 @@
         <option value="$PROJECT_DIR$/logic_modules/eye.py" />
         <option value="$PROJECT_DIR$/battles/views.py" />
         <option value="$PROJECT_DIR$/main/views.py" />
+        <option value="$PROJECT_DIR$/main/middleware.py" />
       </list>
     </option>
   </component>
@@ -547,7 +548,11 @@
       <created>1378128550124</created>
       <updated>1378128550124</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="session bugfix">
+      <created>1378190039684</created>
+      <updated>1378190039684</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -616,7 +621,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="session bugfix" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -634,6 +639,7 @@
     <MESSAGE value="configurator requests" />
     <MESSAGE value="is_authorized" />
     <MESSAGE value="update" />
+    <MESSAGE value="session bugfix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -743,13 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/middleware.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="35" selection-end="565" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../../Python/Portable Python CE/pypy/site-packages/django/contrib/sessions/backends/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="291" column="30" selection-start="9528" selection-end="9539" vertical-scroll-proportion="0.0">
@@ -759,10 +758,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="272" column="36" selection-start="9910" selection-end="9910" vertical-scroll-proportion="0.7111651">
+        <state line="256" column="76" selection-start="9445" selection-end="9445" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#15#48#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/middleware.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="9" selection-start="118" selection-end="118" vertical-scroll-proportion="0.10315534">
+          <folding />
         </state>
       </provider>
     </entry>
