@@ -10,7 +10,7 @@ class SensorWrapper(object):
         self.module = module
 
     def process(self, battlefield):
-        return []
+        return {}
 
 
 class EyeModule(SensorWrapper):
@@ -91,10 +91,16 @@ class AnalyzerWrapper(object):
         return {}
 
 
+class MotionWrapper(object):
+    def __init__(self, module):
+        self.module = module
+
+
 class ObjectDetectorModule(AnalyzerWrapper):
     def process(self, data):
         if 'visual' in data:
             data['objects'] = self.process_visual(data['visual'])
+        return {}
 
     def process_visual(self, data):
         result = []
@@ -112,6 +118,7 @@ class FriendOrFoeModule(AnalyzerWrapper):
     def process(self, data):
         if 'objects' in data:
             self.process_visual(data['objects'])
+        return {}
 
     def process_visual(self, data):
         result = []
@@ -128,6 +135,7 @@ class RangeFinderModule(AnalyzerWrapper):
     def process(self, data):
         if 'objects' in data:
             self.process_visual(data['objects'])
+        return {}
 
     def process_visual(self, data):
         result = []
@@ -139,19 +147,22 @@ class RangeFinderModule(AnalyzerWrapper):
 
 class RandomRovingModule(AnalyzerWrapper):
     def process(self, data):
-        direction = random.randint(0, 6)
         if not 'goto' in data:
-            data['goto'] = []
-        data['goto'].append({'vector': Battlefield.DIRECTIONS[direction], 'priority': 0})
+            return {}
+        direction = random.randint(0, 6)
+        return {'goto': {'vector': Battlefield.DIRECTIONS[direction], 'priority': 0}}
 
 
 class WeaponModuleWrapper(object):
-    def __init__(self, fighter, module):
-        self.fighter = fighter
+    def __init__(self, module):
         self.module = module
 
-    def process(self, data, weapon):
-        return []
+    def get_bullet(self):
+        return None
+
+    @property
+    def range(self):
+        return 10
 
 
 class GetTargetsInFirezoneModule(WeaponModuleWrapper):
@@ -175,8 +186,9 @@ class DecisionMaker(object):
         for weapon in weapons:
             if hasattr(weapon, 'targets') and weapon.targets:
                 target = random.choice(weapon.targets)
-                commands['shoot'].append({'weapon': weapon, 'position': target['position']})
+                commands['shoot'].append({'bullet': weapon.get_bullet(), 'target': target, 'target_position': target['position']})
                 can_fire = True
-        if not can_fire:
+        if not can_fire and not motion.busy:
             if 'goto' in data and data['goto']:
                 commands['goto'] = random.choice(data['goto'])['vector']
+        return commands
