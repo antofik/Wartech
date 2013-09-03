@@ -220,7 +220,7 @@ class DecisionMaker(object):
                 log("weapon %s can fire at %s" % (weapon, target))
         if not can_fire and not motion.busy:
             if 'goto' in data and data['goto']:
-                commands['goto'] = random.choice(data['goto'])['vector']
+                commands['goto'] = data['goto']['vector']
             else:
                 log("will not go: data=%s" % data)
         else:
