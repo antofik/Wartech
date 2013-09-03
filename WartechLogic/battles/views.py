@@ -169,7 +169,11 @@ def fight(arena, *teams):
                     target = bullet['target']
                     fight_journal.append("%s fires at %s" % (fighter.name, target['object']['object'].name))
                 shoots.extend(bullets)
+        fight_journal.append("Shooting at %s" % shoots)
         for shoot in shoots:
+            target_position = shoot['target_position']
+            if target_position not in battlefield:
+                continue
             target = battlefield[shoot['target_position']]
             if isinstance(target, Fighter):
                 idle = False
