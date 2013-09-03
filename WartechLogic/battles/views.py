@@ -61,6 +61,8 @@ class Battlefield(dict):
 
     def move_fighter(self, fighter):
         dx, dy = fighter.goto
+        if dx == dy == 0:
+            self.fight_journal.append("%s stays" % fighter.name)
         x, y = fighter.x + dx, fighter.y + dy
         if self[x, y] == Arena.EMPTY:
             self.fight_journal.append("%s moving (%s, %s)" % (fighter.name, dx, dy))
@@ -72,9 +74,10 @@ class Battlefield(dict):
 
 
 class Fighter(object):
-    def __init__(self, robot, teamid):
+    def __init__(self, robot, teamid, journal=None):
         self.robot = robot
         self.teamid = teamid
+        self.journal = journal
         slots = defaultdict(list)
         for module in self.robot.hull.modules.all():
             slots[module.proto.slot].append(module)
@@ -86,13 +89,20 @@ class Fighter(object):
         self.weapon = [WeaponModuleWrapper(module) for module in slots['weapon']]
         self.health = 100
 
+    def log(self, message):
+        if self.journal:
+            self.journal.append("----%s> %s" % (self.name, message))
+
     def process(self, battlefield):
         data = defaultdict(list)
         for module in self.sensors:
+            self.log("processing module %s" % module)
             data.update(module.process(battlefield))
         for module in self.analyzers:
+            self.log("processing analyzer %s" % module)
             data.update(module.process(data))
-        commands = self.decision.process(data, self.weapon, self.motion)
+        self.log("result data = %s" % data)
+        commands = self.decision.process(data, self.weapon, self.motion, self.log)
         self.goto = commands['goto']
         return commands['shoot']
 
@@ -165,5 +175,5 @@ def fight(arena, *teams):
             fight_journal.append("Fight finished: exceeded time limit")
             break
 
-    return '\n'.join(fight_journal)
+    return fight_journal
 

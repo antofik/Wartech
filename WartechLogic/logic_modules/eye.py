@@ -186,7 +186,7 @@ class DecisionMaker(object):
     def __init__(self, fighter):
         self.fighter = fighter
 
-    def process(self, data, weapons, motion):
+    def process(self, data, weapons, motion, log):
         commands = {'shoot': [], 'goto': (0, 0)}
         can_fire = False
         for weapon in weapons:
@@ -194,7 +194,12 @@ class DecisionMaker(object):
                 target = random.choice(weapon.targets)
                 commands['shoot'].append({'bullet': weapon.get_bullet(), 'target': target, 'target_position': target['position']})
                 can_fire = True
+                log("weapon %s can fire at %s" % (weapon, target))
         if not can_fire and not motion.busy:
             if 'goto' in data and data['goto']:
                 commands['goto'] = random.choice(data['goto'])['vector']
+            else:
+                log("will not go: data=%s" % data)
+        else:
+            log("will not go: can_fire=%s, motion.busy=%s" % (can_fire, motion.busy))
         return commands
