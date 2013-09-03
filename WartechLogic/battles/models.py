@@ -9,3 +9,4 @@ class Arena(Model):
     width = IntegerField()
     height = IntegerField()
     terrain = TextField()
+    slug = CharField(max_length=50)
