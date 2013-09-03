@@ -270,7 +270,7 @@ def login(request):
         give_start_robot_to_user(user)
     request.session["user_id"] = user.id
     request.session["is_authorized"] = True
-    request.session.save(must_create=True)
+    request.session.save()
     return JsonResponse(request, {'granted': True, 'sessionid': request.session.session_key})
 
 

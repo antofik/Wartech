@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9345266-ce5f-4564-9989-cce456f95f16" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/middleware.py" afterPath="$PROJECT_DIR$/main/middleware.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WartechLogic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378190037114" ignored="false" />
+    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378190097672" ignored="false" />
     <file path="/models.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377977470488" ignored="false" />
     <file path="/Django Console" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377869644665" ignored="false" />
     <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378189999850" ignored="false" />
@@ -51,10 +51,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="256" column="76" selection-start="9445" selection-end="9445" vertical-scroll-proportion="0.0">
+            <state line="272" column="25" selection-start="9899" selection-end="9899" vertical-scroll-proportion="0.7111651">
               <folding>
                 <element signature="e#15#48#0" expanded="true" />
               </folding>
@@ -71,10 +71,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="middleware.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="middleware.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/middleware.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="9" selection-start="118" selection-end="118" vertical-scroll-proportion="0.10315534">
+            <state line="7" column="53" selection-start="315" selection-end="315" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -151,8 +151,8 @@
         <option value="$PROJECT_DIR$/media/test.html" />
         <option value="$PROJECT_DIR$/logic_modules/eye.py" />
         <option value="$PROJECT_DIR$/battles/views.py" />
-        <option value="$PROJECT_DIR$/main/views.py" />
         <option value="$PROJECT_DIR$/main/middleware.py" />
+        <option value="$PROJECT_DIR$/main/views.py" />
       </list>
     </option>
   </component>
@@ -552,7 +552,11 @@
       <created>1378190039684</created>
       <updated>1378190039684</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="get/post sessionid will dominate over cookie sessionid">
+      <created>1378190100300</created>
+      <updated>1378190100300</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -621,7 +625,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="session bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="get/post sessionid will dominate over cookie sessionid" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -640,6 +644,7 @@
     <MESSAGE value="is_authorized" />
     <MESSAGE value="update" />
     <MESSAGE value="session bugfix" />
+    <MESSAGE value="get/post sessionid will dominate over cookie sessionid" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -756,19 +761,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/views.py">
+    <entry file="file://$PROJECT_DIR$/main/middleware.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="256" column="76" selection-start="9445" selection-end="9445" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#15#48#0" expanded="true" />
-          </folding>
+        <state line="7" column="53" selection-start="315" selection-end="315" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/middleware.py">
+    <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="9" selection-start="118" selection-end="118" vertical-scroll-proportion="0.10315534">
-          <folding />
+        <state line="272" column="25" selection-start="9899" selection-end="9899" vertical-scroll-proportion="0.7111651">
+          <folding>
+            <element signature="e#15#48#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
