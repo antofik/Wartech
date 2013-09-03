@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9345266-ce5f-4564-9989-cce456f95f16" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logic_modules/eye.py" afterPath="$PROJECT_DIR$/logic_modules/eye.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/battles/views.py" afterPath="$PROJECT_DIR$/battles/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WartechLogic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378215276607" ignored="false" />
+    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378215358589" ignored="false" />
     <file path="/models.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377977470488" ignored="false" />
     <file path="/Django Console" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378210188519" ignored="false" />
-    <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378215352331" ignored="false" />
+    <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378215928751" ignored="false" />
     <file path="/uwsgi.xml" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377887090653" ignored="false" />
     <file path="/localsettings.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377956145737" ignored="false" />
     <file path="/urls.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377977188759" ignored="false" />
@@ -18,7 +19,7 @@
     <file path="/home.html" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377944533812" ignored="false" />
     <file path="/importlib.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377974893125" ignored="false" />
     <file path="/settings.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378212145926" ignored="false" />
-    <file path="/eye.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378215272717" ignored="false" />
+    <file path="/eye.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378215918103" ignored="false" />
     <file path="/sensor.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378052621055" ignored="false" />
     <file path="/cookless_middleware.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378063849278" ignored="false" />
     <file path="/test.html" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378116968753" ignored="false" />
@@ -55,7 +56,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/battles/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="0" selection-start="2568" selection-end="2568" vertical-scroll-proportion="0.36666667">
+            <state line="89" column="49" selection-start="3340" selection-end="3340" vertical-scroll-proportion="0.48686868">
               <folding>
                 <element signature="e#15#50#0" expanded="true" />
                 <element signature="e#1743#2057#0" expanded="false" />
@@ -67,10 +68,16 @@
       <file leaf-file-name="eye.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logic_modules/eye.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="201" column="50" selection-start="5918" selection-end="5918" vertical-scroll-proportion="0.0">
+            <state line="187" column="49" selection-start="5279" selection-end="5279" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <element signature="e#392#1379#1" expanded="false" />
+                <element signature="e#547#2625#0" expanded="false" />
+                <element signature="e#587#1574#1" expanded="false" />
+                <element signature="e#3466#3960#0" expanded="false" />
+                <element signature="e#4009#4472#0" expanded="false" />
+                <element signature="e#4521#4846#0" expanded="false" />
+                <element signature="e#4896#5088#0" expanded="false" />
+                <element signature="e#5867#6789#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -691,7 +698,11 @@
       <created>1378215278070</created>
       <updated>1378215278070</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="test fight">
+      <created>1378215359771</created>
+      <updated>1378215359771</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -804,7 +815,13 @@
         <state line="6" column="8" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#392#1379#1" expanded="false" />
+            <element signature="e#547#2625#0" expanded="false" />
+            <element signature="e#587#1574#1" expanded="false" />
+            <element signature="e#3466#3960#0" expanded="false" />
+            <element signature="e#4009#4472#0" expanded="false" />
+            <element signature="e#4521#4846#0" expanded="false" />
+            <element signature="e#4896#5088#0" expanded="false" />
+            <element signature="e#5867#6789#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -886,16 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logic_modules/eye.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="201" column="50" selection-start="5918" selection-end="5918" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#392#1379#1" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="46" column="35" selection-start="1282" selection-end="1282" vertical-scroll-proportion="0.0">
@@ -903,9 +910,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/logic_modules/eye.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="187" column="49" selection-start="5279" selection-end="5279" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#547#2625#0" expanded="false" />
+            <element signature="e#587#1574#1" expanded="false" />
+            <element signature="e#3466#3960#0" expanded="false" />
+            <element signature="e#4009#4472#0" expanded="false" />
+            <element signature="e#4521#4846#0" expanded="false" />
+            <element signature="e#4896#5088#0" expanded="false" />
+            <element signature="e#5867#6789#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/battles/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="0" selection-start="2568" selection-end="2568" vertical-scroll-proportion="0.36666667">
+        <state line="89" column="49" selection-start="3340" selection-end="3340" vertical-scroll-proportion="0.48686868">
           <folding>
             <element signature="e#15#50#0" expanded="true" />
             <element signature="e#1743#2057#0" expanded="false" />

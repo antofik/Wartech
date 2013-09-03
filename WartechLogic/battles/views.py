@@ -83,11 +83,11 @@ class Fighter(object):
         for module in self.robot.hull.modules.all():
             slots[module.proto.slot].append(module)
         self.slots = slots
-        self.sensors = [SensorWrapper(self, module) for module in slots['sensor']]
-        self.analyzers = [AnalyzerWrapper(self, module) for module in slots['analyzer']]
+        self.sensors = [SensorWrapper.create(self, module) for module in slots['sensor']]
+        self.analyzers = [AnalyzerWrapper.create(self, module) for module in slots['analyzer']]
         self.decision = DecisionMaker(slots['decision'])
         self.motion = MotionWrapper(slots['motion'])
-        self.weapon = [WeaponModuleWrapper(module) for module in slots['weapon']]
+        self.weapon = [WeaponModuleWrapper.create(module) for module in slots['weapon']]
         self.health = 100
 
     def log(self, message):

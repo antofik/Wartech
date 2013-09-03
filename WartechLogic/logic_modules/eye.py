@@ -11,8 +11,15 @@ class SensorWrapper(object):
         self.fighter = fighter
         self.module = module
 
-    def process(self, battlefield):
-        return {}
+    @staticmethod
+    def create(fighter, module):
+        slot = module.proto.slot
+        factory = None
+        if slot == "eye":
+            factory = EyeModule
+        if factory:
+            return factory(fighter, module)
+        return None
 
 
 class EyeModule(SensorWrapper):
@@ -89,8 +96,21 @@ class AnalyzerWrapper(object):
         self.fighter = fighter
         self.module = module
 
-    def process(self, data):
-        return {}
+    @staticmethod
+    def create(fighter, module):
+        slot = module.proto.slot
+        factory = None
+        if slot == "object_detector":
+            factory = ObjectDetectorModule
+        elif slot == "friend_or_foe":
+            factory = FriendOrFoeModule
+        elif slot == "range_finder":
+            factory = RangeFinderModule
+        elif slot == "random_roving":
+            factory = RandomRovingModule
+        if factory:
+            return factory(fighter, module)
+        return None
 
 
 class MotionWrapper(object):
@@ -162,6 +182,10 @@ class RandomRovingModule(AnalyzerWrapper):
 class WeaponModuleWrapper(object):
     def __init__(self, module):
         self.module = module
+
+    @staticmethod
+    def create(module):
+        return GetTargetsInFirezoneModule(module)
 
     def get_bullet(self):
         return None
