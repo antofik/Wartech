@@ -90,6 +90,11 @@ class Fighter(object):
         self.weapon = [WeaponModuleWrapper.create(module) for module in slots['weapon']]
         self.health = 100
 
+        self.log("slots: %s" % self.slots)
+        self.log("found sensors: %s" % self.sensors)
+        self.log("found analyzers: %s" % self.analyzers)
+        self.log("found weapon: %s" % self.weapon)
+
     def log(self, message):
         if self.journal:
             self.journal.append("----%s> %s" % (self.name, message))
