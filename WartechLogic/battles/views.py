@@ -66,7 +66,7 @@ class Battlefield(dict):
         else:
             x, y = fighter.x + dx, fighter.y + dy
             if (x, y) in self and self[x, y] == Arena.EMPTY:
-                self.fight_journal.append("%s moving (%s, %s)" % (fighter.name, dx, dy))
+                self.fight_journal.append("%s moving (%s, %s) at (%s, %s)" % (fighter.name, dx, dy, x, y))
                 self[fighter.x, fighter.y] = Arena.EMPTY
                 self[x, y] = fighter
                 fighter.x, fighter.y = x, y
@@ -175,7 +175,7 @@ def fight(arena, *teams):
 
         if idle:
             idle_counter += 1
-        if idle_counter > 100:
+        if idle_counter > 10000:
             fight_journal.append("Fight finished: 100 cycles without shooting&hitting. It's really boring")
             break
 
