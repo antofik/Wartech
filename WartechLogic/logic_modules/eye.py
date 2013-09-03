@@ -178,8 +178,8 @@ class RangeFinderModule(AnalyzerWrapper):
 
 class RandomRovingModule(AnalyzerWrapper):
     def process(self, data):
-        direction = random.randint(0, 5)
-        return {'goto': {'vector': DIRECTIONS[direction], 'priority': 0}}
+        self.fighter.direction = random.randint(0, 5)
+        return {'goto': {'vector': DIRECTIONS[self.fighter.direction], 'priority': 0}}
 
 
 class WeaponModuleWrapper(object):
