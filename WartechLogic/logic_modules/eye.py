@@ -221,7 +221,10 @@ class DecisionMaker(object):
         for weapon in weapons:
             if hasattr(weapon, 'targets') and weapon.targets:
                 target = random.choice(weapon.targets)
-                commands['shoot'].append({'bullet': weapon.get_bullet(), 'target': target['object']['object'], 'target_position': target['position']})
+                x, y = self.fighter.x, self.fighter.y
+                dx, dy = target['position']
+                commands['shoot'].append({'bullet': weapon.get_bullet(), 'target': target['object']['object'],
+                                          'target_position': (x + dx, y + dy)})
                 can_fire = True
                 log("weapon %s can fire at %s" % (weapon, target))
         if not can_fire and not motion.busy:
