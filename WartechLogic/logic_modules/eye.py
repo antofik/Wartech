@@ -130,7 +130,7 @@ class MotionWrapper(object):
 class ObjectDetectorModule(AnalyzerWrapper):
     def process(self, data):
         if 'visual' in data:
-            data['objects'] = self.process_visual(data['visual'])
+            return {'objects': self.process_visual(data['visual'])}
         return {}
 
     def process_visual(self, data):
@@ -139,7 +139,7 @@ class ObjectDetectorModule(AnalyzerWrapper):
             type = item['object']['type']
             if type == 'fighter':
                 result.append(item)
-            elif isinstance(item['object'], int):
+            elif isinstance(item['object']['object'], int):
                 if item['object'] != Arena.EMPTY:
                     result.append(item)
         return result
@@ -199,7 +199,7 @@ class WeaponModuleWrapper(object):
 
 
 class GetTargetsInFirezoneModule(AnalyzerWrapper):
-    def process(self, data, weapon):
+    def process(self, data, weapon, log):
         result = []
         if 'objects' in data:
             for object in data['objects']:

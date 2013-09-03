@@ -97,6 +97,7 @@ class Fighter(object):
         self.log("slots: %s" % self.slots)
         self.log("found sensors: %s" % self.sensors)
         self.log("found analyzers: %s" % self.analyzers)
+        self.log("found weapon analyzers: %s" % self.weapon_analyzers)
         self.log("found weapon: %s" % self.weapon)
 
     def log(self, message):
@@ -117,8 +118,9 @@ class Fighter(object):
             for module in self.weapon_analyzers:
                 if module:
                     self.log("processing weapon module %s for weapon %s" % (module, weapon))
-                    data.update(module.process(data, weapon))
-        self.log("result data = %s" % data)
+                    data.update(module.process(data, weapon, self.log))
+        self.log("result visual = %s" % data['visual'])
+        self.log("result objects = %s" % data['objects'])
         commands = self.decision.process(data, self.weapon, self.motion, self.log)
         self.goto = commands['goto']
         return commands['shoot']
