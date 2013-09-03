@@ -89,7 +89,7 @@ class Fighter(object):
         self.analyzers.sort(key=lambda item: item.priority)
         self.weapon_analyzers = [m for m in [AnalyzerWrapper.create(self, module) for module in slots['weapon_analyzer']] if m]
         self.weapon_analyzers.sort(key=lambda item: item.priority)
-        self.decision = DecisionMaker(slots['decision'])
+        self.decision = DecisionMaker(self, slots['decision'])
         self.motion = MotionWrapper(slots['motion'])
         self.weapon = [m for m in [WeaponModuleWrapper.create(module) for module in slots['weapon']] if m]
         self.health = 100

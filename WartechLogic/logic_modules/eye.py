@@ -212,8 +212,9 @@ class GetTargetsInFirezoneModule(AnalyzerWrapper):
 
 
 class DecisionMaker(object):
-    def __init__(self, fighter):
+    def __init__(self, fighter, decision_module):
         self.fighter = fighter
+        self.decision_module = decision_module
 
     def process(self, data, weapons, motion, log):
         commands = {'shoot': [], 'goto': (0, 0)}
