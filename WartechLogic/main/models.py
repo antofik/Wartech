@@ -55,6 +55,7 @@ class ModulePrototype(Model, ModelWithParameters):
     slug = SlugField()
     name = CharField(max_length=50)
     slot = CharField(max_length=50)
+    priority = IntegerField(default=0)
     category = CharField(max_length=50)
     description = TextField()
     parameters = TextField()

@@ -84,7 +84,9 @@ class Fighter(object):
             slots[module.proto.slot].append(module)
         self.slots = slots
         self.sensors = [SensorWrapper.create(self, module) for module in slots['sensor']]
+        self.sensors.sort(key=lambda item: item.priority)
         self.analyzers = [AnalyzerWrapper.create(self, module) for module in slots['analyzer']]
+        self.analyzers.sort(key=lambda item: item.priority)
         self.decision = DecisionMaker(slots['decision'])
         self.motion = MotionWrapper(slots['motion'])
         self.weapon = [WeaponModuleWrapper.create(module) for module in slots['weapon']]

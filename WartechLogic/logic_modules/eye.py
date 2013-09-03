@@ -10,6 +10,7 @@ class SensorWrapper(object):
     def __init__(self, fighter, module):
         self.fighter = fighter
         self.module = module
+        self.priority = module.proto.priority
 
     @staticmethod
     def create(fighter, module):
@@ -96,6 +97,7 @@ class AnalyzerWrapper(object):
     def __init__(self, fighter, module):
         self.fighter = fighter
         self.module = module
+        self.priority = module.proto.priority
 
     @staticmethod
     def create(fighter, module):
