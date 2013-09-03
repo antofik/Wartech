@@ -184,14 +184,23 @@ def fight(arena, *teams):
                 hit = target.bullet_hit(bullet)
                 fight_journal.append("%s received %s damage" % (target.name, hit))
 
+        alive_teams = set()
         for fighter in list(fighters):
             fight_journal.append("%s has %s health. Alive=%s" % (fighter.name, fighter.health, fighter.alive))
             if fighter.alive:
+                alive_teams.add(fighter.teamid)
                 battlefield.move_fighter(fighter)
             else:
                 fight_journal.append("%s is dead" % fighter.name)
                 fighters.remove(fighter)
                 battlefield.remove_fighter(fighter)
+
+        if len(alive_teams) == 0:
+            fight_journal.append("Fight finished: all are dead")
+            break
+        elif len(alive_teams) == 1:
+            fight_journal.append("Fight finished: team %s is winner" % alive_teams.pop())
+            break
 
         if idle:
             idle_counter += 1
