@@ -19,8 +19,6 @@ def test_fight(request):
 
 
 class Battlefield(dict):
-    DIRECTIONS = [(1, 0), (0, 1), (-1, 1), (-1, 0), (0, -1), (1, -1)]
-
     def __init__(self, arena, fight_journal):
         super(Battlefield, self).__init__()
         self.arena = arena

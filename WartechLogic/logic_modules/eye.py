@@ -1,7 +1,9 @@
 import json
 import random
 from battles.models import Arena
-from battles.views import Battlefield
+
+
+DIRECTIONS = [(1, 0), (0, 1), (-1, 1), (-1, 0), (0, -1), (1, -1)]
 
 
 class SensorWrapper(object):
@@ -65,7 +67,7 @@ class EyeModule(SensorWrapper):
                 break
             item = field_of_vision[key]
             delta_direction = (item['direction'] + fighter_direction) % 6
-            delta_vector = Battlefield.DIRECTIONS[delta_direction]
+            delta_vector = DIRECTIONS[delta_direction]
             delta_source = item['from']
             if delta_source == 0:
                 start_x, start_y = 0, 0
@@ -150,7 +152,7 @@ class RandomRovingModule(AnalyzerWrapper):
         if not 'goto' in data:
             return {}
         direction = random.randint(0, 6)
-        return {'goto': {'vector': Battlefield.DIRECTIONS[direction], 'priority': 0}}
+        return {'goto': {'vector': DIRECTIONS[direction], 'priority': 0}}
 
 
 class WeaponModuleWrapper(object):
