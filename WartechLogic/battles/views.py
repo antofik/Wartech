@@ -151,7 +151,7 @@ class Fighter(object):
 
     def set_position(self, x, y):
         self.x, self.y = x, y
-        self.action('movements', type='turn', x=self.x, y=self.y)
+        self.action('movements', type='move', x=self.x, y=self.y)
 
     def set_direction(self, direction):
         self.direction = direction

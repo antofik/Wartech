@@ -4,8 +4,26 @@
 
 <div class='page-main'>
 	<div class='well'>
-		<a class='btn btn-warning btn-large' href='configurator'>Start game!</a>		
+		<a class='start btn btn-warning btn-large' href='javascript:void(0);'>Start game!</a>
 	</div>
 </div>
 
+{% endblock %}
+
+{% block javascript %}
+    <script>
+        $(function(){
+            $('.start').click(function(){
+                $.ajax({
+                    'type': 'POST',
+                    'url': 'http://logic.wartech.pro/login',
+                    'dataType': 'JSON',
+                    'data': {'token': 1, 'provider': 'debug'}
+                }).done(function(data){
+                    localStorage.sessionid = data.sessionid;
+                    location.href = '/configurator';
+                });
+            });
+        });
+    </script>
 {% endblock %}

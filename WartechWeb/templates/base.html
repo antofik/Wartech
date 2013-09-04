@@ -13,6 +13,13 @@
 	<script type="text/javascript" src="{{ MEDIA_URL }}plugins/bootstrap/js/bootstrap.js"></script>
 	{% block head %} {% endblock %}
 
+    <script>
+        $.ajaxSetup({
+                    crossDomain: true,
+                    data: {'sessionid': localStorage.sessionid}
+                });
+    </script>
+
     {% block javascript %} {% endblock %}
 </head>
 <body data-spy="scroll" data-target=".subnav" data-offset="50">    
