@@ -117,6 +117,7 @@ class Fighter(object):
             'movements': [],
             'shoots': [],
         }
+        self.tick_actions = defaultdict(list)
         self.action(action='start')
         self.action('health', value=self.health)
 
@@ -165,6 +166,10 @@ class Fighter(object):
         d.update(args)
         self.actions[journal].append(d)
 
+        d = {'type': journal, 'name': self.name, 'teamid': self.teamid}
+        d.update(args)
+        self.tick_actions[self.tick].append(d)
+
     def bullet_hit(self, bullet):
         self.health -= 10
         self.action('health', value=self.health)
@@ -183,6 +188,27 @@ class Fighter(object):
     @property
     def action_journal(self):
         return self.actions
+
+    @property
+    def tick_action_journal(self):
+        return self.tick_actions
+
+
+def aggregate_action_journals(journals):
+    journal = {}
+    tick = 0
+    while True:
+        actions = []
+        for action_journal in journals:
+            name = action_journal['name']
+            teamid = action_journal['teamid']
+            pass
+
+        if actions:
+            journal[tick] = actions
+            tick += 1
+        else:
+            break
 
 
 def fight(arena, *teams):
@@ -261,5 +287,14 @@ def fight(arena, *teams):
             fight_journal.append("Fight finished: exceeded time limit")
             break
 
-    return {fighter.name: fighter.action_journal for fighter in all_fighters}
+    tick = 0
+    journals = [fighter.tick_action_journal for fighter in all_fighters]
+    result = {}
+    while True:
+        result[tick] = []
+        for journal in journals:
+            if tick in journal:
+                result[tick].append(journal[tick])
+    return result
+    #return [fighter.action_journal for fighter in all_fighters]
 
