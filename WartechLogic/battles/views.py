@@ -346,7 +346,7 @@ def fight(arena, *teams):
                     result[tick].append(item)
     return {
         'final_message': final,
-        'log': result,
+        'journal': result,
         'time_elapsed': (datetime.now() - fight_start).total_seconds()
     }
 
