@@ -79,6 +79,7 @@ class Battlefield(dict):
 
 class Fighter(object):
     def __init__(self, robot, teamid, journal=None):
+        #self.
         self.robot = robot
         self.teamid = teamid
         self.journal = journal
