@@ -3,9 +3,11 @@ from collections import defaultdict
 import random
 import json
 from datetime import datetime
+from django.http import HttpResponse
 from logic_modules.eye import *
 from main.models import User
 from main.views import is_authorized, JsonResponse
+from pprint import pprint
 
 
 def test_fight(request):
@@ -16,7 +18,7 @@ def test_fight(request):
     robots = user.robots.all()
     arena = Arena.objects.get(slug='small')
     journal = fight(arena, robots, robots)
-    return JsonResponse(request, {"ok": True, "journal": journal})
+    return HttpResponse(pprint(journal))
 
 
 class Battlefield(dict):
@@ -304,5 +306,4 @@ def fight(arena, *teams):
             del result[tick]
             break
     return result
-    #return [fighter.action_journal for fighter in all_fighters]
 
