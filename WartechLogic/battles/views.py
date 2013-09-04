@@ -23,6 +23,7 @@ def test_fight(request):
         return HttpResponse("<!DOCTYPE html><html><body><pre>%s</pre></body</html>" % json.dumps(journal)
         .replace("{", "\r\n{")
         .replace("}],", "}],\r\n\r\n")
+        .replace('\n{"', '    \n{"')
         )
     return JsonResponse(request, {"ok": True, "journal": journal})
 
