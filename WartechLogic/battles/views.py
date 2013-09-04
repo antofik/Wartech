@@ -146,7 +146,7 @@ class Fighter(object):
         self.goto = commands['goto'] if 'goto' in commands else None
 
         for shoot in commands['shoot']:
-            self.action('shoot', shoot)
+            self.action('shoot', **shoot)
         return commands['shoot']
 
     def set_position(self, x, y):
