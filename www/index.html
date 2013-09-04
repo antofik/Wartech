@@ -15,14 +15,20 @@
         </div>
         <div class="page" style="display: none"></div>
 
-        <script src="lib/jquery.cookie.js"></script>
-        <script src="js/api.js"></script>
-        <script src="js/auth.js"></script>
-        <script src="js/inventory.js"></script>
-        <script src="js/robot.js"></script>
-        <script src="js/template.js"></script>
-        <script src="js/page.js"></script>
-        <script src="js/page/configurator.js"></script>
-        <script src="js/page/login.js"></script>
+        <script src="lib/jquery.cookie.js" defer></script>
+        <script src="js/api.js" defer></script>
+        <script src="js/auth.js" defer></script>
+        <script src="js/inventory.js" defer></script>
+        <script src="js/robot.js" defer></script>
+        <script src="js/template.js" defer></script>
+        <script src="js/page.js" defer></script>
+        <script src="js/page/configurator.js" defer></script>
+        <script src="js/page/login.js" defer></script>
+
+        <script>
+            $(document).ready(function(){
+                page.show('fight');
+            });
+        </script>
     </body>
 </html>

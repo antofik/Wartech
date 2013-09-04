@@ -1,46 +1,47 @@
-.configurator {
-  .slot {
-    width: 120px;
-    height: 120px;
-    border: solid 1px #eee;
-    &:nth-child(odd) {
-      float: left;
-      clear: both;
-    }
-    &:nth-child(even) {
-      float: right;
-    }
-    &.power {
-        background: url('/img/slot/default/power.gif') no-repeat center;
-    }
-    &.gun {
-        background: url('/img/slot/default/gun.jpg') no-repeat center;
-    }
-    &.processor {
-        background: url('/img/slot/default/processor.jpg') no-repeat center;
-    }
-    &.logic {
-        background: url('/img/slot/default/logic.jpg') no-repeat center;
-    }
-    &.sensor {
-        background: url('/img/slot/default/sensor.jpg') no-repeat center;
-    }
-    &.motion {
-        background: url('/img/slot/default/motion.jpg') no-repeat center;
-    }
+.slot {
+  width: 120px;
+  height: 120px;
+  border: solid 1px #eee;
+  &:nth-child(odd) {
+    float: left;
+    clear: both;
   }
-  .hull{
-    position: relative;
-    .photo {
-      position: absolute;
-      left: 120px;
-      top: 0px;
-      width: 200px;
-      height: 480px;
-      float: left;
-    }
-    &.start {
-        width: 450px;
-    }
+  &:nth-child(even) {
+    float: right;
   }
+  &.power {
+      background: url('/img/slot/default/power.gif') no-repeat center;
+  }
+  &.gun {
+      background: url('/img/slot/default/gun.jpg') no-repeat center;
+  }
+  &.processor {
+      background: url('/img/slot/default/processor.jpg') no-repeat center;
+  }
+  &.logic {
+      background: url('/img/slot/default/logic.jpg') no-repeat center;
+  }
+  &.sensor {
+      background: url('/img/slot/default/sensor.jpg') no-repeat center;
+  }
+  &.motion {
+      background: url('/img/slot/default/motion.jpg') no-repeat center;
+  }
+}
+.hull{
+  position: relative;
+  .photo {
+    position: absolute;
+    left: 120px;
+    top: 0px;
+    width: 200px;
+    height: 480px;
+    float: left;
+  }
+  &.start {
+      width: 450px;
+  }
+}
+.field {
+  border: solid 1px grey;
 }

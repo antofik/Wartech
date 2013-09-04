@@ -5,6 +5,8 @@ api.init = function(callback) {
 };
 
 api.request = function(method, data, callback) {
+    callback = callback || console.log;
+    data = data || {}
     url = 'http://logic.wartech.pro/' + method;
     data.sessionid = $.cookie('sessionid')
     $.getJSON(url, data, function(reply) {
