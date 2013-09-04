@@ -126,7 +126,7 @@ class Fighter(object):
             'shoots': [],
         }
         self.tick_actions = defaultdict(list)
-        self.action(action='start', name=self.name, team=self.teamid)
+        self.action(action='start', team=self.teamid)
         self.action('health', value=self.health)
 
     def log(self, message):
@@ -174,7 +174,7 @@ class Fighter(object):
         d.update(args)
         self.actions[journal].append(d)
 
-        d = {'type': journal}
+        d = {'type': journal, 'name': self.name}
         d.update(args)
         self.tick_actions[self.tick].append(d)
 
