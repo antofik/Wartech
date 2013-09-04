@@ -23,11 +23,12 @@ def test_fight(request):
     user = User.objects.get(pk=request.session["user_id"])
     robots = list(user.robots.all())*int(get_value(request, 'count', 1))
     arena = Arena.objects.get(slug=get_value(request, 'arena', 'small'))
-    journal = fight(arena, robots, robots)
+    final, journal = fight(arena, robots, robots)
 
     ok, _ = get_request_values(request, 'human')
     if ok:
-        return HttpResponse("<!DOCTYPE html><html><body><pre>%s</pre></body</html>" % json.dumps(journal)
+        return HttpResponse(("<!DOCTYPE html><html><body><div style='color: blue;'>%s</div><br/><pre>%s</pre></body</html>" %
+                            (final, json.dumps(journal)))
         .replace("{", "\r\n{")
         .replace("}],", "}],\r\n\r\n")
         .replace('\n{"', '\n    {"')
@@ -229,6 +230,7 @@ def aggregate_action_journals(journals):
 
 
 def fight(arena, *teams):
+    final = ""
     fight_journal = []
     fight_start = datetime.now()
     fight_journal.append("Fight started at %s" % fight_start)
@@ -288,20 +290,24 @@ def fight(arena, *teams):
                 battlefield.remove_fighter(fighter)
 
         if len(alive_teams) == 0:
-            fight_journal.append("Fight finished: all are dead")
+            final = "Fight finished: all are dead"
+            fight_journal.append(final)
             break
         elif len(alive_teams) == 1:
-            fight_journal.append("Fight finished: team %s is winner" % alive_teams.pop())
+            final = "Fight finished: team %s is winner" % alive_teams.pop()
+            fight_journal.append(final)
             break
 
         if idle:
             idle_counter += 1
         if idle_counter > 100:
-            fight_journal.append("Fight finished: 100 cycles without shooting&hitting. It's really boring")
+            final = "Fight finished: 100 cycles without shooting&hitting. It's really boring"
+            fight_journal.append(final)
             break
 
         if (datetime.now() - fight_start).total_seconds() > 1:
-            fight_journal.append("Fight finished: exceeded time limit")
+            final = "Fight finished: exceeded time limit"
+            fight_journal.append(final)
             break
 
     max_tick = tick
@@ -313,5 +319,5 @@ def fight(arena, *teams):
             if tick in journal:
                 for item in journal[tick]:
                     result[tick].append(item)
-    return result
+    return final, result
 
