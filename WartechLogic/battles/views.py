@@ -22,7 +22,7 @@ def test_fight(request):
     if ok:
         return HttpResponse("<!DOCTYPE html><html><body><pre>%s</pre></body</html>" % json.dumps(journal)
         .replace("{", "\r\n{")
-        .replace("}],", "}],\r\n")
+        .replace("}],", "}],\r\n\r\n")
         )
     return JsonResponse(request, {"ok": True, "journal": journal})
 
@@ -126,7 +126,7 @@ class Fighter(object):
             'shoots': [],
         }
         self.tick_actions = defaultdict(list)
-        self.action(action='start')
+        self.action(action='start', name=self.name, team=self.teamid)
         self.action('health', value=self.health)
 
     def log(self, message):
@@ -174,7 +174,7 @@ class Fighter(object):
         d.update(args)
         self.actions[journal].append(d)
 
-        d = {'type': journal, 'name': self.name, 'teamid': self.teamid}
+        d = {'type': journal}
         d.update(args)
         self.tick_actions[self.tick].append(d)
 
