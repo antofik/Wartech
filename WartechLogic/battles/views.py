@@ -23,7 +23,7 @@ def test_fight(request):
     user = User.objects.get(pk=request.session["user_id"])
     robots = list(user.robots.all())*int(get_value(request, 'count', 1))
     arena = Arena.objects.get(slug=get_value(request, 'arena', 'small'))
-    final, journal = fight(arena, robots, robots)
+    final, journal = fight(arena, [robots]*int(get_value(request, "team_count", 2)))
 
     ok, _ = get_request_values(request, 'human')
     if ok:
