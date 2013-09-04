@@ -6,16 +6,15 @@
         <link rel="stylesheet" href="/css/main.css" />
     </head>
     <body>
-        <a href="" style="display: none" class="__auth-url" onclick="auth.login(); return false;">Авторизироваться с помощью vk.com</a>
-        <div class="wait">
+
+        <button onclick="page.show('configurator')">Конфигуратор</button>
+        <button onclick="page.show('fight')">Бой</button>
+        <button onclick="page.show('login')">Авторизация</button>
+        <div class="wait" style="display: none">
             Загрузка...
         </div>
-        <div class="page configurator" style="display: none">
-            <div class="hull"></div>
-            <div class="inventory">
+        <div class="page" style="display: none"></div>
 
-            </div>
-        </div>
         <script src="lib/jquery.cookie.js"></script>
         <script src="js/api.js"></script>
         <script src="js/auth.js"></script>
@@ -25,11 +24,5 @@
         <script src="js/page.js"></script>
         <script src="js/page/configurator.js"></script>
         <script src="js/page/login.js"></script>
-        <script>
-            $().ready(function(){
-                var currentPage = page.configurator;
-                currentPage.render();
-            });
-        </script>
     </body>
 </html>

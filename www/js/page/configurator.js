@@ -1,22 +1,27 @@
 page.configurator = {}
-page.configurator.render = function(){
+var initialized = false;
+
+page.configurator.init = function(callback){
+    if (initialized)
+        return callback();
+
     api.init(function(){
         api.isAuthorized(function(isAuthorized){
             if (isAuthorized) {
                 robot.init(function(robot){
-                    page.configurator.show();
+                    initialized = true;
+                    callback();
                 });
             } else {
                 auth.tryAuthorize(function(isAuthorized){
-                    $('.__auth-url').show();
+                    page.show('login');
                 })
             }
         })
     });
-
 }
 
-page.configurator.show = function(){
-    $('.wait').hide();
-    $('.page').show();
+page.configurator.render = function(onRendered){
+    onRendered();
 }
+
