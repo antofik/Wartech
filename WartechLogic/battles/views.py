@@ -82,6 +82,7 @@ class Battlefield(dict):
 
 class Fighter(object):
     def __init__(self, robot, teamid, journal=None):
+        self.tick = 0
         self.robot = robot
         self.teamid = teamid
         self.journal = journal
@@ -103,7 +104,10 @@ class Fighter(object):
         self.actions = {
             'name': self.name,
             'teamid': self.teamid,
-            'health': 100,
+            'general': [{'tick': 0, 'action': 'start'}],
+            'health': [{'tick': 0, 'value': 100}],
+            'movements': [],
+            'shoots': [],
         }
         self.log("slots: %s" % self.slots)
         self.log("found sensors: %s" % self.sensors)
@@ -111,11 +115,14 @@ class Fighter(object):
         self.log("found weapon analyzers: %s" % self.weapon_analyzers)
         self.log("found weapon: %s" % self.weapon)
 
+        self.action(action='start')
+
     def log(self, message):
         if self.journal:
             self.journal.append("----%s> %s" % (self.name, message))
 
-    def process(self, battlefield):
+    def process(self, tick, battlefield):
+        self.tick = tick
         data = defaultdict(list)
         for module in self.sensors:
             if module:
@@ -138,15 +145,25 @@ class Fighter(object):
 
     def set_position(self, x, y):
         self.x, self.y = x, y
+        self.action('movements', type='turn', x=self.x, y=self.y)
 
     def set_direction(self, direction):
         self.direction = direction
+        self.action('movements', type='turn', direction=self.direction)
 
     def remove(self):
-        pass
+        self.action(action='removed')
+
+    def action(self, journal='general', **args):
+        d = {'tick': self.tick}
+        d.update(args)
+        self.actions[journal].append(d)
 
     def bullet_hit(self, bullet):
         self.health -= 10
+        self.action('health', value=10)
+        if not self.alive:
+            self.action(action='dead')
         return -10
 
     @property
@@ -156,6 +173,10 @@ class Fighter(object):
     @property
     def name(self):
         return "R%s.%s" % (self.teamid, self.robot.id)
+
+    @property
+    def action_journal(self):
+        return self.actions
 
 
 def fight(arena, *teams):
@@ -174,8 +195,13 @@ def fight(arena, *teams):
     for fighter in fighters:
         battlefield.place_fighter_at_random_position(fighter)
 
+    all_fighters = list(fighters)
+
+    tick = 0
     idle_counter = 0
     while True:
+        tick += 1
+
         if not fighters:
             fight_journal.append("Fight finished: no more alive fighters found")
             break
@@ -184,7 +210,7 @@ def fight(arena, *teams):
         shoots = []
         for fighter in fighters:
             if fighter.alive:
-                bullets = fighter.process(battlefield)
+                bullets = fighter.process(tick, battlefield)
                 for bullet in bullets:
                     target = bullet['target']
                     fight_journal.append("%s fires at %s" % (fighter.name, target.name))
@@ -229,5 +255,5 @@ def fight(arena, *teams):
             fight_journal.append("Fight finished: exceeded time limit")
             break
 
-    return fight_journal
+    return {fighter.name: fighter.action_journal for fighter in all_fighters}
 
