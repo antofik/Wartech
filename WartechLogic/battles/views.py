@@ -103,21 +103,22 @@ class Fighter(object):
         self.weapon = [m for m in [WeaponModuleWrapper.create(module) for module in slots['weapon']] if m]
         self.health = 100
 
-        self.actions = {
-            'name': self.name,
-            'teamid': self.teamid,
-            'general': [{'tick': 0, 'action': 'start'}],
-            'health': [{'tick': 0, 'value': 100}],
-            'movements': [],
-            'shoots': [],
-        }
         self.log("slots: %s" % self.slots)
         self.log("found sensors: %s" % self.sensors)
         self.log("found analyzers: %s" % self.analyzers)
         self.log("found weapon analyzers: %s" % self.weapon_analyzers)
         self.log("found weapon: %s" % self.weapon)
 
+        self.actions = {
+            'name': self.name,
+            'teamid': self.teamid,
+            'general': [],
+            'health': [],
+            'movements': [],
+            'shoots': [],
+        }
         self.action(action='start')
+        self.action('health', value=self.health)
 
     def log(self, message):
         if self.journal:
@@ -143,6 +144,9 @@ class Fighter(object):
         self.log("result objects = %s" % data['objects'])
         commands = self.decision.process(data, self.weapon, self.motion, self.log)
         self.goto = commands['goto'] if 'goto' in commands else None
+
+        for shoot in commands['shoot']:
+            self.action('shoot', shoot)
         return commands['shoot']
 
     def set_position(self, x, y):
@@ -163,7 +167,7 @@ class Fighter(object):
 
     def bullet_hit(self, bullet):
         self.health -= 10
-        self.action('health', value=10)
+        self.action('health', value=self.health)
         if not self.alive:
             self.action(action='dead')
         return -10
