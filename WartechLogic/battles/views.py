@@ -7,7 +7,6 @@ from django.http import HttpResponse
 from logic_modules.eye import *
 from main.models import User
 from main.views import is_authorized, JsonResponse, get_request_values
-from pprint import pprint
 
 
 def test_fight(request):
@@ -22,7 +21,7 @@ def test_fight(request):
     ok, _ = get_request_values(request, 'human')
     if ok:
         HttpResponse("<!DOCTYPE html><html><body><pre>%s</pre></body</html>" % json.dumps(journal, sort_keys=False, indent=4))
-    return JsonResponse({"ok": True, "journal": journal})
+    return JsonResponse(request, {"ok": True, "journal": journal})
 
 
 class Battlefield(dict):
