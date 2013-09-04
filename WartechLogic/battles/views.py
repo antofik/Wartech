@@ -20,7 +20,10 @@ def test_fight(request):
 
     ok, _ = get_request_values(request, 'human')
     if ok:
-        return HttpResponse("<!DOCTYPE html><html><body><pre>%s</pre></body</html>" % json.dumps(journal).replace("{", "\r\n{"))
+        return HttpResponse("<!DOCTYPE html><html><body><pre>%s</pre></body</html>" % json.dumps(journal)
+        .replace("{", "\r\n{")
+        .replace("}],", "}],\r\n")
+        )
     return JsonResponse(request, {"ok": True, "journal": journal})
 
 
