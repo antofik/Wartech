@@ -44,7 +44,7 @@ def test_fight(request):
         "arena": {
             'width': arena.width,
             'height': arena.height,
-            'terrain': arena.terrain,
+            'terrain': json.loads(arena.terrain),
         }
     })
 
