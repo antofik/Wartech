@@ -1,37 +1,37 @@
-.configurator .slot {
+.slot {
   width: 120px;
   height: 120px;
   border: solid 1px #eee;
 }
-.configurator .slot:nth-child(odd) {
+.slot:nth-child(odd) {
   float: left;
   clear: both;
 }
-.configurator .slot:nth-child(even) {
+.slot:nth-child(even) {
   float: right;
 }
-.configurator .slot.power {
+.slot.power {
   background: url('/img/slot/default/power.gif') no-repeat center;
 }
-.configurator .slot.gun {
+.slot.gun {
   background: url('/img/slot/default/gun.jpg') no-repeat center;
 }
-.configurator .slot.processor {
+.slot.processor {
   background: url('/img/slot/default/processor.jpg') no-repeat center;
 }
-.configurator .slot.logic {
+.slot.logic {
   background: url('/img/slot/default/logic.jpg') no-repeat center;
 }
-.configurator .slot.sensor {
+.slot.sensor {
   background: url('/img/slot/default/sensor.jpg') no-repeat center;
 }
-.configurator .slot.motion {
+.slot.motion {
   background: url('/img/slot/default/motion.jpg') no-repeat center;
 }
-.configurator .hull {
+.hull {
   position: relative;
 }
-.configurator .hull .photo {
+.hull .photo {
   position: absolute;
   left: 120px;
   top: 0px;
@@ -39,6 +39,22 @@
   height: 480px;
   float: left;
 }
-.configurator .hull.start {
+.hull.start {
   width: 450px;
+}
+.arena {
+  border: solid 1px grey;
+  background: url('/img/arena/cell.png') 60px;
+  position: relative;
+}
+.arena .arena-object {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border: solid 1px red;
+}
+.coords {
+  position: absolute;
+  color: #ccc;
+  font-size: 16px;
 }

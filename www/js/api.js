@@ -53,3 +53,11 @@ api.login = function(token, provider, callback) {
         provider: provider
     }, callback);
 };
+
+api.testFight = function(callback){
+    return api.request('test_fight', {}, callback);
+}
+
+api.requestFight = function(callback){
+    return api.request('request_fight', {}, callback);
+}
