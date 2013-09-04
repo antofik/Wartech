@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
     <head>
         <title>WarTech</title>
@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="/css/main.css" />
     </head>
     <body>
-        <a href="" onclick="auth.login(); return false;">Авторизироваться с помощью vk.com</a>
+        <a href="" style="display: none" class="__auth-url" onclick="auth.login(); return false;">Авторизироваться с помощью vk.com</a>
         <div class="wait">
             Загрузка...
         </div>
@@ -17,39 +17,16 @@
             </div>
         </div>
         <script src="lib/jquery.cookie.js"></script>
-        <script src="js/all.js"></script>
+        <script src="js/api.js"></script>
+        <script src="js/auth.js"></script>
+        <script src="js/inventory.js"></script>
+        <script src="js/robot.js"></script>
+        <script src="js/template.js"></script>
+        <script src="js/page.js"></script>
         <script>
             $().ready(function(){
-                $.ajaxSetup({
-                    xhrFields: {
-                        withCredentials: true
-                    },
-                    crossDomain: true
-                });
-                api.init(function(){
-                    api.isAuthorized(function(isAuthrized){
-                        if (isAuthrized) {
-                            robot.init(function(){
-                                $('.wait').hide();
-                                $('.page').show();
-                            });
-                        } else {
-
-                        }
-                    })
-                });
-                if (matches = document.location.toString().match(/&code=(\w+)/)) {
-                    api.login(matches[1], 'vk', function(a, b, c, d){
-                        api.isAuthorized(function(isAuthrized){
-                            if (isAuthrized) {
-                                robot.init(function(){
-                                    $('.wait').hide();
-                                    $('.page').show();
-                                });
-                            }
-                        })
-                    });
-                }
+                var currentPage = page.configurator;
+                currentPage.render();
             });
         </script>
     </body>
