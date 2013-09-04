@@ -296,10 +296,12 @@ def fight(arena, *teams):
         for journal in journals:
             if tick in journal:
                 flag = True
-                result[tick].append(journal[tick])
+                for item in journal[tick]:
+                    result[tick].append(item)
         if flag:
             tick += 1
         else:
+            del result[tick]
             break
     return result
     #return [fighter.action_journal for fighter in all_fighters]
