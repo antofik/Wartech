@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9345266-ce5f-4564-9989-cce456f95f16" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+    <list default="true" id="a9345266-ce5f-4564-9989-cce456f95f16" name="Default" comment="test fight">
+      <change type="DELETED" beforePath="X:\Documents\Private\GitHub\Wartech\WartechLogic\.idea\workspace.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/battles/views.py" afterPath="$PROJECT_DIR$/battles/views.py" />
     </list>
     <ignored path="WartechLogic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378280337280" ignored="false" />
+    <file path="/Dummy.txt" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378280403614" ignored="false" />
     <file path="/models.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1377977470488" ignored="false" />
     <file path="/Django Console" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378210188519" ignored="false" />
     <file path="/views.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378280224163" ignored="false" />
@@ -23,7 +24,6 @@
     <file path="/test.html" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378116968753" ignored="false" />
     <file path="/middleware.py" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378190065432" ignored="false" />
     <file path="/a.dummy" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378212253077" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="a9345266-ce5f-4564-9989-cce456f95f16" time="1378280336753" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,8 +55,10 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/battles/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="24" selection-start="4258" selection-end="4258" vertical-scroll-proportion="0.17171717">
-              <folding />
+            <state line="111" column="32" selection-start="4397" selection-end="4397" vertical-scroll-proportion="0.24040404">
+              <folding>
+                <element signature="e#15#50#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -619,7 +621,11 @@
       <created>1378280349504</created>
       <updated>1378280349504</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="test fight">
+      <created>1378280362507</created>
+      <updated>1378280362508</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -809,8 +815,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/battles/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="24" selection-start="4258" selection-end="4258" vertical-scroll-proportion="0.17171717">
-          <folding />
+        <state line="111" column="32" selection-start="4397" selection-end="4397" vertical-scroll-proportion="0.24040404">
+          <folding>
+            <element signature="e#15#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
