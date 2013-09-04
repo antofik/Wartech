@@ -111,6 +111,7 @@ class Fighter(object):
         self.motion = MotionWrapper(slots['motion'])
         self.weapon = [m for m in [WeaponModuleWrapper.create(module) for module in slots['weapon']] if m]
         self.health = 100
+        self.id = random.randint(10, 99)
 
         self.log("slots: %s" % self.slots)
         self.log("found sensors: %s" % self.sensors)
@@ -192,7 +193,7 @@ class Fighter(object):
 
     @property
     def name(self):
-        return "R%s.%s" % (self.teamid, self.robot.id)
+        return "R%s" % (self.id)
 
     @property
     def action_journal(self):
