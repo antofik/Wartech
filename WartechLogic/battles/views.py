@@ -293,16 +293,13 @@ def fight(arena, *teams):
             break
 
     max_tick = tick
-    tick = 0
     journals = [fighter.tick_action_journal for fighter in all_fighters]
     result = {}
-    while True:
+    for tick in xrange(max_tick + 1):
         result[tick] = []
         for journal in journals:
             if tick in journal:
                 for item in journal[tick]:
                     result[tick].append(item)
-        if tick > max_tick:
-            break
     return result
 
