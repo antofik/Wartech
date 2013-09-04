@@ -18,10 +18,10 @@ def test_fight(request):
     arena = Arena.objects.get(slug='small')
     journal = fight(arena, robots, robots)
 
-    ok, _ = get_request_values(request, 'human', 'human')
+    ok, _ = get_request_values(request, 'human')
     if ok:
-        HttpResponse("<!DOCTYPE html><html><body><pre>%s</pre></body</html>" % json.dumps(journal, sort_keys=False, indent=4))
-    return JsonResponse(request, {"test": ok, "ok": True, "journal": journal})
+        return HttpResponse("<!DOCTYPE html><html><body><pre>%s</pre></body</html>" % json.dumps(journal, sort_keys=False, indent=4))
+    return JsonResponse(request, {"ok": True, "journal": journal})
 
 
 class Battlefield(dict):
