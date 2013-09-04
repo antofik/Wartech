@@ -7,15 +7,35 @@
 		<span class='span12'>Configurator</span>
 	</div>
 	<div class='row-fluid'>
-		<a href='#'>Get your robot</a>
+		<a href='javascript:void(0);' class='get-robot'>Get your robot</a>
 	</div>
 	<div class='row-fluid'>
-		<a href='#'>Get list of available modules</a>
+		<a class='get-modules' href='javascript:void(0);'>Get list of available modules</a>
 	</div>
 	<br/>
 	<div class='row-fluid'>
-		<a class='btn btn-large btn-info' href='arena'>Fight</a>
+		<a class='fight btn btn-large btn-info' href='javascript:void(0);'>Fight</a>
 	</div>
 </div>
 
+{% endblock %}
+
+{% block javascript %}
+    <script>
+        $(function(){
+            $('.get-robot').click(function(){
+                $.get('http://logic.wartech.pro/get_user_robot', function(data){
+                    alert(data);
+                })
+            });
+            $('.get-modules').click(function(){
+                $.get('http://logic.wartech.pro/get_all_modules', function(data){
+                    alert(data);
+                })
+            });
+            $('.fight').click(function(){
+                location.href = '/arena';
+            });
+        });
+    </script>
 {% endblock %}

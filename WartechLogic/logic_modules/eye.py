@@ -10,6 +10,7 @@ class SensorWrapper(object):
     def __init__(self, fighter, module):
         self.fighter = fighter
         self.module = module
+        self.priority = module.proto.priority
 
     @staticmethod
     def create(fighter, module):
@@ -23,6 +24,8 @@ class SensorWrapper(object):
 
 
 class EyeModule(SensorWrapper):
+    MAX_EYE_POWER = 1000
+
     def process(self, battlefield):
         """
         module should contain parameter 'field_of_vision'
@@ -69,7 +72,7 @@ class EyeModule(SensorWrapper):
         parameters = json.loads(self.module.proto.parameters)
         field_of_vision = parameters['field_of_vision']
         result = []
-        for i in xrange(1, 1000):
+        for i in range(1, EyeModule.MAX_EYE_POWER):
             key = str(i)
             if key not in field_of_vision:
                 break
@@ -96,6 +99,7 @@ class AnalyzerWrapper(object):
     def __init__(self, fighter, module):
         self.fighter = fighter
         self.module = module
+        self.priority = module.proto.priority
 
     @staticmethod
     def create(fighter, module):
@@ -109,6 +113,8 @@ class AnalyzerWrapper(object):
             factory = RangeFinderModule
         elif slot == "random_roving":
             factory = RandomRovingModule
+        elif slot == "fire_at_random_enemy":
+            factory = GetTargetsInFirezoneModule
         if factory:
             return factory(fighter, module)
         return None
@@ -126,7 +132,7 @@ class MotionWrapper(object):
 class ObjectDetectorModule(AnalyzerWrapper):
     def process(self, data):
         if 'visual' in data:
-            data['objects'] = self.process_visual(data['visual'])
+            return {'objects': self.process_visual(data['visual'])}
         return {}
 
     def process_visual(self, data):
@@ -135,8 +141,8 @@ class ObjectDetectorModule(AnalyzerWrapper):
             type = item['object']['type']
             if type == 'fighter':
                 result.append(item)
-            elif isinstance(item['object'], int):
-                if item['object'] != Arena.EMPTY:
+            elif isinstance(item['object']['object'], int):
+                if item['object']['object'] != Arena.EMPTY:
                     result.append(item)
         return result
 
@@ -174,8 +180,7 @@ class RangeFinderModule(AnalyzerWrapper):
 
 class RandomRovingModule(AnalyzerWrapper):
     def process(self, data):
-        direction = random.randint(0, 5)
-        return {'goto': {'vector': DIRECTIONS[direction], 'priority': 0}}
+        return {'goto': {'direction': random.randint(0, 5), 'vector': DIRECTIONS[self.fighter.direction], 'priority': 0}}
 
 
 class WeaponModuleWrapper(object):
@@ -184,7 +189,7 @@ class WeaponModuleWrapper(object):
 
     @staticmethod
     def create(module):
-        return GetTargetsInFirezoneModule(module)
+        return WeaponModuleWrapper(module)
 
     def get_bullet(self):
         return None
@@ -194,33 +199,40 @@ class WeaponModuleWrapper(object):
         return 10
 
 
-class GetTargetsInFirezoneModule(WeaponModuleWrapper):
-    def process(self, data, weapon):
+class GetTargetsInFirezoneModule(AnalyzerWrapper):
+    def process(self, data, weapon, log):
         result = []
         if 'objects' in data:
             for object in data['objects']:
                 if 'distance' in object and object['distance'] <= weapon.range:
-                    if object['type'] == 'fighter' and 'is_friend' in object and not object['is_friend']:
+                    if object['object']['type'] == 'fighter' and \
+                            'is_friend' in object and not object['is_friend'] and \
+                            object['object']['object'].alive:
                         result.append(object)
         weapon.targets = result
+        return {}
 
 
 class DecisionMaker(object):
-    def __init__(self, fighter):
+    def __init__(self, fighter, decision_module):
         self.fighter = fighter
+        self.decision_module = decision_module
 
     def process(self, data, weapons, motion, log):
-        commands = {'shoot': [], 'goto': (0, 0)}
+        commands = {'shoot': []}
         can_fire = False
         for weapon in weapons:
             if hasattr(weapon, 'targets') and weapon.targets:
                 target = random.choice(weapon.targets)
-                commands['shoot'].append({'bullet': weapon.get_bullet(), 'target': target, 'target_position': target['position']})
+                x, y = self.fighter.x, self.fighter.y
+                dx, dy = target['position']
+                commands['shoot'].append({'bullet': weapon.get_bullet(), 'target': target['object']['object'],
+                                          'target_position': (x + dx, y + dy)})
                 can_fire = True
                 log("weapon %s can fire at %s" % (weapon, target))
         if not can_fire and not motion.busy:
             if 'goto' in data and data['goto']:
-                commands['goto'] = data['goto']['vector']
+                commands['goto'] = data['goto']
             else:
                 log("will not go: data=%s" % data)
         else:
