@@ -21,19 +21,32 @@ def test_fight(request):
         return JsonResponse(request, {"ok": False, "error_reason": "Not authorized"})
 
     user = User.objects.get(pk=request.session["user_id"])
-    robots = list(user.robots.all())*int(get_value(request, 'count', 1))
+    robots = list(user.robots.all()) * int(get_value(request, 'count', 1))
     arena = Arena.objects.get(slug=get_value(request, 'arena', 'small'))
-    final, journal = fight(arena, *([robots]*int(get_value(request, "team_count", 2))))
+    fight_result = fight(arena, *([robots] * int(get_value(request, "team_count", 2))))
+    journal = fight_result['journal']
+    final = fight_result['final']
 
     ok, _ = get_request_values(request, 'human')
     if ok:
-        return HttpResponse(("<!DOCTYPE html><html><body><div style='color: blue;'>%s</div><br/><pre>%s</pre></body</html>" %
-                            (final, json.dumps(journal)))
-        .replace("{", "\r\n{")
-        .replace("}],", "}],\r\n\r\n")
-        .replace('\n{"', '\n    {"')
+        return HttpResponse(
+            ("<!DOCTYPE html><html><body><div style='color: blue;'>%s</div><br/><pre>%s</pre></body</html>" %
+             (final, json.dumps(journal)))
+            .replace("{", "\r\n{")
+            .replace("}],", "}],\r\n\r\n")
+            .replace('\n{"', '\n    {"')
         )
-    return JsonResponse(request, {"ok": True, "journal": journal})
+    return JsonResponse(request, {
+        "ok": True,
+        "journal": journal,
+        "final_message": final,
+        "time_elapsed": fight_result["time_elapsed"],
+        "arena": {
+            'width': arena.width,
+            'height': arena.height,
+            'terrain': arena.terrain,
+        }
+    })
 
 
 class Battlefield(dict):
@@ -47,18 +60,18 @@ class Battlefield(dict):
 
     def translate_point_to_hexagone(self, i):
         x, y = divmod(i, self.arena.width)
-        y = -(y//2)
+        y = -(y // 2)
         return x, y
 
     def place_fighter_at_random_position(self, fighter):
         counter = 1000
         while counter:
             counter -= 1
-            x, y = self.translate_point_to_hexagone(random.randint(0, self.arena.width*self.arena.height - 1))
+            x, y = self.translate_point_to_hexagone(random.randint(0, self.arena.width * self.arena.height - 1))
             if self[x, y] == Arena.EMPTY:
                 self[x, y] = fighter
-                fighter.set_position(x, y)
-                fighter.set_direction(random.randint(0, 5))
+                fighter.set_position(x, y, start=True)
+                fighter.set_direction(random.randint(0, 5), start=True)
                 self.fight_journal.append("%s placed at (%s, %s)" % (fighter.name, x, y))
                 break
         if not counter:
@@ -113,13 +126,14 @@ class Fighter(object):
         self.sensors.sort(key=lambda item: item.priority)
         self.analyzers = [m for m in [AnalyzerWrapper.create(self, module) for module in slots['analyzer']] if m]
         self.analyzers.sort(key=lambda item: item.priority)
-        self.weapon_analyzers = [m for m in [AnalyzerWrapper.create(self, module) for module in slots['weapon_analyzer']] if m]
+        self.weapon_analyzers = [m for m in
+                                 [AnalyzerWrapper.create(self, module) for module in slots['weapon_analyzer']] if m]
         self.weapon_analyzers.sort(key=lambda item: item.priority)
         self.decision = DecisionMaker(self, slots['decision'])
         self.motion = MotionWrapper(slots['motion'])
         self.weapon = [m for m in [WeaponModuleWrapper.create(module) for module in slots['weapon']] if m]
         self.health = 100
-        self.id = random.randint(10, 99)
+        self.id = random.randint(100, 999)
 
         self.log("slots: %s" % self.slots)
         self.log("found sensors: %s" % self.sensors)
@@ -173,13 +187,13 @@ class Fighter(object):
             self.action('shoots', bullet='TODO', target_position=shoot['target_position'])
         return commands['shoot']
 
-    def set_position(self, x, y):
+    def set_position(self, x, y, start=False):
         self.x, self.y = x, y
-        self.action('movements', type='move', x=self.x, y=self.y)
+        self.action('movements', type='move' if not start else 'start_position', x=self.x, y=self.y)
 
-    def set_direction(self, direction):
+    def set_direction(self, direction, start=False):
         self.direction = direction
-        self.action('movements', type='turn', direction=self.direction)
+        self.action('movements', type='turn' if not start else 'start_direction', direction=self.direction)
 
     def remove(self):
         self.action(action='removed')
@@ -206,7 +220,7 @@ class Fighter(object):
 
     @property
     def name(self):
-        return "R%s" % (self.id)
+        return "R%s.%s" % (self.teamid, self.id)
 
     @property
     def action_journal(self):
@@ -243,7 +257,7 @@ def fight(arena, *teams):
     battlefield = Battlefield(arena, fight_journal)
     fighters = []
     for robots in teams:
-        teamid = random.randint(0, 100)
+        teamid = random.randint(10, 99)
         for robot in robots:
             fighter = Fighter(robot, teamid, fight_journal)
             fighters.append(fighter)
@@ -330,5 +344,9 @@ def fight(arena, *teams):
             if tick in journal:
                 for item in journal[tick]:
                     result[tick].append(item)
-    return final, result
+    return {
+        'final_message': final,
+        'log': result,
+        'time_elapsed': (datetime.now() - fight_start).total_seconds()
+    }
 
