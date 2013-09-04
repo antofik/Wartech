@@ -21,7 +21,7 @@ def test_fight(request):
     ok, _ = get_request_values(request, 'human', 'human')
     if ok:
         HttpResponse("<!DOCTYPE html><html><body><pre>%s</pre></body</html>" % json.dumps(journal, sort_keys=False, indent=4))
-    return JsonResponse(request, {"ok": True, "journal": journal})
+    return JsonResponse(request, {"test": ok, "ok": True, "journal": journal})
 
 
 class Battlefield(dict):
@@ -292,21 +292,17 @@ def fight(arena, *teams):
             fight_journal.append("Fight finished: exceeded time limit")
             break
 
+    max_tick = tick
     tick = 0
     journals = [fighter.tick_action_journal for fighter in all_fighters]
     result = {}
     while True:
         result[tick] = []
-        flag = False
         for journal in journals:
             if tick in journal:
-                flag = True
                 for item in journal[tick]:
                     result[tick].append(item)
-        if flag:
-            tick += 1
-        else:
-            del result[tick]
+        if tick > max_tick:
             break
     return result
 
