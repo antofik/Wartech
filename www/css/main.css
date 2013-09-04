@@ -1,35 +1,35 @@
-.configurator .hull {
-  position: relative;
-}
-.configurator .hull .slot {
+.configurator .slot {
   width: 120px;
   height: 120px;
   border: solid 1px #eee;
 }
-.configurator .hull .slot:nth-child(odd) {
+.configurator .slot:nth-child(odd) {
   float: left;
   clear: both;
 }
-.configurator .hull .slot:nth-child(even) {
+.configurator .slot:nth-child(even) {
   float: right;
 }
-.configurator .hull .slot.power {
+.configurator .slot.power {
   background: url('/img/slot/default/power.gif') no-repeat center;
 }
-.configurator .hull .slot.gun {
+.configurator .slot.gun {
   background: url('/img/slot/default/gun.jpg') no-repeat center;
 }
-.configurator .hull .slot.processor {
+.configurator .slot.processor {
   background: url('/img/slot/default/processor.jpg') no-repeat center;
 }
-.configurator .hull .slot.logic {
+.configurator .slot.logic {
   background: url('/img/slot/default/logic.jpg') no-repeat center;
 }
-.configurator .hull .slot.sensor {
+.configurator .slot.sensor {
   background: url('/img/slot/default/sensor.jpg') no-repeat center;
 }
-.configurator .hull .slot.motion {
+.configurator .slot.motion {
   background: url('/img/slot/default/motion.jpg') no-repeat center;
+}
+.configurator .hull {
+  position: relative;
 }
 .configurator .hull .photo {
   position: absolute;
@@ -39,6 +39,6 @@
   height: 480px;
   float: left;
 }
-.configurator .hull.monster {
+.configurator .hull.start {
   width: 450px;
 }

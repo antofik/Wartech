@@ -5,9 +5,9 @@ robot.init = function(callback) {
     var c = function(){
         count--;
         if (count == 0) {
-            url = 'hull/' + robot[0].hull.name;
+            url = 'hull/' + robot[0].hull.slug;
             template.load(url, function(reply){
-                $('.hull').html(reply).addClass(robot.hull_name);
+                $('.hull').html(reply).addClass(robot[0].hull.slug);
                 callback(robot);
             });
         }
