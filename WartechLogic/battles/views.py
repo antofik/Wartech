@@ -18,7 +18,7 @@ def test_fight(request):
     robots = user.robots.all()
     arena = Arena.objects.get(slug='small')
     journal = fight(arena, robots, robots)
-    return HttpResponse(pprint(journal))
+    return HttpResponse(json.dumps(journal, sort_keys=False, indent=4))
 
 
 class Battlefield(dict):
