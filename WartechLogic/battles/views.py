@@ -274,6 +274,7 @@ def fight(arena, *teams):
             target = battlefield[shoot['target_position']]
             if isinstance(target, Fighter):
                 idle = False
+                idle_counter = 0
                 bullet = shoot['bullet']
                 hit = target.bullet_hit(bullet)
                 fight_journal.append("%s received %s damage" % (target.name, hit))
