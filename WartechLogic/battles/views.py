@@ -40,8 +40,8 @@ class Battlefield(dict):
             x, y = self.translate_point_to_hexagone(random.randint(0, self.arena.width*self.arena.height - 1))
             if self[x, y] == Arena.EMPTY:
                 self[x, y] = fighter
-                fighter.x, fighter.y = x, y
-                fighter.direction = random.randint(0, 5)
+                fighter.set_position(x, y)
+                fighter.set_direction(random.randint(0, 5))
                 self.fight_journal.append("%s placed at (%s, %s)" % (fighter.name, x, y))
                 break
         if not counter:
@@ -60,7 +60,9 @@ class Battlefield(dict):
         return {'type': type, 'object': object}
 
     def move_fighter(self, fighter):
-        dx, dy = fighter.goto
+        dx, dy = fighter.goto['vector']
+        direction = fighter.goto['direction']
+        fighter.set_direction(direction)
         if dx == dy == 0:
             self.fight_journal.append("%s stays" % fighter.name)
         else:
@@ -69,17 +71,17 @@ class Battlefield(dict):
                 self.fight_journal.append("%s moving (%s, %s) at (%s, %s)" % (fighter.name, dx, dy, x, y))
                 self[fighter.x, fighter.y] = Arena.EMPTY
                 self[x, y] = fighter
-                fighter.x, fighter.y = x, y
+                fighter.set_position(x, y)
             else:
                 self.fight_journal.append("%s fails to move (%s, %s)" % (fighter.name, dx, dy))
 
     def remove_fighter(self, fighter):
         self[fighter.x, fighter.y] = Arena.EMPTY
+        fighter.remove()
 
 
 class Fighter(object):
     def __init__(self, robot, teamid, journal=None):
-        #self.
         self.robot = robot
         self.teamid = teamid
         self.journal = journal
@@ -98,6 +100,11 @@ class Fighter(object):
         self.weapon = [m for m in [WeaponModuleWrapper.create(module) for module in slots['weapon']] if m]
         self.health = 100
 
+        self.actions = {
+            'name': self.name,
+            'teamid': self.teamid,
+            'health': 100,
+        }
         self.log("slots: %s" % self.slots)
         self.log("found sensors: %s" % self.sensors)
         self.log("found analyzers: %s" % self.analyzers)
@@ -128,6 +135,15 @@ class Fighter(object):
         commands = self.decision.process(data, self.weapon, self.motion, self.log)
         self.goto = commands['goto']
         return commands['shoot']
+
+    def set_position(self, x, y):
+        self.x, self.y = x, y
+
+    def set_direction(self, direction):
+        self.direction = direction
+
+    def remove(self):
+        pass
 
     def bullet_hit(self, bullet):
         self.health -= 10

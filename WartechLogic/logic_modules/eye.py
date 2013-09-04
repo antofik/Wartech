@@ -178,8 +178,7 @@ class RangeFinderModule(AnalyzerWrapper):
 
 class RandomRovingModule(AnalyzerWrapper):
     def process(self, data):
-        self.fighter.direction = random.randint(0, 5)
-        return {'goto': {'vector': DIRECTIONS[self.fighter.direction], 'priority': 0}}
+        return {'goto': {'direction': random.randint(0, 5), 'vector': DIRECTIONS[self.fighter.direction], 'priority': 0}}
 
 
 class WeaponModuleWrapper(object):
@@ -231,7 +230,7 @@ class DecisionMaker(object):
                 log("weapon %s can fire at %s" % (weapon, target))
         if not can_fire and not motion.busy:
             if 'goto' in data and data['goto']:
-                commands['goto'] = data['goto']['vector']
+                commands['goto'] = data['goto']
             else:
                 log("will not go: data=%s" % data)
         else:
