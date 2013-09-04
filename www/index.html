@@ -1,0 +1,34 @@
+﻿<!doctype html>
+<html>
+    <head>
+        <title>WarTech</title>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <link rel="stylesheet" href="/css/main.css" />
+    </head>
+    <body>
+
+        <button onclick="page.show('configurator')">Конфигуратор</button>
+        <button onclick="page.show('fight')">Бой</button>
+        <button onclick="page.show('login')">Авторизация</button>
+        <div class="wait" style="display: none">
+            Загрузка...
+        </div>
+        <div class="page" style="display: none"></div>
+
+        <script src="lib/jquery.cookie.js" defer></script>
+        <script src="js/api.js" defer></script>
+        <script src="js/auth.js" defer></script>
+        <script src="js/inventory.js" defer></script>
+        <script src="js/robot.js" defer></script>
+        <script src="js/template.js" defer></script>
+        <script src="js/page.js" defer></script>
+        <script src="js/page/configurator.js" defer></script>
+        <script src="js/page/login.js" defer></script>
+
+        <script>
+            $(document).ready(function(){
+                page.show('fight');
+            });
+        </script>
+    </body>
+</html>
