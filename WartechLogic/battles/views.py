@@ -25,7 +25,7 @@ def test_fight(request):
     arena = Arena.objects.get(slug=get_value(request, 'arena', 'small'))
     fight_result = fight(arena, *([robots] * int(get_value(request, "team_count", 2))))
     journal = fight_result['journal']
-    final = fight_result['final']
+    final = fight_result['final_message']
 
     ok, _ = get_request_values(request, 'human')
     if ok:
