@@ -10,9 +10,9 @@ page.show = function(pageName){
         var config = page[pageName].config || {};
 
         var show = function(){
+            $('title').html(config.title || pageName);
             page[pageName].init(function(){
                 page[pageName].render(function(){
-                    $('title').html(config.title || pageName);
                     $('.page').show();
                     $('.wait').hide();
                 });
@@ -44,8 +44,10 @@ page.load = function(pageName, callback){
     var url = 'js/page/' + pageName + '.js';
     $.ajax({
         url: url,
+        dataType: 'html',
         success: function(reply){
             eval(reply);
+            cache[pageName] = true;
             callback();
         }
     });
