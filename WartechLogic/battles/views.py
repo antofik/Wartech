@@ -141,7 +141,7 @@ class Fighter(object):
 
         for module in slots['sensor']:
             if module.proto.slug == 'eye':
-                self.action(action='eye', configuration=module.proto.parameters)
+                self.action(action='eye', configuration=json.loads(module.proto.parameters))
 
 
     def log(self, message):
