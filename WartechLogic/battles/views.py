@@ -139,6 +139,11 @@ class Fighter(object):
         self.action(action='start', team=self.teamid)
         self.action('health', value=self.health)
 
+        for module in slots['sensor']:
+            if module.proto.slug == 'eye':
+                self.action(action='eye', configuration=module.proto.parameters)
+
+
     def log(self, message):
         if self.journal:
             self.journal.append("----%s> %s" % (self.name, message))
