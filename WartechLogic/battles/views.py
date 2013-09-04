@@ -14,7 +14,7 @@ def test_fight(request):
         return JsonResponse(request, {"ok": False, "error_reason": "Not authorized"})
 
     user = User.objects.get(pk=request.session["user_id"])
-    robots = user.robots.all()
+    robots = list(user.robots.all())*2
     arena = Arena.objects.get(slug='small')
     journal = fight(arena, robots, robots)
 
