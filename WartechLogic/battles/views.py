@@ -9,13 +9,20 @@ from main.models import User
 from main.views import is_authorized, JsonResponse, get_request_values
 
 
+def get_value(request, key, default_value):
+    ok, values = get_request_values(request, key)
+    if ok:
+        return values[0]
+    return default_value
+
+
 def test_fight(request):
     if not is_authorized(request):
         return JsonResponse(request, {"ok": False, "error_reason": "Not authorized"})
 
     user = User.objects.get(pk=request.session["user_id"])
-    robots = list(user.robots.all())*2
-    arena = Arena.objects.get(slug='small')
+    robots = list(user.robots.all())*int(get_value(request, 'count', 1))
+    arena = Arena.objects.get(slug=get_value(request, 'arena', 'small'))
     journal = fight(arena, robots, robots)
 
     ok, _ = get_request_values(request, 'human')
