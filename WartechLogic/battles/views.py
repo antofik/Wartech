@@ -294,7 +294,12 @@ def fight(arena, *teams):
             fight_journal.append(final)
             break
         elif len(alive_teams) == 1:
-            final = "Fight finished: team %s is winner" % alive_teams.pop()
+            final = "Fight finished: team %s is winner. Alive: %s. Dead: %s" % \
+                    (
+                        alive_teams.pop(),
+                        ",".join([f.name for f in all_fighters if f.alive]),
+                        ",".join([f.name for f in all_fighters if not f.alive]),
+                    )
             fight_journal.append(final)
             break
 
