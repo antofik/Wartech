@@ -311,7 +311,7 @@ def fight(arena, *teams):
             fight_journal.append(final)
             break
 
-        if (datetime.now() - fight_start).total_seconds() > 1:
+        if (datetime.now() - fight_start).total_seconds() > 3:
             final = "Fight finished: exceeded time limit"
             fight_journal.append(final)
             break
