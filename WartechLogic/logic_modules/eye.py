@@ -24,6 +24,8 @@ class SensorWrapper(object):
 
 
 class EyeModule(SensorWrapper):
+    MAX_EYE_POWER = 1000
+
     def process(self, battlefield):
         """
         module should contain parameter 'field_of_vision'
@@ -70,7 +72,7 @@ class EyeModule(SensorWrapper):
         parameters = json.loads(self.module.proto.parameters)
         field_of_vision = parameters['field_of_vision']
         result = []
-        for i in xrange(1, 1000):
+        for i in range(1, EyeModule.MAX_EYE_POWER):
             key = str(i)
             if key not in field_of_vision:
                 break
@@ -217,7 +219,7 @@ class DecisionMaker(object):
         self.decision_module = decision_module
 
     def process(self, data, weapons, motion, log):
-        commands = {'shoot': [], 'goto': (0, 0)}
+        commands = {'shoot': []}
         can_fire = False
         for weapon in weapons:
             if hasattr(weapon, 'targets') and weapon.targets:

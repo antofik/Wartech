@@ -60,6 +60,8 @@ class Battlefield(dict):
         return {'type': type, 'object': object}
 
     def move_fighter(self, fighter):
+        if not fighter.goto:
+            return
         dx, dy = fighter.goto['vector']
         direction = fighter.goto['direction']
         fighter.set_direction(direction)
@@ -140,7 +142,7 @@ class Fighter(object):
         self.log("result visual = %s" % data['visual'])
         self.log("result objects = %s" % data['objects'])
         commands = self.decision.process(data, self.weapon, self.motion, self.log)
-        self.goto = commands['goto']
+        self.goto = commands['goto'] if 'goto' in commands else None
         return commands['shoot']
 
     def set_position(self, x, y):
