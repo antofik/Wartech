@@ -60,7 +60,7 @@ class Battlefield(dict):
 
     def translate_point_to_hexagone(self, i):
         x, y = divmod(i, self.arena.width)
-        y = -(y // 2)
+        x = -(y // 2)
         return x, y
 
     def place_fighter_at_random_position(self, fighter):
