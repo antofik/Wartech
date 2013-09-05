@@ -27,6 +27,10 @@ def test_fight(request):
     journal = fight_result['journal']
     final = fight_result['final_message']
 
+    ok, _ = get_request_values(request, "journal")
+    if ok:
+        return JsonResponse(request, fight_result['journal'])
+
     ok, _ = get_request_values(request, 'human')
     if ok:
         return HttpResponse(
@@ -347,6 +351,7 @@ def fight(arena, *teams):
     return {
         'final_message': final,
         'journal': result,
-        'time_elapsed': (datetime.now() - fight_start).total_seconds()
+        'time_elapsed': (datetime.now() - fight_start).total_seconds(),
+        'fight_journal': {fighter.name:fighter.action_journal for fighter in all_fighters},
     }
 
