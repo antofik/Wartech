@@ -29,7 +29,7 @@ def test_fight(request):
 
     ok, _ = get_request_values(request, "journal")
     if ok:
-        return JsonResponse(request, fight_result['journal'])
+        return JsonResponse(request, fight_result['fight_journal'])
 
     ok, _ = get_request_values(request, 'human')
     if ok:
