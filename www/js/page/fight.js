@@ -36,8 +36,8 @@ page.fight.render = function(callback){
         c();
     });
 }
-var tickInterval = 500;
-var interval = 500;
+var tickInterval = 1000;
+var interval = 1000;
 
 var list = {};
 var beginFight = function(fight){
@@ -57,6 +57,13 @@ var beginFight = function(fight){
 						case 'start':
                             list[val.name] = new robot(val.name);
 							break;
+                        case 'dead':
+                            break;
+                        case 'removed':
+                            var item = list[val.name];
+                            item.remove();
+                            delete list[val.name];
+                            break;
                         default:
                             console.log('Unknown action: ', val.action, val);
                             break;
@@ -78,11 +85,12 @@ var beginFight = function(fight){
                     var item = list[val.name];
                     item.direction = val.direction;
 					break;
+
                 case 'shoots':
-                    var targetPosition = arena.convertCoords(val.target_position[0], val.target_position[1]);
+                    var t = arena.convertCoords(val.target_position[0], val.target_position[1]);
                     var startPosition = list[val.name].getShootCoords();
-                    var s = new shoot(startPosition, targetPosition);
-                    s.animateTick(interval);
+                    var s = new shoot(startPosition, [t[0]+15, t[1]+15]);
+                    s.animateTick(interval / 2);
                     break;
                 default:
                     console.log('Unknown type: ', type, val);

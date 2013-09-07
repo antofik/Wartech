@@ -107,7 +107,14 @@ function robot(name)
 
     this.getShootCoords = function()
     {
-        return this.position;
+        var x = this.position[0] + 20;
+        var y = this.position[1] + 15;
+        return [x, y];
+    }
+
+    this.remove = function()
+    {
+        $(this.objWrap).remove();
     }
 
 

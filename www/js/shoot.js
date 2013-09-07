@@ -1,6 +1,5 @@
 function shoot(startPosition, endPosition)
 {
-    console.log(startPosition, endPosition);
     var width = 30;
     var height = 30;
     var that = this;
