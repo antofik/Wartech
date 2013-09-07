@@ -55,7 +55,7 @@ var beginFight = function(fight){
                         case 'start':
                             var obj = {};
                             var html = '<div class="arena-object">' +
-                                            '<div class="health">-</div>' +
+                                            '<div class="health"><div></div></div>' +
                                             '<div class="name">' + val.name + '</div>' +
                                         '</div>';
                             $(wrap).append(html);
