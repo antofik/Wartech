@@ -91,8 +91,8 @@ function robot(name)
             width: that.width,
             height: that.height
         });
-        var rect = svg.rect(obj, -20, -15, 40, 30, {fill: '#fce', stroke: 'black', fill: 'transparent'});
-        var gun = svg.rect(obj, 20, -1, 30, 1, {fill: '#fce', stroke: 'black', fill: 'transparent'});
+        var rect = svg.rect(obj, -20, -15, 40, 30, {fill: '#fce', stroke: 'black'});
+        var gun = svg.rect(obj, 20, -1, 30, 1, {fill: '#fce', stroke: 'black'});
 
         var robotDebug = $('.debug .robotPoint');
         $(obj).hover(function(){
