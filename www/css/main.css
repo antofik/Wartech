@@ -43,25 +43,22 @@
   width: 450px;
 }
 .arena {
-  border: solid 1px grey;
-  background: url('/img/arena/cell.png') 60px;
-  position: relative;
+  width: 800px;
+  height: 600px;
+  border: 1px solid #eee;
 }
-.arena .arena-object {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  border: solid 1px red;
+.arena polygon {
+  fill: transparent;
 }
-.arena .arena-object .health {
-  background: red;
-}
-.arena .arena-object .health div {
-  height: 5px;
-  background: green;
+.arena polygon:hover {
+  fill: #eee;
 }
 .coords {
   position: absolute;
   color: #ccc;
   font-size: 16px;
+}
+.svg_error {
+  color: red;
+  font-weight: bold;
 }

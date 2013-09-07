@@ -2,6 +2,7 @@ page = {};
 var cache = {};
 page.show = function(pageName){
     page.load(pageName, function(){
+		location = '/#' + pageName;
 
         $('.page')[0].className='page ' + pageName;
         $('.page').hide().html('');
