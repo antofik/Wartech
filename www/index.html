@@ -30,8 +30,12 @@
         <div class="page" style="display: none"></div>
         <script>
             $(document).ready(function(){
-                var pageName = document.location.toString().match(/#\w+/)[0] || '#fight';
-                pageName = pageName.replace('#', '');
+                var match, pageName;
+                if (match = document.location.toString().match(/#\w+/)) {
+                    pageName = match[0].replace('#', '');
+                } else {
+                    pageName = 'fight';
+                }
                 page.show(pageName);
             });
         </script>

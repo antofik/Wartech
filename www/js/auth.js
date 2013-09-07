@@ -11,7 +11,7 @@ auth.tryAuthorize = function(callback)
     if (matches = document.location.toString().match(/&code=(\w+)/)) {
         api.login(matches[1], 'vk', function(reply){
             $.cookie('sessionid', reply.sessionid);
-            location = '/configure.html';
+            location = document.location;
             callback(true);
         });
     } else {
