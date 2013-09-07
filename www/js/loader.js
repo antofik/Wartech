@@ -7,7 +7,6 @@ loader = {
         var script = document.createElement('script');
         script.onload = function(){
             cache[url] = true;
-            console.log('loaded ' + url)
             callback();
         }
         script.src = 'js/' + scriptName + '.js';

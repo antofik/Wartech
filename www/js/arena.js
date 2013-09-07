@@ -54,7 +54,7 @@ var drawGexoid  = function(l, point){
 			Math.round(points[i-1][1] + l * Math.sin(a))
 		]);
 	}
-	var p = $(svg.polygon(points, {stroke: '#eee', strokeWidth: 1}));
+	var p = $(svg.polygon(points));
 	p.addClass('cell');
 
 	//svg.circle(point[0], point[1], 1);
