@@ -13,4 +13,3 @@ loader = {
         $('body').appendChild(script);
     }
 }
-
