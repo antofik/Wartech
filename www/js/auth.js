@@ -8,6 +8,7 @@ auth.login = function() {
 
 auth.tryAuthorize = function(callback)
 {
+    var matches;
     if (matches = document.location.toString().match(/&code=(\w+)/)) {
         api.login(matches[1], 'vk', function(reply){
             $.cookie('sessionid', reply.sessionid);

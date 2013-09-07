@@ -7,9 +7,10 @@ loader = {
         var script = document.createElement('script');
         script.onload = function(){
             cache[url] = true;
+            console.log('loaded ' + url)
             callback();
         }
-        script.url = 'js/' + scriptName + '.js';
-        $('body').appendChild(script);
+        script.src = 'js/' + scriptName + '.js';
+        document.body.appendChild(script);
     }
 }

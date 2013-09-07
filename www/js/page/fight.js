@@ -56,18 +56,7 @@ var beginFight = function(fight){
 				case 'general':
 					switch (val.action){
 						case 'start':
-							var _robot = $(drawRobot([0, 0]));
-							(function(){
-								var _name = val.name;
-								_robot.hover(function(){
-									robotDebug.html(list[_name].x + ', ' + list[_name].y + ': ' + list[_name].direction);
-								}, function(){
-									robotDebug.html('');
-								});
-							})();
-							list[val.name] = {
-								obj: _robot
-							};
+                            list[val.name] = new robot(val.name);
 							break;
 					}
 					break;
@@ -77,25 +66,17 @@ var beginFight = function(fight){
 					break;
 				case 'start_position':
 					var item = list[val.name];
-					item.x = val.x;
-					item.y = val.y;
-					item.direction = 0;
-					item.position = arena.convertCoords(item.x, item.y);
-					animateRobot(item);
+                    item.move(val.x, val.y);
 					break;
 				case 'move':
-					var item = list[val.name];
-					var c = arena.convertCoords(item.x, item.y);
-					item.x = val.x;
-					item.y = val.y;
-					item.position = c;
-					animateRobot(item);
-
+                    var item = list[val.name];
+                    item.move(val.x, val.y);
+                    item.animateTick(interval);
 					break;
 				case 'turn':
-					item = list[val.name];
-					item.direction = val.direction;
-					animateRobot(item);
+                    var item = list[val.name];
+                    item.rotate(val.direction);
+                    item.animateTick(interval);
 					break;
 			}
 

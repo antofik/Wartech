@@ -30,13 +30,14 @@
         <div class="page" style="display: none"></div>
         <script>
             $(document).ready(function(){
-                var match, pageName;
-                if (match = document.location.toString().match(/#\w+/)) {
-                    pageName = match[0].replace('#', '');
-                } else {
-                    pageName = 'fight';
-                }
-                page.show(pageName);
+                auth.tryAuthorize(function(){
+                    var match, pageName;
+                    if (match = document.location.toString().match(/#\w+/)) {
+                        page.show(match[0].replace('#', ''));
+                    } else {
+                        page.show('fight');
+                    }
+                })
             });
         </script>
     </body>
