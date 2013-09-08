@@ -39,7 +39,7 @@ function shoot(startPosition, endPosition)
             var y = endPosition[1];
             $(that.objWrap).animate({
                 svgTransform: 'translate('+x+' '+y+')'
-            }, interval, function(){
+            }, interval/5, function(){
                 $(that.objWrap).remove();
             });
         });

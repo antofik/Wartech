@@ -13,18 +13,23 @@ arena.init = function(_arena){
         height: height + 'px'
     });
 
+
 	$('#arena').svg({
 		onLoad: function(svg){
 			window.svg = svg;
-
-			var arenaWidth = 8;
-			var arenaHeight = 8;
+            var group = svg.group('arena');
+            var defs = svg.defs(group);
+            var pattern = svg.pattern(defs, 'grass', 0, 0, 60, 68);
+            var grass = svg.image(pattern, 0, 0, 60, 68, 'img/arena/grass.jpg');
+            var pattern = svg.pattern(defs, 'water', 0, 0, 60, 68);
+            var grass = svg.image(pattern, 0, 0, 60, 68, 'img/arena/water.gif');
 
 			var currentLocation = $('.debug .currentPoint');
-			for (var i = 0; i < arenaWidth; i++){
-				for (var j = -Math.floor(i/2); j < arenaHeight - Math.floor(i/2); j++){
+            var index = _arena.width * _arena.height - 1;
+			for (var i = 0; i < _arena.width; i++){
+				for (var j = -Math.floor(i/2); j < _arena.height - Math.floor(i/2); j++){
 					var c = arena.convertCoords(j, i);
-					var p = drawGexoid(30, c);
+					var p = drawGexoid(group, 30, c, _arena.terrain[index]);
 					(function(){
 						var text = j + ', ' + i;
 						p.hover(function(){
@@ -33,6 +38,7 @@ arena.init = function(_arena){
 							currentLocation.html();
 						});
 					})();
+                    index--;
 				}
 			}
 		}
@@ -44,8 +50,12 @@ arena.convertCoords = function(x, y){
 }
 
 
-var drawGexoid  = function(l, point){
+var drawGexoid  = function(group, l, point, index){
 	var points = [point];
+
+    var patterns = [
+        'none', 'brown'
+    ];
 
 	for (var i = 1; i < 6; i++) {
 		var a = (i+3) * Math.PI / 3 + Math.PI/2;
@@ -54,8 +64,14 @@ var drawGexoid  = function(l, point){
 			Math.round(points[i-1][1] + l * Math.sin(a))
 		]);
 	}
-	var p = $(svg.polygon(points, {stroke: '#eee', strokeWidth: 1, fill: '#fff'}));
+	var p = $(svg.polygon(group, points, {
+        stroke: '#eee',
+        strokeWidth: 1,
+        fill: patterns[index]
+    }));
+
 	p.addClass('cell');
+
 
 	//svg.circle(point[0], point[1], 1);
 

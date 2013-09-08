@@ -44,6 +44,7 @@ var beginFight = function(fight){
     arena.init(fight.arena);
     $('title').html(fight.final_message);
     var tick = 0;
+    var teams = [];
 	var processTick = function(){
 		var data = fight.journal[tick];
 		//console.log(data);
@@ -55,7 +56,10 @@ var beginFight = function(fight){
 				case 'general':
 					switch (val.action){
 						case 'start':
-                            list[val.name] = new robot(val.name);
+                            if (teams[val.team] == undefined) {
+                                teams[val.team] = new Team();
+                            }
+                            list[val.name] = new Robot(val.name, teams[val.team]);
 							break;
                         case 'dead':
                             break;

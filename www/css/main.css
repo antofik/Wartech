@@ -47,8 +47,11 @@
   height: 600px;
   border: 1px solid #eee;
 }
-.arena polygon:hover {
-  fill: #eee;
+.arena .cell:hover {
+  box-shadow: 0px 0px 5px grey;
+}
+.arena .cell.grass {
+  fill: url('#grass');
 }
 .coords {
   position: absolute;

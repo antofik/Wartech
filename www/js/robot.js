@@ -1,4 +1,4 @@
-function robot(name)
+function Robot(name, team)
 {
     var healthWidth = 40;
     var that = this;
@@ -91,8 +91,8 @@ function robot(name)
             width: that.width,
             height: that.height
         });
-        var rect = svg.rect(obj, -20, -15, 40, 30, {fill: '#fce', stroke: 'black'});
-        var gun = svg.rect(obj, 20, -1, 30, 1, {fill: '#fce', stroke: 'black'});
+        var rect = svg.rect(obj, -20, -15, 40, 30, {fill: team.color, stroke: 'black'});
+        var gun = svg.rect(obj, 20, -1, 30, 1, {fill: team.color, stroke: 'black'});
 
         var robotDebug = $('.debug .robotPoint');
         $(obj).hover(function(){

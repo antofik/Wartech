@@ -42,19 +42,18 @@
       width: 450px;
   }
 }
-
 .arena {
   width: 800px;
   height: 600px;
   border: 1px solid #eee;
-  polygon {
-      &.cell {
-
-      }
+    .cell {
       &:hover {
-          fill: #eee;
+        box-shadow: 0px 0px 5px grey;
       }
-  }
+      &.grass {
+        fill: url('#grass');
+      }
+    }
 }
 
 .coords {
