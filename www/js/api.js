@@ -56,8 +56,8 @@ api.login = function(token, provider, callback) {
 
 api.testFight = function(callback){
     return api.request('test_fight', {
-        count: 5,
-        arena: 'large'
+        count: 2,
+        arena: 'small'
     }, callback);
 }
 

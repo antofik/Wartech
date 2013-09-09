@@ -54,7 +54,7 @@ var drawGexoid  = function(group, l, point, index){
 	var points = [point];
 
     var patterns = [
-        'none', 'brown'
+        'none', 'url(#water)'
     ];
 
 	for (var i = 1; i < 6; i++) {
