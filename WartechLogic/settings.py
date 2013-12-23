@@ -21,7 +21,7 @@ USE_I18N = True # If you set this to False, Django will make some optimizations 
 USE_L10N = True # If you set this to False, Django will not format dates, numbers and calendars according to the current locale.
 USE_TZ = True # If you set this to False, Django will not use timezone-aware datetimes.
 
-MEDIA_ROOT = os.path.join(PROJECT_PATH, "media")
+MEDIA_ROOT = os.path.join(PROJECT_PATH, "media/")
 MEDIA_URL = '/media/'
 CMS_MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(PROJECT_PATH, "static")
@@ -80,6 +80,7 @@ INSTALLED_APPS = (
     'main',
     'battles',
     'logic_modules',
+    'map',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -132,7 +133,7 @@ LOGGING = {
             'level': 'DEBUG',
             'class': 'logging.FileHandler', 
             'formatter': 'verbose',         
-            'filename': os.path.join(PROJECT_PATH, 'logs', 'django.log') 
+            'filename': os.path.join(PROJECT_PATH, 'logs', 'django.log')
         },
         'console':{
             'level':'DEBUG',
