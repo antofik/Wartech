@@ -52,20 +52,13 @@ def generate_map(request, sx, sy):
         material = Materials.Soil
         height = 8
 
-    map = []
-    for x in xrange(1000):
-        line = []
-        map.append(line)
-        for y in xrange(1000):
-            line.append(MapCell(sx + x, sy + y, height, material))
+    heights = str(height) * 10000
+    map = material * 10000
 
     for x in xrange(10):
         for y in xrange(10):
-            data = [[i.json() for i in line[x*100:x*100+100]] for line in map[y*100:y*100+100]]
-            print data
-            point = (sx + x) * 1000000 + (sy + y)
-            m = MapTile(point=point, type=4, data=data)
-            m.save()
+            point = (sx*10 + x) * 1000000 + (sy*10 + y)
+            MapTile(point=point, type=4, data=map, heights=heights).save()
 
 
 def get_map(sx, sy):

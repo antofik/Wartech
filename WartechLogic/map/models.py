@@ -4,10 +4,13 @@ import json
 
 class MapTile(Model):
     id = AutoField( primary_key=True)
-    ready_level = PositiveSmallIntegerField()
     type = PositiveSmallIntegerField()
     point = BigIntegerField()
     data = TextField()
+    heights = TextField()
+
+    class Meta:
+        db_table = 'map'
 
 
 class ChemicalElements(object):
@@ -34,18 +37,11 @@ class Material(object):
         self.Name = name
         self.ChemicalName = self.get_name()
         Material.Table[self.Name] = self
+        setattr(Material, name, self)
 
     def get_name(self):
         name = ''.join(['%s%s' for (el, n) in self.Elements])
         return '%s-%s-%s' % (name, self.State, self.Substate)
-
-    def __str__(self):
-        return self.Name
-
-    @classmethod
-    def register(cls, name, Material):
-        print 'registering', name
-        setattr(cls, name, Material)
 
     @staticmethod
     def get(name, chemicalName=None):
@@ -74,16 +70,17 @@ class MaterialSubstate(object):
 
 
 class Materials(object):
-    Water = "Water"
-    Rock = "Rock"
-    Sand = "Sand"
-    Soil = "Soil"
+    Water = "W"
+    Rock = "R"
+    Sand = "S"
+    Soil = "T"
+
 
 _ = ChemicalElements
-Material.register(Materials.Water, Material(MaterialState.Liquid, MaterialSubstate.Soft, (_.Ar, 2), (_.Lu, 1)))
-Material.register(Materials.Rock, Material(MaterialState.Solid, MaterialSubstate.Hard, (_.Fe, 5), (_.Lu, 1), (_.Es, 2)))
-Material.register(Materials.Sand, Material(MaterialState.Dry, MaterialSubstate.Soft, (_.Ar, 1), (_.Es, 1), (_.Rz, 2)))
-Material.register(Materials.Soil, Material(MaterialState.Dry, MaterialSubstate.Hard, (_.Ar, 1), (_.Lu, 2), (_.Fe, 2), (_.Rz, 1), (_.Es, 1)))
+Material(Materials.Water, MaterialState.Liquid, MaterialSubstate.Soft, (_.Ar, 2), (_.Lu, 1))
+Material(Materials.Rock, MaterialState.Solid, MaterialSubstate.Hard, (_.Fe, 5), (_.Lu, 1), (_.Es, 2))
+Material(Materials.Sand, MaterialState.Dry, MaterialSubstate.Soft, (_.Ar, 1), (_.Es, 1), (_.Rz, 2))
+Material(Materials.Soil, MaterialState.Dry, MaterialSubstate.Hard, (_.Ar, 1), (_.Lu, 2), (_.Fe, 2), (_.Rz, 1), (_.Es, 1))
 
 
 class MapCell(object):
