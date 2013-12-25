@@ -71,21 +71,14 @@ def get_map(sx, sy):
     if not m:
         generate_map(sx//10, sy//10)
         m = MapTile.objects.get(Q(point=point), Q(type=4))
-    return m.data
+    return m
 
 
 def get(request):
     sx = int(request.GET.get('x', 0)) * 100
     sy = int(request.GET.get('y', 0)) * 100
 
-    im = Image.open("media/images/map.png")
-    pixels = im.load()
-    data = []
-    width, height = 100, 100
-    for x in xrange(width):
-        l = []
-        for y in xrange(height):
-            l.append(pixels[sx+x,sy+y])
-        data.append(l)
-    jsonData = {'map': data}
+    map = get_map(sx, sy)
+
+    jsonData = {'map': map.data, 'heights': map.heights}
     return JsonResponse(request, jsonData) #3, 2, 75, 5, 6
