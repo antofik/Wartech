@@ -67,8 +67,9 @@ def get_map(sx, sy):
     result contain 100x100 cells
     """
     point = sx * 1000000 + sy
-    m = MapTile.objects.get(Q(point=point), Q(type=4))
-    if not m:
+    try:
+        m = MapTile.objects.get(Q(point=point), Q(type=4))
+    except MapTile.DoesNotExcept:
         generate_map(sx//10, sy//10)
         m = MapTile.objects.get(Q(point=point), Q(type=4))
     return m
