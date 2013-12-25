@@ -6,6 +6,7 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.db.models import Q
 from models import *
+from random import randint
 from PIL import Image
 
 
@@ -24,11 +25,43 @@ def JsonResponse(request, data):
     return response
 
 
+def create_roughness(heights):
+    for i in xrange(len(heights)):
+        r = randint(0, 20)
+        if r > 19:
+            heights[i] += 3
+        elif r > 18:
+            heights[i] -= 3
+        elif r > 16:
+            heights[i] += 2
+        elif r > 14:
+            heights[i] -= 2
+        elif r > 11:
+            heights[i] += 1
+        elif r > 8:
+            heights[i] -= 1
+        heights[i] = max(0, min(7, heights[i]))
+    for x in xrange(1,99):
+        for y in xrange(1,99):
+            heights[y*100+x] = (heights[y*100+x] + heights[y*100+x+1] + heights[y*100+x-1] + heights[y*100+x+100] + heights[y*100+x-100])/5
+
+
+def create_mountains(heights):
+    def coordinates(width=0):
+        return randint(width, 99-width), randint(width, 99-width)
+
+    for i in xrange(randint(0, 100)):
+        x, y = coordinates()
+
+
+def create_ravines(heights):
+    pass
+
+
 def generate_map(sx, sy):
     """
     sx,sy=0..999
     """
-    print sx, sy
     sx, sy = int(sx), int(sy)
     im = Image.open("media/images/map.png")
     pixels = im.load()
@@ -50,15 +83,27 @@ def generate_map(sx, sy):
         height = 6
     elif pixel == 6:
         material = Materials.Soil
-        height = 8
+        height = 7
 
-    heights = str(height) * 10000
-    map = material * 10000
+    m = [material] * 10000
 
     for x in xrange(10):
         for y in xrange(10):
             point = (sx*10 + x) * 1000000 + (sy*10 + y)
-            MapTile(point=point, type=4, data=map, heights=heights).save()
+            heights = [height] * 10000
+            if material == Materials.Soil:
+                create_roughness(heights)
+                create_mountains(heights)
+                create_ravines(heights)
+            elif material == Materials.Rock:
+                create_roughness(heights)
+                create_mountains(heights)
+            elif material == Materials.Sand:
+                create_roughness(heights)
+
+            m = ''.join(m)
+            heights = ''.join(map(str, heights))
+            MapTile(point=point, type=4, data=m, heights=heights).save()
 
 
 def get_map(sx, sy):
