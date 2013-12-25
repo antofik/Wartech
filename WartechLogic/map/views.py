@@ -24,7 +24,7 @@ def JsonResponse(request, data):
     return response
 
 
-def generate_map(request, sx, sy):
+def generate_map(sx, sy):
     """
     sx,sy=0..999
     """
@@ -74,14 +74,9 @@ def get_map(sx, sy):
     return m.data
 
 
-def get(request, sx, sy):
-    sx = int(sx)
-    sy = int(sy)
-    if sx > 9: sx = 9
-    if sy > 9: sy = 9
-    sx *= 100
-    sy *= 100
-    print sx, sy
+def get(request):
+    sx = int(request.GET.get('x', 0)) * 100
+    sy = int(request.GET.get('y', 0)) * 100
 
     im = Image.open("media/images/map.png")
     pixels = im.load()
