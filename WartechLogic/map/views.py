@@ -76,8 +76,8 @@ def get_map(sx, sy):
 
 
 def get(request):
-    sx = int(request.GET.get('x', 0)) * 100
-    sy = int(request.GET.get('y', 0)) * 100
+    sx = int(request.GET.get('x', 0))
+    sy = int(request.GET.get('y', 0))
 
     map = get_map(sx, sy)
 
