@@ -69,7 +69,7 @@ def get_map(sx, sy):
     point = sx * 1000000 + sy
     try:
         m = MapTile.objects.get(Q(point=point), Q(type=4))
-    except MapTile.DoesNotExcept:
+    except MapTile.DoesNotExist:
         generate_map(sx//10, sy//10)
         m = MapTile.objects.get(Q(point=point), Q(type=4))
     return m
